@@ -4,12 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ToscComponent } from './components/tosc/tosc.component';
 
+import { AppRoutingModule } from './app.routing.module';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToscComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule
