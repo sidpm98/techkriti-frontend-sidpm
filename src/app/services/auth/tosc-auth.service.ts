@@ -29,6 +29,8 @@ export class ToscAuthService {
                           {headers: this.headers})
       .toPromise()
       .then((res) => {
+        this.currentUser = Promise.resolve(res.json().username as string);
+        localStorage.setItem('User', JSON.stringify(res.json()));
         return res.json();
       })
       .catch((err: any) => {
@@ -41,7 +43,7 @@ export class ToscAuthService {
       .toPromise()
       .then((res) => {
         this.currentUser = Promise.resolve(null);
-        console.log(res.json());
+        localStorage.removeItem('User');
         return res.json();
       })
       .catch((err: any) => {
