@@ -1,11 +1,12 @@
 <h1>TOSC Homepage</h1>
 <button (click)="fbLogin()">Facebook Login</button>
 <button (click)="gotoRegister()">Register</button>
-<button (click)="signIn()">SignIn</button>
+<button (click)="openSignIn()">SignIn</button>
 <button (click)="logOut()">LogOut</button>
 <button (click)="isLoggedIn()">CheckStatus</button>
 <button (click)="userQuiz()">Quiz</button>
 <button (click)="gotoToscForgot()">Forgot Password</button>
+<button (click)="gotoBackend()">Backend</button>
 <div *ngIf="user">
   {{ currentUser.name }}
 </div>

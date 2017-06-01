@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MdDialog } from '@angular/material';
 
 import { FbLoginService } from '../../services/auth/fb-login.service';
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 import { ToscService } from '../../services/tosc.service';
+
+import { ToscLoginComponent } from './tosc-login/tosc-login.component';
 
 @Component({
   selector: 'app-tosc',
@@ -18,7 +21,8 @@ export class ToscComponent implements OnInit {
   constructor(private authService: ToscAuthService,
               private toscService: ToscService,
               private fbService: FbLoginService,
-              private router: Router ) { }
+              private router: Router,
+              private dialog: MdDialog) { }
 
   fbLogin() {
     this.fbService.login()
@@ -30,15 +34,12 @@ export class ToscComponent implements OnInit {
       });
   }
 
-  signIn() {
-    this.authService.signIn('anu', '222')
-      .then((user) => {
-        this.user = user;
-        this.currentUser = JSON.parse(localStorage.getItem('User'));
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+  openSignIn() {
+    const dialogRef = this.dialog.open(ToscLoginComponent, {
+      hasBackdrop: true,
+      height: '35vmin',
+      width: '35vmin'
+    });
   }
 
   logOut() {
@@ -77,6 +78,10 @@ export class ToscComponent implements OnInit {
 
   gotoRegister() {
     this.router.navigate(['tosc-register']);
+  }
+
+  gotoBackend() {
+    this.router.navigate(['backend']);
   }
 
   ngOnInit() {
