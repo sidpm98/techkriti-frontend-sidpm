@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
+import { TOSCUser } from '../../models/users';
+
 @Injectable()
 
 export class ToscAuthService {
@@ -45,6 +47,17 @@ export class ToscAuthService {
         this.currentUser = Promise.resolve(null);
         localStorage.removeItem('User');
         return res.json();
+      })
+      .catch((err: any) => {
+        return Promise.reject(err.statusText);
+      });
+  }
+
+  signUp(user: TOSCUser): Promise<any> {
+    return this.http.post('api/tosc/user', JSON.stringify(user), { headers: this.headers })
+      .toPromise()
+      .then((res) => {
+        return res;
       })
       .catch((err: any) => {
         return Promise.reject(err.statusText);

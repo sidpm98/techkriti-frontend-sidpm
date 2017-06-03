@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 
 import { TOSCUser } from '../../models/users';
 
@@ -93,7 +96,9 @@ export class ToscRegisterComponent implements OnInit {
   private phoneRe: RegExp = new RegExp('^[0-9]{10}$');
   private passwords: FormGroup;
 
-  constructor(private formBuild: FormBuilder) { }
+  constructor(private formBuild: FormBuilder,
+              private authService: ToscAuthService,
+              private router: Router) { }
 
   ngOnInit() {
     this.buildForm();
@@ -176,7 +181,13 @@ export class ToscRegisterComponent implements OnInit {
     this.registerForm.value.password = this.registerForm.value.passwords.password;
     delete this.registerForm.value.passwords;
     this.user = this.registerForm.value;
-    console.log(this.user);
+    this.authService.signUp(this.user)
+      .then((res) => {
+        console.log('register successfully');
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   selectSchool(e) {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { ToscService } from '../../services/tosc.service';
 
@@ -9,11 +9,13 @@ import { ToscService } from '../../services/tosc.service';
 })
 export class ToscForgotComponent implements OnInit {
 
+  @Output() private backFlag: EventEmitter<boolean> = new EventEmitter<false>();
+  private email: string;
 
   constructor(private toscService: ToscService) { }
 
   forgotPass() {
-    this.toscService.forgot('ssaha@iitk.ac.in')
+    this.toscService.forgot(this.email)
       .then((res) => {
         console.log(res);
       })
@@ -22,9 +24,11 @@ export class ToscForgotComponent implements OnInit {
       });
   }
 
+  back() {
+    this.backFlag.emit(false);
+  }
+
   ngOnInit() {
-    // this.getQueryParams();
-    this.forgotPass();
   }
 
 }

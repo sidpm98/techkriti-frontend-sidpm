@@ -35,10 +35,16 @@ export class ToscComponent implements OnInit {
   }
 
   openSignIn() {
+    let height = '40vmin';
+    let width = '40vmin';
+    if (window.innerWidth <= 412 ) {
+      width = '60vw';
+      height = '300px';
+    }
     const dialogRef = this.dialog.open(ToscLoginComponent, {
       hasBackdrop: true,
-      height: '35vmin',
-      width: '35vmin'
+      width: width,
+      height: height
     });
   }
 

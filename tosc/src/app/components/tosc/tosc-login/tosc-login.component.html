@@ -1,17 +1,28 @@
-<div class="login-body">
+<div *ngIf="!forgot" class="login-body">
   <div class="header">
     <h2>Sign-In</h2>
   </div>
+
   <div class="content">
     <md-input-container>
-      <input mdInput type="text" placeholder="Username" required>
+      <input mdInput type="text" placeholder="Username"
+             required [(ngModel)]="username">
     </md-input-container>
 
     <md-input-container>
-      <input mdInput type="password" placeholder="Password" required>
+      <input mdInput type="password" placeholder="Password"
+             required [(ngModel)]="password">
     </md-input-container>
   </div>
+
   <div class="actions">
-    <button md-raised-button>Login</button>
+    <button md-raised-button [disabled]="loginFlag" (click)="loginIn()">Login</button>
+    <a (click)="showForgot()">Forgot Password</a>
   </div>
+
+  <md-progress-bar *ngIf="loaderFlag" mode="query"></md-progress-bar>
+</div>
+
+<div *ngIf="forgot" class="forgot-body">
+  <app-tosc-forgot (backFlag)="showSignIn($event)"></app-tosc-forgot>
 </div>

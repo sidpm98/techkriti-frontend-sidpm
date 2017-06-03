@@ -1,4 +1,5 @@
 export class TOSCUser {
+  id?: string;
   name: string;
   username: string;
   password: string;
