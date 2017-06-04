@@ -1,0 +1,151 @@
+<md-card>
+  <md-card-header>
+    <md-card-title><h1>Application Form</h1></md-card-title>
+  </md-card-header>
+  <form [formGroup]="register">
+    <md-card-content>
+      <div  *ngIf="flags[0]" class="personal" formGroupName="personal">
+        <h2>Personal Details</h2>
+        <md-input-container>
+          <input mdInput type="text" placeholder="Name"
+                 required formControlName="name">
+        </md-input-container>
+          <h3>Contact Details</h3>
+        <div class="mob-input-col contact">
+          <md-input-container>
+            <input mdInput type="text" placeholder="Contact No"
+                   required formControlName="contact">
+          </md-input-container>
+          <md-input-container>
+            <input mdInput type="text" placeholder="Whatsapp"
+                   required formControlName="whatsapp">
+          </md-input-container>
+          <md-input-container>
+            <input mdInput type="email" placeholder="Email"
+                   required formControlName="email">
+          </md-input-container>
+        </div>
+        <div  formGroupName="address">
+          <h3>Address</h3>
+          <div class="address">
+            <md-input-container>
+              <input mdInput type="text" placeholder="House"
+                     required formControlName="house">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="text" placeholder="Locality"
+                     required formControlName="locality">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="text" placeholder="landmark"
+                     required formControlName="landmark">
+            </md-input-container>
+          </div>
+          <md-input-container>
+            <input mdInput type="text" placeholder="Pincode"
+                   required formControlName="pincode">
+          </md-input-container>
+        </div>
+          <div class="actions">
+            <button md-raised-button [disabled]="personal.invalid">Next</button>
+          </div>
+      </div>
+
+
+      <div class="college" *ngIf="flags[1]" formGroupName="college">
+        <h2>College Details</h2>
+        <md-input-container>
+          <input mdInput type="text" placeholder="College Name"
+                 required formControlName="name">
+        </md-input-container>
+        <div id="col-city-str" class="mob-input-col">
+          <md-input-container>
+            <input mdInput type="text" placeholder="College City"
+                   required formControlName="city">
+          </md-input-container>
+          <md-input-container>
+            <input mdInput type="number" placeholder="Strength"
+                   required formControlName="strength">
+          </md-input-container>
+        </div>
+        <div formGroupName="address">
+          <h3>Address</h3>
+          <div class="address">
+            <md-input-container>
+              <input mdInput type="text" placeholder="Hostel Number"
+                     required formControlName="house">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="text" placeholder="College Address"
+                     required formControlName="locality">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="text" placeholder="Landmark"
+                     required formControlName="landmark">
+            </md-input-container>
+          </div>
+          <md-input-container>
+            <input mdInput type="text" placeholder="Pincode"
+                   required formControlName="pincode">
+          </md-input-container>
+        </div>
+        <div formGroupName="contact">
+          <h3>Director's/Dean's Details</h3>
+          <div class="mob-input-col contact" formGroupName="director">
+            <md-input-container>
+              <input mdInput type="text" placeholder="Name"
+                     formControlName="name">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="email" placeholder="Email"
+                     formControlName="email">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="text" placeholder="Contact Number"
+                     formControlName="number">
+            </md-input-container>
+          </div>
+          <h3>President's/Highest Student Authority Details</h3>
+          <div class="mob-input-col contact" formGroupName="president">
+            <md-input-container>
+              <input mdInput type="text" placeholder="Name"
+                     formControlName="name">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="email" placeholder="Email"
+                     formControlName="email">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="text" placeholder="Contact Number"
+                     formControlName="number">
+            </md-input-container>
+          </div>
+        </div>
+        <div class="actions">
+          <button md-raised-button [disabled]="college.invalid">Next</button>
+        </div>
+      </div>
+
+      <div class="misc" *ngIf="flags[2]" formArrayName="miscellaneous">
+        <div *ngFor="let answer of miscellaneous.controls; index as i">
+          <h3>{{ questionStrings[i] }}</h3>
+            <md-input-container>
+              <textarea mdInput mdTextareaAutosize [mdAutosizeMaxRows]="5"
+                        cols="80"
+                        placeholder="Enter your answer"
+                        [formControlName]="i"></textarea>
+            </md-input-container>
+        </div>
+
+        <div>
+          <h2>Skills</h2>
+        </div>
+
+        <div class="actions">
+          <button md-raised-button [disabled]="register.invalid"
+                  (click)="submit()">Submit</button>
+        </div>
+      </div>
+    </md-card-content>
+  </form>
+</md-card>

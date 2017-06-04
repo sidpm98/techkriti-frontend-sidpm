@@ -1,0 +1,63 @@
+md-card {
+    display: flex;
+    flex-direction: column;
+    margin: 12.5vmin auto;
+    width: 35vmax !important;
+}
+
+@media (max-width: 412px) {
+    md-card {
+        display: flex;
+        flex-direction: column;
+        margin: 12.5vmin auto;
+        width: 80vw !important;
+    }
+
+    .mob-input-col {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+input, textarea {
+    font-size: 110%;
+}
+
+.personal {
+    display: flex;
+    flex-direction: column;
+}
+
+.college {
+    display: flex;
+    flex-direction: column;
+}
+
+.misc {
+    display: flex;
+    flex-direction: column;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between
+}
+
+#col-city-str md-input-container {
+    width: 50%;
+}
+
+textarea {
+    border-radius: 5px;
+    /* background-color: lightgrey; */
+}

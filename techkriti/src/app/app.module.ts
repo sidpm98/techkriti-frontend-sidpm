@@ -8,6 +8,7 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AmbassadorComponent } from './components/ambassador/ambassador.component';
+import { RegisterComponent } from './components/ambassador/register/register.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AmbassadorComponent } from './components/ambassador/ambassador.componen
     AppComponent,
     NavbarComponent,
     AmbassadorComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
