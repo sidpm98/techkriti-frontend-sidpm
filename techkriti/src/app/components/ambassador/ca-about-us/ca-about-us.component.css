@@ -6,6 +6,20 @@
     align-items: center;
 }
 
+@media (max-width: 412px) {
+    .logo {
+        align-items: center !important;
+    }
+
+    .content {
+        font-size: 3vw !important;
+    }
+
+    .ab-card {
+        height: 75vh !important;
+    }
+}
+
 .ab-card {
     display: flex;
     box-shadow: 2px 2px 54px rgba(0,0,0,.5);

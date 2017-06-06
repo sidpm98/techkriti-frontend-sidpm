@@ -13,6 +13,7 @@ import { IncentivesComponent } from './components/ambassador/incentives/incentiv
 import { CaHeaderComponent } from './components/ambassador/ca-header/ca-header.component';
 import { ApplicationProcessComponent } from './components/ambassador/application-process/application-process.component';
 import { CaAboutUsComponent } from './components/ambassador/ca-about-us/ca-about-us.component';
+import { ResponsiblityComponent } from './components/ambassador/responsiblity/responsiblity.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CaAboutUsComponent } from './components/ambassador/ca-about-us/ca-about
     CaHeaderComponent,
     ApplicationProcessComponent,
     CaAboutUsComponent,
+    ResponsiblityComponent,
   ],
   imports: [
     BrowserModule,
