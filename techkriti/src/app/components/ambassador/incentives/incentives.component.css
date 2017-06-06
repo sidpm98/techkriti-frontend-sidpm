@@ -1,0 +1,35 @@
+.incentive-body {
+    display: flex;
+    height: calc(85vh - 50px);
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.incentive-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 60vw;
+    height: 60vh;
+}
+
+.incentive-card {
+    display: flex;
+    font-size: 1.5em;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    background-color: blue;
+    margin-top: 10px;
+    width: 250px;
+    height: 150px;
+}
+
+@media (max-width: 412px) {
+    .mob-incentive-card {
+        font-size: 1.2em !important;
+        width: 275px;
+    }
+}

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AmbassadorComponent } from './components/ambassador/ambassador.component';
 import { RegisterComponent } from './components/ambassador/register/register.component';
+import { IncentivesComponent } from './components/ambassador/incentives/incentives.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { RegisterComponent } from './components/ambassador/register/register.com
     NavbarComponent,
     AmbassadorComponent,
     RegisterComponent,
+    IncentivesComponent,
   ],
   imports: [
     BrowserModule,
