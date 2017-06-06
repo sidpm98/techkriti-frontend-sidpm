@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   private president: FormGroup;
   private director: FormGroup;
   private miscellaneous: FormArray;
-  private flags = [ true, false, false ]; // TODO next implementation
+  private flags = [ false, false, true ]; // TODO next implementation
   private step: number = 0;
   private phoneRe: RegExp = new RegExp('^[0-9]{10}$');
   private pinRe: RegExp = new RegExp('^[0-9]{6}$');

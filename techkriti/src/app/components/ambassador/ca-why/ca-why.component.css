@@ -1,0 +1,38 @@
+.ab-body {
+    display: flex;
+    height: calc(85vh - 50px);
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.ab-card {
+    display: flex;
+    box-shadow: 2px 2px 54px rgba(0,0,0,.5);
+    flex-direction: column;
+    width: 60vw;
+    height: 60vh;
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #373737;
+    color: #fffde7;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3vw;
+    flex: 1 0 0;
+}
+
+.content:first-child {
+    padding-top: 20px;
+}
+
+.content:last-child {
+    padding-bottom: 20px;
+}
