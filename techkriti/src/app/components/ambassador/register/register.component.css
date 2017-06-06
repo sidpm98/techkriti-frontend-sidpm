@@ -1,8 +1,29 @@
+.ca-reg-body {
+    background-image: url('../assets/images/background.jpg');
+    background-size: contain;
+    position: fixed;
+    width: 100vw;
+    height: 120vh;
+    margin-top: -10%;
+}
 md-card {
     display: flex;
     flex-direction: column;
-    margin: 12.5vmin auto;
+    margin: 3vmin auto;
     width: 35vmax !important;
+    font-family: Lato;
+    background-color: #f5f5f5;
+}
+
+md-card-header {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 412px) {
@@ -21,6 +42,11 @@ md-card {
 
 input, textarea {
     font-size: 110%;
+    font-family: Lato;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    font-family: Lato;
 }
 
 .personal {
@@ -47,6 +73,23 @@ input, textarea {
     display: flex;
     justify-content: center;
 }
+
+.back {
+    margin-left: 3px;
+}
+
+.mat-raised-button {
+    background-color: #4285f4 !important;
+    color: #fff !important;
+    font-family: Lato !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+}
+
+.mat-raised-button[disabled] {
+    background-color: rgba(0,0,0,.12) !important;
+}
+
 
 .contact {
     display: flex;

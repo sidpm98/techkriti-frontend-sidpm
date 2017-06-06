@@ -1,3 +1,5 @@
+<div class="ca-reg-body">
+</div>
 <md-card>
   <md-card-header>
     <md-card-title><h1>Application Form</h1></md-card-title>
@@ -5,12 +7,14 @@
   <form [formGroup]="register">
     <md-card-content>
       <div  *ngIf="flags[0]" class="personal" formGroupName="personal">
-        <h2>Personal Details</h2>
+        <div class="header">
+          <h2>Personal Details</h2>
+        </div>
         <md-input-container>
           <input mdInput type="text" placeholder="Name"
                  required formControlName="name">
         </md-input-container>
-          <h3>Contact Details</h3>
+        <h3>Contact Details</h3>
         <div class="mob-input-col contact">
           <md-input-container>
             <input mdInput type="text" placeholder="Contact No"
@@ -46,14 +50,17 @@
                    required formControlName="pincode">
           </md-input-container>
         </div>
-          <div class="actions">
-            <button md-raised-button [disabled]="personal.invalid">Next</button>
-          </div>
+        <div class="actions">
+          <button md-raised-button [disabled]="personal.invalid"
+                  (click)="next()">Next</button>
+        </div>
       </div>
 
 
       <div class="college" *ngIf="flags[1]" formGroupName="college">
-        <h2>College Details</h2>
+        <div class="header">
+          <h2>College Details</h2>
+        </div>
         <md-input-container>
           <input mdInput type="text" placeholder="College Name"
                  required formControlName="name">
@@ -122,28 +129,46 @@
           </div>
         </div>
         <div class="actions">
-          <button md-raised-button [disabled]="college.invalid">Next</button>
+          <button md-raised-button [disabled]="college.invalid"
+                  (click)="next()">Next</button>
+          <button md-raised-button class="back" (click)="back()">Back</button>
         </div>
       </div>
 
-      <div class="misc" *ngIf="flags[2]" formArrayName="miscellaneous">
-        <div *ngFor="let answer of miscellaneous.controls; index as i">
-          <h3>{{ questionStrings[i] }}</h3>
+      <div class="misc" *ngIf="flags[2]"> 
+        <div formArrayName="miscellaneous">
+          <div *ngFor="let answer of questionStrings; index as i">
+            <h3>{{ questionStrings[i] }}</h3>
             <md-input-container>
               <textarea mdInput mdTextareaAutosize [mdAutosizeMaxRows]="5"
                         cols="80"
                         placeholder="Enter your answer"
-                        [formControlName]="i"></textarea>
+                      [formControlName]="i"></textarea>
             </md-input-container>
+          </div>
         </div>
 
-        <div>
+        <div class="misc">
           <h2>Skills</h2>
+          <md-checkbox *ngFor="let skill of skillsStrings"
+                       (change)="check($event)"
+                       [name]="skill"> {{ skill }}</md-checkbox>
+        </div>
+        <md-input-container>
+          <input mdInput type="text" placeholder="Other" [formControl]="other">
+        </md-input-container>
+        <div>
+          <h3>Will you be able to organize workshop (getting permission, a lecture hall, projector etc.) in your institute if Techkriti 18 team takes care of the trainer and other requirements?</h3>
+          <md-radio-group (change)="choose($event)">
+            <md-radio-button [checked]="true" value="Yes">Yes</md-radio-button>
+            <md-radio-button value="No">No</md-radio-button>
+          </md-radio-group>
         </div>
 
         <div class="actions">
-          <button md-raised-button [disabled]="register.invalid"
+          <button md-raised-button [disabled]="false"
                   (click)="submit()">Submit</button>
+          <button md-raised-button class="back" (click)="back()">Back</button>
         </div>
       </div>
     </md-card-content>

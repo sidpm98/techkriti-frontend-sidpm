@@ -1,0 +1,137 @@
+@font-face {
+    font-family: Lovelo;
+    src: url(./assets/Lovelo.otf);
+}
+
+md-tab-group {
+    background-image: url('./assets/images/background.jpg');
+    background-size: contain;
+    height: 100vh;
+}
+
+.nav-bar {
+    margin-top: 5vh;
+    height: 5vh;
+    display: flex;
+}
+
+.nav-flex {
+    flex: .8 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-flex-sides {
+    flex: 2 0 0;
+}
+
+.nav-font {
+    font-size: 3vw;
+    padding-top: 5px;
+    font-family: Lovelo;
+}
+
+.nav-back {
+    background-color: blue;
+}
+
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(85vh - 50px);
+}
+
+
+.content-contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60vw;
+    height: 60vh;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    height: 50vmin;
+    width: 40vmin;
+}
+
+.content-incentive {
+    
+}
+
+.incentive {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    height: 20vmin;
+    width: 50vmin;
+}
+
+.img {
+    height: 25vmin;
+    width: 25vmin;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.flex-contact-top {
+    display: flex;
+    flex: 6 0 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-contact-bottom {
+    display: flex;
+    flex: 4 0 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.info div {
+    flex: 1 0 0;
+}
+
+.test-left {
+    position: absolute;
+    top: calc(57.5vh - .75vmax - 35px);
+    background-color: red;
+    font-size: 1.5vmax;
+    font-family: Lovelo, sans-serif;
+    left: 0;
+    transform: translateX(calc(-50% + 1.8vmax)) rotate(-90deg);
+    padding-top: 18px;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-bottom: 18px;
+    transform-origin: center center;
+    z-index: 1000;
+}
+
+.test-right {
+    position: absolute;
+    top: calc(57.5vh - .75vmax - 35px);
+    background-color: red;
+    font-size: 1.5vmax;
+    font-family: Lovelo, sans-serif;
+    right: 0;
+    transform: translateX(calc(50% - 1.8vmax)) rotate(90deg);
+    padding-top: 18px;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    padding-bottom: 18px;
+    transform-origin: center center;
+    z-index: 1000;
+}

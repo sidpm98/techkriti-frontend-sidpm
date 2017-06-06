@@ -1,10 +1,53 @@
 <md-tab-group>
-  <md-tab *ngFor="let tab of content">
-    <ng-template md-tab-label>
-      {{tab.label}} 
-    </ng-template>
-    <h1>{{tab.heading}}</h1>
-    <p>{{tab.body}}</p>
+  <md-tab label="Tab 1">
+    <div class="nav-bar">
+      <div class="nav-back nav-flex-sides"></div>
+      <div class="nav-flex nav-font">Contacts</div>
+      <div class="nav-flex-sides nav-back"></div>
+    </div>
+    <div class="center">
+      <div class="content-contact">
+        <div class="contact">
+          <div class="flex-contact-top">
+            <div class="img"></div>
+          </div>
+          <div class="flex-contact-bottom info">
+            <div>Name</div>
+            <div>Phone Number</div>
+            <div>Email</div>
+            <div>Fb Link</div>
+          </div>
+        </div>
+        <div class="contact">
+        </div>
+      </div>
+    </div>
+    <div class="test-left">
+      Application Process
+    </div>
+    <div class="test-right">
+      Contact Us
+    </div>
+  </md-tab>
+  <md-tab label="Tab 2">
+    <div class="nav-bar">
+      <div class="nav-back nav-flex-sides"></div>
+      <div class="nav-flex nav-font">Contacts</div>
+      <div class="nav-flex-sides nav-back"></div>
+    </div>
+    <div class="center">
+      <div class="content-contact">
+        <div class="incentive">
+        </div>
+        <div class="incentive">
+        </div>
+      </div>
+    </div>
+    <div class="test-left">
+      Application Process
+    </div>
+    <div class="test-right">
+      About
+    </div>
   </md-tab>
 </md-tab-group>
-
