@@ -10,6 +10,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AmbassadorComponent } from './components/ambassador/ambassador.component';
 import { RegisterComponent } from './components/ambassador/register/register.component';
 import { IncentivesComponent } from './components/ambassador/incentives/incentives.component';
+import { CaHeaderComponent } from './components/ambassador/ca-header/ca-header.component';
+import { ApplicationProcessComponent } from './components/ambassador/application-process/application-process.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { IncentivesComponent } from './components/ambassador/incentives/incentiv
     AmbassadorComponent,
     RegisterComponent,
     IncentivesComponent,
+    CaHeaderComponent,
+    ApplicationProcessComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+.nav-bar {
+    margin-top: 5vh;
+    height: 5vh;
+    display: flex;
+}
+
+.nav-flex {
+    flex: .8 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-flex-sides {
+    flex: 2 1 0;
+}
+
+.nav-font {
+    font-size: 2.5vmax;
+    padding-top: 5px;
+    font-family: Lovelo;
+    padding-left: .5em;
+    letter-spacing: .5em;
+    text-shadow: rgba(0,0,0,.5) 2px 2px 30px
+}
+
+.nav-back {
+    background-color: #2f6ed9;
+    box-shadow: 2px 2px 54px rgba(0,0,0,.5);
+}
