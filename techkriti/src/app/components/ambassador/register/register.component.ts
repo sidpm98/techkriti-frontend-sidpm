@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormArray, FormControlName, FormControl, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
+import { CAService } from '../../../services/ca.service';
 
 @Component({
   selector: 'app-register',
@@ -59,7 +60,8 @@ export class RegisterComponent implements OnInit {
     'email': ['']
   };
 
-  constructor(private formBuild: FormBuilder) { }
+  constructor(private formBuild: FormBuilder,
+              private caService: CAService) { }
 
   ngOnInit() {
     this.buildForm();
@@ -158,13 +160,21 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  // TODO write the service adn change the schema if possible for backend convience 
+  // TODO write the service and change the schema if possible for backend convience 
   submit() {
+    this.caService.submit(this.register.value)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
     this.skills.push(this.other.value);
     this.skillControl = new FormControl(this.skills.join(','));
     this.chooseControl = new FormControl(this.chosenValue);
     this.miscellaneous.push(this.skillControl);
     this.miscellaneous.push(this.chooseControl);
+
     console.log(this.register.value);
   }
 }

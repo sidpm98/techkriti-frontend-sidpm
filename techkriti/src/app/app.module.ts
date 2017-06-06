@@ -11,6 +11,7 @@ import { AmbassadorComponent } from './components/ambassador/ambassador.componen
 import { RegisterComponent } from './components/ambassador/register/register.component';
 import { IncentivesComponent } from './components/ambassador/incentives/incentives.component';
 
+import { CAService } from './services/ca.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { IncentivesComponent } from './components/ambassador/incentives/incentiv
     MaterialModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    CAService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
