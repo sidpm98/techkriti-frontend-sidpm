@@ -1,0 +1,57 @@
+.ab-body {
+    display: flex;
+    height: calc(85vh - 50px);
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.ab-card {
+    display: flex;
+    box-shadow: 2px 2px 54px rgba(0,0,0,.5);
+    flex-direction: column;
+    width: 60vw;
+    height: 60vh;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #373737;
+    flex: 1 0 0;
+}
+
+.logo-container {
+    background-image: url(../assets/images/ca-logo3.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 31vmin;
+    width: 35vmin;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    background-color: #373737;
+    color: #fffde7;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: justify;
+    font-size: 1.3vw;
+    flex: 1 0 0;
+}
+
+.center {
+    text-align: center;
+}
+
+#head2 {
+    font-size: 1.8vw;
+    padding-bottom: 10px;
+}
+
+#head1 {
+    padding-bottom: 10px;
+}

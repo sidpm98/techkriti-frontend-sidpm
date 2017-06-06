@@ -34,37 +34,7 @@ md-tab-group {
 
 /* NAV-BAR THINGIES */
 
-.nav-bar {
-    margin-top: 5vh;
-    height: 5vh;
-    display: flex;
-}
 
-.nav-flex {
-    flex: .8 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.nav-flex-sides {
-    flex: 2 0 0;
-}
-
-.nav-font {
-    font-size: 2.5vmax;
-    padding-top: 5px;
-    font-family: Lovelo;
-    padding-left: .5em;
-    letter-spacing: .5em;
-    text-shadow: rgba(0,0,0,.5) 2px 2px 30px
-}
-
-.nav-back {
-    background-color: #2f6ed9;
-    box-shadow: 2px 2px 54px rgba(0,0,0,.5);
-}
 
 /* BODY THINGIES */
 
@@ -100,7 +70,6 @@ md-tab-group {
 }
 
 .tech {
-    background-image: url(./assets/images/tech-logo.png);
     width: 10vmin;
     height: 10vmin;
     background-size: contain;
@@ -130,14 +99,6 @@ md-tab-group {
     width: 379px;
     margin-top: 2vh;
     box-shadow: 2px 2px 54px rgba(0,0,0,.5);
-}
-
-.incentive {
-    display: flex;
-    flex-direction: column;
-    background-color: red;
-    height: 20vmin;
-    width: 50vmin;
 }
 
 #img-naveen {

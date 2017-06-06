@@ -12,6 +12,7 @@ import { RegisterComponent } from './components/ambassador/register/register.com
 import { IncentivesComponent } from './components/ambassador/incentives/incentives.component';
 import { CaHeaderComponent } from './components/ambassador/ca-header/ca-header.component';
 import { ApplicationProcessComponent } from './components/ambassador/application-process/application-process.component';
+import { CaAboutUsComponent } from './components/ambassador/ca-about-us/ca-about-us.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ApplicationProcessComponent } from './components/ambassador/application
     IncentivesComponent,
     CaHeaderComponent,
     ApplicationProcessComponent,
+    CaAboutUsComponent,
   ],
   imports: [
     BrowserModule,
