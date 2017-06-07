@@ -1,6 +1,6 @@
 .ab-body {
     display: flex;
-    height: calc(85vh - 50px);
+    height: calc(85vh - 10vh);
     width: 80vw;
     justify-content: center;
     align-items: center;

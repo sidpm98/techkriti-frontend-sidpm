@@ -1,34 +1,30 @@
 <div class="body">
-  <div class="nav-bar">
-    <div class="ca">Campus Ambassador</div>
-    <div class="void"></div>
-    <div class="tabs">
-      <div>About</div>
-      <div>Why CA?</div>
-      <div>Responsibilities</div>
-      <div>Incentives</div>
-      <div>Application Process</div>
-      <div>Contact Us</div>
+</div>
+<div class="nav-bar">
+  <div class="ca">Campus Ambassador</div>
+  <div class="void"></div>
+  <a class="tabs" *ngFor="let tab of tabLabels"
+     (click)="switchTab(tab)" [class.active]="tab == currTab">
+    {{ tab }}
+  </a>
+</div>
+<app-ca-header [header]="currTab"></app-ca-header>
+<div class="ca-body">
+  <div class="left">
+    <div class="social-box">
+      <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+      <i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i>
+      <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+      <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
     </div>
   </div>
-    <app-ca-header></app-ca-header>
-    <div class="ca-body">
-      <div class="left">
-        <div class="social-box">
-          <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
-          <i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i>
-          <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
-          <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
-        </div>
-      </div>
-      <!-- <app-ca-contact></app-ca-contact> -->
-      <app-ca-why></app-ca-why>
-      <!-- <app-responsiblity></app-responsiblity> -->
-      <!-- <app-ca-about-us></app-ca-about-us> -->
-      <!-- <app-application-process></app-application-process> -->
-      <!-- <app-incentives></app-incentives> -->
-      <div class="right">
-        <div class="tech"></div>
-      </div>
-    </div>
+  <app-ca-contact *ngIf="tabs['Contact Us'].state"></app-ca-contact>
+  <app-ca-why *ngIf="tabs['Why CA?'].state"></app-ca-why>
+  <app-responsiblity *ngIf="tabs['Responsibilities'].state"></app-responsiblity>
+  <app-ca-about-us *ngIf="tabs['About Us'].state"></app-ca-about-us>
+  <app-application-process *ngIf="tabs['Application Process'].state"></app-application-process>
+  <app-incentives *ngIf="tabs['Incentives'].state"></app-incentives>
+  <div class="right">
+    <div class="tech"></div>
+  </div>
 </div>

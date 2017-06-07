@@ -19,6 +19,9 @@ import { CaContactComponent } from './components/ambassador/ca-contact/ca-contac
 
 import { CAService } from './services/ca.service';
 
+import { AppRoutingModule } from './app.routing.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +37,7 @@ import { CAService } from './services/ca.service';
     CaContactComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
