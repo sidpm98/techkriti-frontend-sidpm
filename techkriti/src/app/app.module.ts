@@ -17,6 +17,7 @@ import { ResponsiblityComponent } from './components/ambassador/responsiblity/re
 import { CaWhyComponent } from './components/ambassador/ca-why/ca-why.component';
 import { CaContactComponent } from './components/ambassador/ca-contact/ca-contact.component';
 
+import { CAService } from './services/ca.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { CaContactComponent } from './components/ambassador/ca-contact/ca-contac
     MaterialModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    CAService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
