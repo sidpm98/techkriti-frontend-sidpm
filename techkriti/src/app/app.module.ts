@@ -15,6 +15,7 @@ import { ApplicationProcessComponent } from './components/ambassador/application
 import { CaAboutUsComponent } from './components/ambassador/ca-about-us/ca-about-us.component';
 import { ResponsiblityComponent } from './components/ambassador/responsiblity/responsiblity.component';
 import { CaWhyComponent } from './components/ambassador/ca-why/ca-why.component';
+import { CaContactComponent } from './components/ambassador/ca-contact/ca-contact.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CaWhyComponent } from './components/ambassador/ca-why/ca-why.component'
     CaAboutUsComponent,
     ResponsiblityComponent,
     CaWhyComponent,
+    CaContactComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,8 @@
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
 
 @media (max-width: 412px) {
     .left {
@@ -14,34 +16,58 @@
         visibility: hidden;
     }
 
-    .contact {
-        width: 300px;
-        height: 400px !important;
-    }
-
-    .img {
-        height: 175px !important;
-        width: 175px !important;
-    }
 }
 
-md-tab-group {
+.nav-bar {
+    display: flex;
+    height: 8vh;
+    margin-bottom: 2vh;
+    background-color: rgba(202,202,202,.5);
+}
+
+.ca {
+    display: flex;
+    flex: 0 0 auto;
+    padding-left: 2vw;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    font-size: 3.5vh;
+    letter-spacing: .4vw;
+    text-transform: uppercase;
+}
+
+.void {
+    flex: .5 0 0;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 0;
+}
+
+.tabs div {
+    display: flex;
+    flex: 1 0 0;
+    font-family: Roboto, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
     background-image: url('./assets/images/ca-4background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    font-family: Open Sans, sans-serif;
 }
 
-/* NAV-BAR THINGIES */
-
-
-
-/* BODY THINGIES */
-
-.contact-body {
+.ca-body {
     display: flex;
     margin-top: 5vh;
-    height: calc(85vh - 50px);
+    height: calc(85vh - 10vh);
 }
 
 .left {
@@ -74,120 +100,3 @@ md-tab-group {
     height: 10vmin;
     background-size: contain;
 }
-
-.center {
-    display: flex;
-    flex: 8 0 0;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-center {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 60vw;
-    height: 60vh;
-}
-
-.contact {
-    display: flex;
-    flex-direction: column;
-    background-color: #373737;
-    height: 510px;
-    width: 379px;
-    margin-top: 2vh;
-    box-shadow: 2px 2px 54px rgba(0,0,0,.5);
-}
-
-#img-naveen {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    background-image: url('./assets/images/naveen.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-origin: center center;
-}
-
-#img-rama {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    background-image: url('./assets/images/rama.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-origin: center center;
-}
-
-.flex-contact-top {
-    display: flex;
-    flex: 6 0 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-contact-bottom {
-    display: flex;
-    flex: 4 0 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fdf8c1;
-
-}
-
-.info div {
-    flex: 1 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Open Sans, sans-serif;
-}
-
-.icon {
-    font-size: 1.5em !important;
-    padding-right: 10px;
-}
-
-.name {
-    font-size: 2em;
-}
-
-.mail {
-    align-items: stretch !important;
-}
-
-/* .test-left { */
-/*     position: absolute; */
-/*     top: calc(57.5vh - .75vmax - 35px); */
-/*     background-color: red; */
-/*     font-size: 1.5vmax; */
-/*     font-family: Lovelo, sans-serif; */
-/*     left: 0; */
-/*     transform: translateX(calc(-50% + 1.8vmax)) rotate(-90deg); */
-/*     padding-top: 18px; */
-/*     padding-right: 18px; */
-/*     padding-left: 18px; */
-/*     padding-bottom: 18px; */
-/*     transform-origin: center center; */
-/*     z-index: 1000; */
-/* } */
-
-/* .test-right { */
-/*     position: absolute; */
-/*     top: calc(57.5vh - .75vmax - 35px); */
-/*     background-color: red; */
-/*     font-size: 1.5vmax; */
-/*     font-family: Lovelo, sans-serif; */
-/*     right: 0; */
-/*     transform: translateX(calc(50% - 1.8vmax)) rotate(90deg); */
-/*     padding-top: 18px; */
-/*     padding-left: 3vh; */
-/*     padding-right: 3vh; */
-/*     padding-bottom: 18px; */
-/*     transform-origin: center center; */
-/*     z-index: 1000; */
-/* } */
