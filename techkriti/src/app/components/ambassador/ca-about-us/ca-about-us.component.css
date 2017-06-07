@@ -17,6 +17,10 @@
 
     .ab-card {
         height: 75vh !important;
+        width: 90vw !important;
+    }
+    .ab-body {
+        width: 100vw !important;
     }
 }
 

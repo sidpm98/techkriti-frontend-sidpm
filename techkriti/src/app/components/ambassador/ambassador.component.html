@@ -2,7 +2,11 @@
   <div class="nav-bar">
     <div class="ca">Campus Ambassador</div>
     <div class="void"></div>
-    <div class="tabs">
+    <div class="hamburger-button" (click)="toggleTabVisibility()">
+      <i *ngIf="open" class="fa fa-bars fa-3x" aria-hidden="true"></i>
+      <i *ngIf="!open" class="fa fa-times fa-3x" aria-hidden="true"></i>
+    </div>
+    <div class="tabs" *ngIf="tabVisibility" (click)="toggleTabVisibility()">
       <div>About</div>
       <div>Why CA?</div>
       <div>Responsibilities</div>
@@ -22,9 +26,11 @@
         </div>
       </div>
       <!-- <app-ca-contact></app-ca-contact> -->
-      <app-ca-why></app-ca-why>
-      <!-- <app-responsiblity></app-responsiblity> -->
-      <!-- <app-ca-about-us></app-ca-about-us> -->
+      <!-- <app-ca-why></app-ca-why> -->
+      <!-- <app-responsiblity *ngIf="boo" [@flyInOut]="in"></app-responsiblity> -->
+      <!-- <div class="ab-body" *ngIf="!boo"></div>  -->
+
+      <app-ca-about-us *ngIf="boo" [@flyInOut]="in"></app-ca-about-us>
       <!-- <app-application-process></app-application-process> -->
       <!-- <app-incentives></app-incentives> -->
       <div class="right">
