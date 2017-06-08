@@ -14,6 +14,7 @@
     width: 60vw;
     height: 60vh;
 }
+
 @media (max-width: 412px) {
     .contact {
         width: 300px;
@@ -24,6 +25,16 @@
         height: 175px !important;
         width: 175px !important;
     }
+
+    .center {
+        width: 100vw !important;
+    }
+
+    .contact-center {
+        width: 90vw;
+    }
+
+
 }
 
 .contact {

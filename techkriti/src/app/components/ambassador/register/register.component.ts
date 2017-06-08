@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormArray, FormControlName, FormControl, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 import { CAService } from '../../../services/ca.service';
+import { MdSnackBar } from '@angular/material';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +25,7 @@ export class RegisterComponent implements OnInit {
   private president: FormGroup;
   private director: FormGroup;
   private miscellaneous: FormArray;
-  private flags = [ false, false, true ]; // TODO next implementation
+  private flags = [ true, false, false ];
   private step: number = 0;
   private phoneRe: RegExp = new RegExp('^[0-9]{10}$');
   private pinRe: RegExp = new RegExp('^[0-9]{6}$');
@@ -39,9 +42,7 @@ export class RegisterComponent implements OnInit {
   private other: FormControl = new FormControl('');
 
   private addressControls = {
-    'house': ['', [
-      Validators.required
-    ]],
+    'house': [''],
     'locality': ['', [
       Validators.required
     ]],
@@ -61,12 +62,12 @@ export class RegisterComponent implements OnInit {
   };
 
   constructor(private formBuild: FormBuilder,
+              public snackBar: MdSnackBar,
+              private router: Router,
               private caService: CAService) { }
 
   ngOnInit() {
     this.buildForm();
-    console.log(this.miscellaneous.controls);
-    console.log(this.answers);
   }
 
   buildForm() {
@@ -79,7 +80,7 @@ export class RegisterComponent implements OnInit {
 
     this.answers = Array(3);
     for (let i = 0; i !== this.answers.length; i++) {
-      this.answers[i] = this.formBuild.control('', Validators.required);
+      this.answers[i] = this.formBuild.control('');
     }
 
     this.contact = this.formBuild.group({
@@ -129,7 +130,6 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  // TODO
   next() {
     if (this.step < 2) {
       this.flags[this.step] = false;
@@ -160,21 +160,65 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  // TODO write the service and change the schema if possible for backend convience 
   submit() {
-    this.caService.submit(this.register.value)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
     this.skills.push(this.other.value);
     this.skillControl = new FormControl(this.skills.join(','));
     this.chooseControl = new FormControl(this.chosenValue);
     this.miscellaneous.push(this.skillControl);
     this.miscellaneous.push(this.chooseControl);
+    let form = this.register.value;
+    let temp = '';
 
-    console.log(this.register.value);
+    for (let field in form.personal.address) {
+      temp += form.personal.address[field] + ',';
+    };
+
+    delete form.personal.address;
+    form.personal.address = temp;
+
+    temp = '';
+    for (let field in form.college.address) {
+      temp += form.college.address[field] + ',';
+    };
+
+    delete form.college.address;
+    form.college.address = temp;
+
+    temp = '';
+    for (let field in form.college.contact.director) {
+      temp += form.college.contact.director[field] + ',';
+    };
+
+    delete form.college.contact.director;
+    form.college.director = temp;
+
+    temp = '';
+    for (let field in form.college.contact.president) {
+      temp += form.college.contact.president[field] + ',';
+    };
+
+    delete form.college.contact.president;
+    form.college.president = temp;
+
+    this.caService.submit(form)
+      .then((res) => {
+        console.log(res);
+        this.buildForm();
+        this.snackBar.open('SUCCESS', 'Accepted', {
+          duration: 3000
+        });
+        this.router.navigate(['ambassador']);
+      })
+      .catch((err) => {
+        let msg = '';
+        this.buildForm();
+        if (err.status === 400) {
+          msg = 'Invalid Form Submission';
+        }
+        this.snackBar.open('ERROR', msg, {
+          duration: 3000
+        });
+        this.router.navigate(['ambassador/register']);
+      });
   }
 }

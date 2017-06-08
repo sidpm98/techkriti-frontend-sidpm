@@ -37,6 +37,15 @@
     .mob-button {
         flex: .1 0 0 !important;
     }
+
+    .ap-body {
+        width: 100vw !important;
+    }
+
+    .ap-card {
+        width: 90vw !important;
+    }
+
 }
 
 .ap-card {

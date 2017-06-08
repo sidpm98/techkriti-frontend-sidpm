@@ -8,15 +8,23 @@
 
 @media (max-width: 412px) {
     .content .header {
-        font-size: 3vw !important;
+        font-size: 4vw !important;
     }
 
     .content .body {
-        font-size: 2vw !important;
+        font-size: 3vw !important;
     }
 
     .ab-card {
         height: 80vh !important;
+    }
+
+    .ab-body {
+        width: 100vw !important;
+    }
+
+    .ab-card {
+        width: 90vw !important;
     }
 
 }

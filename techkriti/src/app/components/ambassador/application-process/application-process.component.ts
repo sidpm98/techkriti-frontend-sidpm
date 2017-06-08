@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-application-process',
@@ -18,9 +19,13 @@ export class ApplicationProcessComponent implements OnInit {
       second: 'There are no specific constraints on year in which you study, we need only enthusiasm and sincerity towards the post. At the same time if you are a resourceful person it will surely add up to your chances but is not the criteria for short listing.'
     }
   };
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  gotoRegister() {
+    this.router.navigate(['ambassador/register']);
   }
 
 }

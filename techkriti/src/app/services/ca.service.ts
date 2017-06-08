@@ -11,11 +11,11 @@ export class CAService {
   constructor(private http: Http){}
 
   submit(submitPayLoad: any): Promise<any> {
-    console.log("Serivice called");
     return this.http.post('api/techkriti/ambassador', submitPayLoad, {headers: this.headers })
       .toPromise()
       .then((res) => {
-        return res.json();
+        console.log(res);
+        return res;
       })
       .catch((err) => {
         return Promise.reject(err);

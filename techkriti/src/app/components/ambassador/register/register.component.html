@@ -21,7 +21,7 @@
                    required formControlName="contact">
           </md-input-container>
           <md-input-container>
-            <input mdInput type="text" placeholder="Whatsapp"
+            <input mdInput type="text" placeholder="Whatsapp No"
                    required formControlName="whatsapp">
           </md-input-container>
           <md-input-container>
@@ -33,15 +33,15 @@
           <h3>Address</h3>
           <div class="address">
             <md-input-container>
-              <input mdInput type="text" placeholder="House"
-                     required formControlName="house">
+              <input mdInput type="text" placeholder="House No"
+                     formControlName="house">
             </md-input-container>
             <md-input-container>
               <input mdInput type="text" placeholder="Locality"
                      required formControlName="locality">
             </md-input-container>
             <md-input-container>
-              <input mdInput type="text" placeholder="landmark"
+              <input mdInput type="text" placeholder="City/State"
                      required formControlName="landmark">
             </md-input-container>
           </div>
@@ -79,15 +79,16 @@
           <h3>Address</h3>
           <div class="address">
             <md-input-container>
-              <input mdInput type="text" placeholder="Hostel Number"
-                     required formControlName="house">
+              <input mdInput type="text" placeholder="Hostel"
+                     formControlName="house">
+              <md-hint>Hostel Name/Number if you stay in hostel</md-hint>
             </md-input-container>
             <md-input-container>
               <input mdInput type="text" placeholder="College Address"
                      required formControlName="locality">
             </md-input-container>
             <md-input-container>
-              <input mdInput type="text" placeholder="Landmark"
+              <input mdInput type="text" placeholder="City/State"
                      required formControlName="landmark">
             </md-input-container>
           </div>
@@ -144,6 +145,7 @@
                         cols="80"
                         placeholder="Enter your answer"
                       [formControlName]="i"></textarea>
+              <md-hint *ngIf="i === 2">Event can be a workshop or a competition of Techkriti</md-hint>
             </md-input-container>
           </div>
         </div>
@@ -161,13 +163,13 @@
         <div>
           <h3>Will you be able to organize workshop (getting permission, a lecture hall, projector etc.) in your institute if Techkriti 18 team takes care of the trainer and other requirements?</h3>
           <md-radio-group (change)="choose($event)">
-            <md-radio-button [checked]="true" value="Yes">Yes</md-radio-button>
+            <md-radio-button value="Yes">Yes</md-radio-button>
             <md-radio-button value="No">No</md-radio-button>
           </md-radio-group>
         </div>
 
         <div class="actions">
-          <button md-raised-button [disabled]="false"
+          <button md-raised-button [disabled]="register.invalid"
                   (click)="submit()">Submit</button>
           <button md-raised-button class="back"
                   (click)="back()"

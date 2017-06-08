@@ -18,17 +18,18 @@
         visibility: hidden;
     }
 
-    .tabs {
-        display: none !important;
+    .tabs-container {
         position: absolute !important;
         top: 8vh !important;
         width: 100vw !important;
         right: 0px;
+        display: block !important;
         background-color: rgb(202,202,202);
     }
 
-    .tabs div {
+    .tabs-container div {
         padding: .7em;
+        display: block !important;
         border-bottom: 1px solid black;
         font-face: Roboto;
     }
@@ -96,6 +97,11 @@
     border-bottom: 5px solid #373737;
 }
 
+.tabs-container {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+}
 .body {
     background-image: url('./assets/images/ca-4background.jpg');
     background-size: cover;

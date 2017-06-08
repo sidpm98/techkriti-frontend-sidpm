@@ -15,6 +15,16 @@
     height: 60vh;
 }
 
+@media (max-width:412px) {
+    .incentive-body {
+        width: 100vw !important;
+    }
+
+    .incentive-card {
+        width: 90vw !important;
+    }
+}
+
 .incentive-card {
     display: flex;
     font-size: 1.2em;

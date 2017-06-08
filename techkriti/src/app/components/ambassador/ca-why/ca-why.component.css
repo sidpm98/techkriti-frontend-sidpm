@@ -14,6 +14,20 @@
     height: 60vh;
 }
 
+@media (max-width:412px) {
+    .ab-body {
+        width: 100vw !important;
+    }
+
+    .ab-card {
+        width: 90vw !important;
+    }
+
+    .content {
+        font-size: 3vw !important;
+    }
+}
+
 .content {
     text-align: center;
     display: flex;
