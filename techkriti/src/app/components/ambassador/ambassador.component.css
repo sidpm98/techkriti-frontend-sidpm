@@ -59,6 +59,10 @@
     background-color: rgba(202,202,202,.5);
 }
 
+a {
+    color: black !important;
+}
+
 .hamburger-button {
     display: none;
 }

@@ -37,6 +37,15 @@
 
 }
 
+a {
+    color: #fffde7;
+    text-decoration: none;
+}
+
+a:active {
+    color: #fffde7;
+}
+
 .contact {
     display: flex;
     flex-direction: column;
@@ -81,7 +90,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fdf8c1;
+    color: #fffde7;
 
 }
 
