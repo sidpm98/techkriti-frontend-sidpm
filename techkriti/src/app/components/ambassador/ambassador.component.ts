@@ -6,30 +6,20 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   selector: 'app-ambassador',
   templateUrl: './ambassador.component.html',
   styleUrls: ['./ambassador.component.css'],
-  animations: [
-    trigger('flyInOut', [
-      state('in', style({transform: 'translateX(0)'})),
-      transition('void => *', [
-        style({transform: 'translateX(-100%)'}),
-        animate('500ms ease-out')
-      ])
-    ])
-  ]
 })
 export class AmbassadorComponent implements OnInit {
-  private boo = true;
-  private hamOpen = true; // hamberger-icon boolean
-  private tabVisibility = false;
-  private content = content;
+  boo = true;
+  hamOpen = true; // hamberger-icon boolean
+  tabVisibility = false;
 
-  private tabLabels: string[] = ['About Us',
+  tabLabels: string[] = ['About Us',
                                  'Why CA?',
                                  'Responsibilities',
                                  'Incentives',
                                  'Application Process',
                                  'Contact Us'];
 
-  private tabs: {} = {
+  tabs: {} = {
     'About Us' : {'state': true},
     'Why CA?': {'state': false},
     'Responsibilities': {'state': false},
@@ -38,7 +28,7 @@ export class AmbassadorComponent implements OnInit {
     'Contact Us': {'state': false}
   };
 
-  private currTab: string = 'About Us';
+  currTab: string = 'About Us';
 
   constructor() { }
 

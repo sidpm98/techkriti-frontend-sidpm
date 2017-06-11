@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResponsiblityComponent implements OnInit {
 
-  private resHeading: string[] = ['Responsiblity Coordination',
+  resHeading: string[] = ['Responsiblity Coordination',
                                   'Publicity',
                                   'Social Media',
                                   'Tasks'];
-  private resBody: string[] = [
+  resBody: string[] = [
     'Organization of workshops and events in the respective college with the help of Techkriti.',
-    "Display of Techkriti '17 posters on the students' notice board(s) of the respective college, within 4 days of receiving them.",
+    "Display of Techkriti '18 posters on the students' notice board(s) of the respective college, within 4 days of receiving them.",
     'Publicizing Techkriti events on various social media channels by sharing and posting (in different groups).',
     "Forwarding the mails related to Techkriti to the students' mailing list of the respective college. Based on the skills provided in the form, a festival task would be assigned which is expected to be completed in a given time frame."
   ];

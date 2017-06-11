@@ -85,7 +85,15 @@
     align-items: center;
     text-align: justify;
     display: flex;
+    flex-direction: column;
+    align-content: space-around;
     flex: 6 0 0;
+}
+
+span {
+    font-size: 1.3em;
+    text-align: center;
+    color: red;
 }
 
 .apply {

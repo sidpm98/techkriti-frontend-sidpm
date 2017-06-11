@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CaHeaderComponent implements OnInit {
 
-  @Input() private header: string = '';
+  @Input() header: string = '';
 
   constructor() { }
 

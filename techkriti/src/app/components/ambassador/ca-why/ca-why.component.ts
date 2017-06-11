@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaWhyComponent implements OnInit {
 
-  private whyData: string[] = [
-    'Chance to organize Workshops, National level Competitions of Techkriti your College.',
+  whyData: string[] = [
+    'Chance to organize Workshops, National level Competitions of Techkriti in your College.',
     'Chance to improve Communication and Technical Skills',
     'Golden opportunity to get involved in national level event promotion and brand management',
     'Opportunity to be a part of a pool of thousands of enthusiastic and innovative students from all across the country',

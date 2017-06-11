@@ -18,14 +18,14 @@ export class RegisterComponent implements OnInit {
   private address: FormGroup;
   private college: FormGroup;
   private contact: FormGroup;
-  private register: FormGroup;
+  register: FormGroup;
   private answers: FormControl[];
   private skillControl: FormControl;
   private chooseControl: FormControl;
   private president: FormGroup;
   private director: FormGroup;
   private miscellaneous: FormArray;
-  private flags = [ true, false, false ];
+  flags = [ true, false, false ];
   private step: number = 0;
   private phoneRe: RegExp = new RegExp('^[0-9]{10}$');
   private pinRe: RegExp = new RegExp('^[0-9]{6}$');
@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
                               'Relevant past experience',
                               'What will be your approach for organizing an event? Mention four points.'];
 
-  private skillsStrings = [ 'Video Editing', 'Content Writing',
+  skillsStrings = [ 'Video Editing', 'Content Writing',
                             'Poster Design', 'Marketing', 'Publicity'];
 
   private skills: string[] = [];
@@ -80,7 +80,7 @@ export class RegisterComponent implements OnInit {
 
     this.answers = Array(3);
     for (let i = 0; i !== this.answers.length; i++) {
-      this.answers[i] = this.formBuild.control('');
+      this.answers[i] = this.formBuild.control('', Validators.required);
     }
 
     this.contact = this.formBuild.group({
@@ -204,8 +204,8 @@ export class RegisterComponent implements OnInit {
       .then((res) => {
         console.log(res);
         this.buildForm();
-        this.snackBar.open('SUCCESS', 'Accepted', {
-          duration: 3000
+        this.snackBar.open('Thank You', 'Registered', {
+          duration: 15000
         });
         this.router.navigate(['ambassador']);
       })
