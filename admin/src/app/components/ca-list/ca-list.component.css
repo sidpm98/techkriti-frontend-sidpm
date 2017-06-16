@@ -1,0 +1,37 @@
+.fields{
+    flex: 1 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:412px){
+    .resultItem{
+        padding-bottom: 1.5vmin !important;
+        padding-top: 1.5vmin !important;
+        align-items: center;
+        font-size: 3vmin !important;
+    }
+}
+
+.resultItem{
+    display: flex;
+    justify-content: space-around;
+    background-color: #37474f;
+    color: #e0e0e0 ;
+    padding-bottom: 1vmin;
+    padding-top: 1vmin;
+    border-bottom: 1px solid black;
+    margin-top: 2vmin;
+    align-items: center;
+    box-shadow: .5px .5px 10px;
+    font-size: 2vmin;
+    font-family: noto;
+    border-radius: 2px;
+}
+
+.resultItem:hover{
+    background-color: #1c313a;
+}
+
+

@@ -1,0 +1,5 @@
+<div class="back">
+  <div class="results" *ngIf="results">
+    <app-ca-list  *ngFor="let result of results" [ca]="result"></app-ca-list>
+  </div>
+</div>
