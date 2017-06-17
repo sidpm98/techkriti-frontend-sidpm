@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
+import 'rxjs/add/operator/startWith';
+import 'rxjs/add/operator/map';
 
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 
@@ -33,6 +35,58 @@ export class ToscRegisterComponent implements OnInit {
     {code: 'JOS', name: 'St.Joseph'}
   ];
 
+  private Schools: string[] = ['Alabama',
+    'Alaska',
+    'Arizona',
+    'Arkansas',
+    'California',
+    'Colorado',
+    'Connecticut',
+    'Delaware',
+    'Florida',
+    'Georgia',
+    'Hawaii',
+    'Idaho',
+    'Illinois',
+    'Indiana',
+    'Iowa',
+    'Kansas',
+    'Kentucky',
+    'Louisiana',
+    'Maine',
+    'Maryland',
+    'Massachusetts',
+    'Michigan',
+    'Minnesota',
+    'Mississippi',
+    'Missouri',
+    'Montana',
+    'Nebraska',
+    'Nevada',
+    'New Hampshire',
+    'New Jersey',
+    'New Mexico',
+    'New York',
+    'North Carolina',
+    'North Dakota',
+    'Ohio',
+    'Oklahoma',
+    'Oregon',
+    'Pennsylvania',
+    'Rhode Island',
+    'South Carolina',
+    'South Dakota',
+    'Tennessee',
+    'Texas',
+    'Utah',
+    'Vermont',
+    'Virginia',
+    'Washington',
+    'West Virginia',
+    'Wisconsin',
+    'Wyoming'];
+  private filteredSchools: any;
+
   private cities: any[] = [
     {code: 'KOL', name: 'Kolkata'},
     {code: 'JPR', name: 'Jaipur'},
@@ -47,7 +101,8 @@ export class ToscRegisterComponent implements OnInit {
     phone: '',
     standard: '',
     school: '',
-    city: ''
+    city: '',
+    schoolCity: ''
   };
 
   private passErrors = {
@@ -89,7 +144,11 @@ export class ToscRegisterComponent implements OnInit {
     },
     city: {
       required: 'City is required'
+    },
+    schoolCity: {
+      required: 'schoolCity is required'
     }
+
   };
 
   private registerForm: FormGroup;
@@ -102,6 +161,10 @@ export class ToscRegisterComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
+    const schoolCityControl = this.registerForm.get('schoolCity');
+      this.filteredSchools = schoolCityControl.valueChanges
+        .startWith(null)
+        .map(name => this.filterSchools(name));
   }
 
   buildForm() {
@@ -142,6 +205,9 @@ export class ToscRegisterComponent implements OnInit {
       ]],
       'city': ['', [
         Validators.required
+      ]],
+      'schoolCity': ['', [
+        Validators.required
       ]]
     });
 
@@ -164,6 +230,7 @@ export class ToscRegisterComponent implements OnInit {
         this.passErrors['password'] = messages[key];
       }
 
+
     for (const field in this.formErrors) {
       if (this.formErrors.hasOwnProperty(field)) {
         this.formErrors[field] = '';
@@ -175,6 +242,11 @@ export class ToscRegisterComponent implements OnInit {
         }
       }
     }
+  }
+
+  filterSchools(val: string) {
+    console.log(val ? this.Schools.filter(s => new RegExp(`^${val}`, 'gi').test(s)) : []);
+    return val ? this.Schools.filter(s => new RegExp(`^${val}`, 'gi').test(s)) : [] ;
   }
 
   register() {
