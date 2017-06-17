@@ -1,0 +1,21 @@
+.detail-box{
+    padding: 2vmin;
+    background-color: #718792;
+    font-size: 2vmin;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.minor-detail{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.minor-detail div{
+    padding-right: 2vmin;
+    padding-left: 2vmin;
+}
+.major-detail p{
+    white-space: pre;
+}

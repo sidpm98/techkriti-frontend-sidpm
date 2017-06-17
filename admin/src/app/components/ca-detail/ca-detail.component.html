@@ -1,0 +1,30 @@
+<div class="detail-box">
+  <div class="minor-detail">
+    <div>
+      <p><b>Whatsapp: </b>{{ ca.personal.whatsapp }}</p>
+    </div>
+    <div>
+      <p><b>Address: </b>{{ ca.personal.address }}</p>
+    </div>
+    <div>
+      <p><b>College Address: </b>{{ ca.college.address }}</p>
+    </div>
+    <div>
+      <p><b>College City: </b>{{ ca.college.city }}</p>
+    </div>
+    <div>
+      <p><b>College Strength: </b>{{ ca.college?.strength }}</p>
+    </div>
+    <div>
+      <p><b>Director: </b>{{ ca.college.contact?.director }}</p>
+    </div>
+    <div>
+      <p><b>President: </b>{{ ca.college.contact?.president }}</p>
+    </div>
+  </div>
+  <div >
+    <div class="major-detail" *ngFor="let question of questions; index as i">
+      <p><b>{{ question }}: </b><br>{{ca.miscellaneous[i]}}</p>
+    </div>
+  </div>
+</div>
