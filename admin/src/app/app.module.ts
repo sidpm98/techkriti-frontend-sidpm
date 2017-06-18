@@ -4,13 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+// Components
 import { AppComponent } from './app.component';
 import { CAComponent } from './components/ca/ca.component';
+import { CaListComponent } from './components/ca-list/ca-list.component';
 import { CaDetailComponent } from './components/ca-detail/ca-detail.component';
 
+// Services
 import { CAService } from './services/ca.service';
 import { ParamsService } from './services/params.service';
-import { CaListComponent } from './components/ca-list/ca-list.component';
+import { TechHttp } from './services/tech-http.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { CaListComponent } from './components/ca-list/ca-list.component';
   ],
   providers: [
     CAService,
-    ParamsService
+    ParamsService,
+    TechHttp,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,8 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { CAService } from '../../services/ca.service';
 
+import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-ca',
   templateUrl: './ca.component.html',
@@ -9,12 +11,11 @@ import { CAService } from '../../services/ca.service';
 export class CAComponent implements OnInit {
   public results: any;
 
-  constructor(
-    private caService : CAService
-  ) { }
+  constructor(private caService: CAService,
+              private authService: AuthService) { }
 
   ngOnInit() {
-    this.getCAForms()
+    this.signIn();
   }
 
   getCAForms() {
@@ -25,5 +26,13 @@ export class CAComponent implements OnInit {
       .catch((err) => {
         console.error(err);
       });
+  }
+
+  signIn() {
+    this.authService.login('pratham', 'pratham')
+      .then((res) => {
+        this.getCAForms();
+      })
+      .catch((err) => console.error(err));
   }
 }

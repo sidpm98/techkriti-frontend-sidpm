@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { TechHttp } from './tech-http.service';
 import 'rxjs/add/operator/toPromise';
 
 import { ParamsService } from './params.service';
@@ -8,17 +9,15 @@ import { ParamsService } from './params.service';
 
 export class CAService {
 
-  private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(
-    private http: Http,
-    private paramservice : ParamsService
-  ){}
+    private http: TechHttp,
+    private paramservice: ParamsService
+  ) {}
 
   getApplications(params: {} = null): Promise<any> {
-    let urlparams = this.paramservice.generateParams(params);
-    return this.http.get(`api/backend/techkriti/CAforms`, {headers: this.headers, params: urlparams})
-      .toPromise()
+    const urlparams = this.paramservice.generateParams(params);
+    return this.http.get(`api/backend/techkriti/CAforms`, { params: urlparams})
       .then((res) => {
         console.log(res);
         return res.json();
