@@ -18,6 +18,7 @@ import { ToscLoginComponent } from './components/tosc/tosc-login/tosc-login.comp
 import { FbLoginService } from './services/auth/fb-login.service';
 import { ToscAuthService } from './services/auth/tosc-auth.service';
 import { ToscService } from './services/tosc.service';
+import { SchoolService } from './services/school-name';
 
 // Facebook
 import { FacebookService } from 'ngx-facebook';
@@ -49,7 +50,8 @@ import { AppRoutingModule } from './app.routing.module';
     FacebookService,
     FbLoginService,
     ToscAuthService,
-    ToscService
+    ToscService,
+    SchoolService
   ],
   entryComponents: [
     ToscLoginComponent
