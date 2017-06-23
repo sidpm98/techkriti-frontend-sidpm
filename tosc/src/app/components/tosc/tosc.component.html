@@ -1,13 +1,92 @@
-<h1>TOSC Homepage</h1>
-<button (click)="fbLogin()">Facebook Login</button>
-<button (click)="gotoRegister()">Register</button>
-<button (click)="openSignIn()">SignIn</button>
-<button (click)="logOut()">LogOut</button>
-<button (click)="isLoggedIn()">CheckStatus</button>
-<button (click)="userQuiz()">Quiz</button>
-<button (click)="gotoToscForgot()">Forgot Password</button>
-<button (click)="gotoBackend()">Backend</button>
-<div *ngIf="user">
-  {{ currentUser.name }}
+<div class="nav-container" [class.nav-container-scroll1]="scroll"
+     [class.nav-container-scroll2]="!scroll">
+  <div class="nav-tosc" [class.nav-tosc-scroll1]="scroll"
+       [class.nav-tosc-scroll2]="!scroll">
+    TOSC
+  </div>
+  <div class="nav-void"></div>
+  <div class="nav-ham" (click)="toggle()">H</div>
+  <div class="nav-links" [class.open]="hamOpen">
+    <div *ngFor="let tab of tabStrings" [scrollTo]="tab" (click)="goto(tab)">
+      {{ tab }}
+    </div>
+  </div>
 </div>
+<div class="parallax" [style.background-image]="'url(/assets/cover.jpg)'">
+  <div class="cover-detail">
+    <div class="header">
+      <div class="header1">
+        TECHKRITI OPEN SCHOOL COMPETITION
+      </div>
+      <div class="header2">
+        <span class="weight">MAKE</span> THINGS <span class="weight">HAPPEN</span>
+      </div>
+    <a class="apply" routerLink="/tosc/register">APPLY HERE</a>
+    </div>
+    <div class="down"> &#x26DB; </div>
+  </div>
+</div>
+<div class="my-content"
+     smoothScroll
+     duration="800"
+     easing="easeInQuint"
+     [id]="tabStrings[0]">
+  <div class="con-header">
+    {{ tabStrings[0] }}
+  </div>
+  <div class="con">
+    <p *ngFor="let point of tosc.about"> {{ point }} </p>
+  </div>
+</div>
+<div class="parallax" [style.background-image]="'url(/assets/about.jpg)'" [style.height.vh]="40"></div>
+<div class="my-content details"
+     smoothScroll
+     easing="easeInQuint"
+     [id]="tabStrings[1]">
+  <div class="con-header">
+    {{ tabStrings[1] }}
+  </div>
+  <div class="con">
+    <div *ngFor="let phase of tosc.details">
+      <p> {{ phase[0] }} </p>
+      <p> {{ phase[1] }} </p>
+    </div>
+  </div>
+</div>
+<div class="parallax" [style.background-image]="'url(/assets/details.jpg)'" [style.height.vh]="40"></div>
+<div class="my-content conduction"
+     smoothScroll
+     easing="easeInQuint"
+     [id]="tabStrings[2]">
+  <div class="con-header">
+    {{ tabStrings[2] }}
+  </div>
+  <div class="con">
+    <p *ngFor="let point of tosc.conduction"> {{ point }} </p>
+  </div>
+</div>
+<div class="parallax" [style.background-image]="'url(/assets/conduction.jpg)'" [style.height.vh]="40"></div>
+<div class="block"
+     smoothScroll
+     easing="easeInQuint"
+     [id]="tabStrings[4]">
+  <div class="con-header" >
+    {{ tabStrings[4] }}
+  </div>
+  <div class="con prize">
+    <div *ngFor="let image of imagesStrings " [style.background-image]="'url(/assets/'+ image + ')'"></div>
+  </div>
+</div>
+<!-- <h1>TOSC Homepage</h1> -->
+<!-- <button (click)="fbLogin()">Facebook Login</button> -->
+<!-- <button (click)="gotoRegister()">Register</button> -->
+<!-- <button (click)="openSignIn()">SignIn</button> -->
+<!-- <button (click)="logOut()">LogOut</button> -->
+<!-- <button (click)="isLoggedIn()">CheckStatus</button> -->
+<!-- <button (click)="userQuiz()">Quiz</button> -->
+<!-- <button (click)="gotoToscForgot()">Forgot Password</button> -->
+<!-- <button (click)="gotoBackend()">Backend</button> -->
+<!-- <div *ngIf="user"> -->
+<!-- {{ currentUser.name }} -->
+<!-- </div><!--  --> 
 

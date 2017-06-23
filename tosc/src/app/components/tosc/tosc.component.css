@@ -1,3 +1,349 @@
 .mat-dialog-container {
     box-shadow: 0 13px 19px 0px rgba(0,0,0,.2), 0 4px 8px 4px rgba(0,0,0,.14), 0 2px 15px 8px rgba(0,0,0,.12) !important;
 }
+
+.parallax {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100vw;
+    height: 30vw;
+}
+
+.header {
+    font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    color: white;
+}
+
+.header1 {
+    display: flex;
+    word-spacing: .5vw;
+    width: 100%;
+    font-weight: 300;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: .5vw;
+    font-size: 1.5vmin;
+}
+
+.header2 {
+    font-family: Lato, sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 4vmin;
+    color: white;
+    letter-spacing: .5vw;
+    word-spacing: .2vw;
+}
+
+.weight {
+    font-weight: 700;
+    letter-spacing: .5vw;
+}
+
+.apply {
+    margin-top: 2vmin;
+    background-color: red;
+    letter-spacing: .2vmin;
+    padding: .75vmin 2vmin;
+    background-color: white;
+    font-family: Lato, sans-serif;
+    color: black;
+}
+
+.prize {
+    display: flex;
+    background-color: #fefae5;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.prize div {
+    margin: 20px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 350px;;
+}
+
+.down {
+    position: absolute;
+    color: white;
+    font-size: 4vmin;
+    margin-top: 40vh;
+}
+
+@media (max-width: 1440px) {
+    .nav-void {
+        display: none;
+    }
+}
+
+@media (max-width: 786px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+
+
+    .nav-links {
+        position: absolute;
+        top: -80vmax;
+        width: 100vw;
+        background-color: black !important;
+        flex-flow: column nowrap;
+        display: none !important;
+        height: 0px;
+    }
+
+    .nav-container-scroll2 .nav-links {
+        top: 15vmin;
+    }
+
+    .open {
+        animation-name: nav-open;
+        animation-duration: .7s;
+        animation-timing-function: ease;
+        animation-direction: alternate;
+        height: auto !important;
+        top: 6vmin;
+        display: block !important;
+    }
+
+    @keyframes nav-open {
+        0% {
+            top: -80vmax;
+        }
+        100% {
+            top: 6vmin;
+            display: block !important;
+        }
+    }
+
+
+    .nav-links div {
+        display: block !important;
+        width: 100vw;
+        padding: 3vmin 0 3vmin 4vmin;
+        border-top: 1px solid #444;
+    }
+
+    .nav-links div:hover {
+        color: cyan; /* TODO Ask design people. */
+    }
+
+    .nav-tosc {
+        padding-left: 2px !important;
+    }
+
+    .nav-ham {
+        display: flex !important;
+        background-color: red;
+        align-items: center;
+        padding: 0 2vw;
+    }
+}
+
+.nav-ham {
+    display: none;
+}
+
+
+.nav-container {
+    display: flex;
+    background-color: red;
+    height: 10vmin;
+    width: 100%;
+    position: fixed;
+}
+
+.nav-container-scroll1 {
+    animation-name: nav-back1;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    background-color: black;
+    height: 6vmin;
+}
+
+.nav-container-scroll2 {
+    animation-name: nav-back2;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    background-color: transparent;
+
+}
+
+@keyframes nav-back1 {
+    0% {
+        background-color: transparent;
+        height: 10vmin;
+    }
+    100% {
+        background-color: black;
+        height: 6vmin;
+    }
+}
+
+@keyframes nav-back2 {
+    0% {
+        background-color: black;
+        height: 6vmin;
+    }
+    100% {
+        background-color: transparent;
+        height: 10vmin;
+    }
+
+}
+
+
+.nav-tosc {
+    display: flex;
+    flex: .3 0 0;
+    color: white;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    padding-left: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vmax;
+}
+
+.nav-tosc-scroll1 {
+    animation-name: nav-tosc1;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-fill-mode: none;
+    animation-direction: alternate;
+    font-size: 2vmax;
+
+}
+
+.nav-tosc-scroll2 {
+    animation-name: nav-tosc2;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-fill-mode: none;
+    animation-direction: alternate;
+}
+
+@keyframes nav-tosc1 {
+    0% {
+        font-size: 3vmax;
+    }
+    100% {
+        font-size: 2vmax;
+    }
+}
+
+@keyframes nav-tosc2 {
+    0% {
+        font-size: 2vmax;
+    }
+    100% {
+        font-size: 3vmax;
+    }
+
+}
+.nav-void {
+    flex: .1 0 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.details .con div p:nth-child(1) {
+    font-weight: 700;
+}
+
+.conduction .con p {
+    font-size: 2vmin;
+}
+
+.conduction .con {
+    height: 100vh !important;
+}
+
+.nav-links {
+    display: flex;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1 0 0;
+}
+
+.block {
+    background-color: #fefae5;
+}
+
+.nav-links div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    margin-left: 1px;
+}
+
+.my-content {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fefae5;
+    justify-content: center;
+    align-items: center;
+}
+
+.con-header {
+    margin-top: 8vh;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 5vmin;
+    /* flex: 2 0 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .5vw;
+}
+
+.con {
+    flex: 8 0 0;
+    margin: 0 6vmin;
+    font-family: Lato, sans-serif;
+    font-size: 2.5vmin;
+}
+
+.parallax1 {
+    width: 100%;
+    height: 60vh;
+    background-image: url('http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1449008939/New-York-City-Times-Square-POPIG1215.jpg?itok=8MJM6JIU');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

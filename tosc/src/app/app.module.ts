@@ -22,13 +22,19 @@ import { ToscService } from './services/tosc.service';
 // Facebook
 import { FacebookService } from 'ngx-facebook';
 import { NgUploaderModule } from 'ngx-uploader';
+import { SmoothScrollDirective, SmoothScrollToDirective } from 'ng2-smooth-scroll';
+import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
 
+// Routing Module
 import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     BackendComponent,
+    Parallax,
+    SmoothScrollDirective,
+    SmoothScrollToDirective,
     ToscComponent,
     ToscForgotComponent,
     ToscResetComponent,
@@ -43,7 +49,7 @@ import { AppRoutingModule } from './app.routing.module';
     ReactiveFormsModule,
     HttpModule,
     MaterialModule,
-    NgUploaderModule
+    NgUploaderModule,
   ],
   providers: [
     FacebookService,

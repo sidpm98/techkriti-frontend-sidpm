@@ -11,11 +11,7 @@ import { ToscLoginComponent } from './components/tosc/tosc-login/tosc-login.comp
 const routes: Routes = [
   { path: '', redirectTo: '/tosc', pathMatch: 'full' },
   { path: 'tosc', component: ToscComponent },
-  { path: 'tosc-register', component: ToscRegisterComponent },
-  { path: 'tosc-forgot', component: ToscForgotComponent },
-  { path: 'tosc-reset', component: ToscResetComponent },
-  { path: 'tosc-login', component: ToscLoginComponent },
-  { path: 'backend', component: BackendComponent }
+  { path: 'tosc/register', component: ToscRegisterComponent },
 ];
 
 @NgModule({
