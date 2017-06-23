@@ -3,8 +3,9 @@ import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms'
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
-
+import { Cities as CITIES }  from '../../apidata/city-name';
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
+import { SchoolService } from '../../services/school-name';
 
 import { TOSCUser } from '../../models/users';
 
@@ -22,6 +23,7 @@ const passwordMatchValidator: ValidatorFn = function(g: FormGroup) {
 export class ToscRegisterComponent implements OnInit {
 
   private user = new TOSCUser();
+  selected: string = '';
   private standards: any[] = [
     {group: 'A', std: '09'},
     {group: 'A', std: '10'},
@@ -35,64 +37,13 @@ export class ToscRegisterComponent implements OnInit {
     {code: 'JOS', name: 'St.Joseph'}
   ];
 
-  private Schools: string[] = ['Alabama',
-    'Alaska',
-    'Arizona',
-    'Arkansas',
-    'California',
-    'Colorado',
-    'Connecticut',
-    'Delaware',
-    'Florida',
-    'Georgia',
-    'Hawaii',
-    'Idaho',
-    'Illinois',
-    'Indiana',
-    'Iowa',
-    'Kansas',
-    'Kentucky',
-    'Louisiana',
-    'Maine',
-    'Maryland',
-    'Massachusetts',
-    'Michigan',
-    'Minnesota',
-    'Mississippi',
-    'Missouri',
-    'Montana',
-    'Nebraska',
-    'Nevada',
-    'New Hampshire',
-    'New Jersey',
-    'New Mexico',
-    'New York',
-    'North Carolina',
-    'North Dakota',
-    'Ohio',
-    'Oklahoma',
-    'Oregon',
-    'Pennsylvania',
-    'Rhode Island',
-    'South Carolina',
-    'South Dakota',
-    'Tennessee',
-    'Texas',
-    'Utah',
-    'Vermont',
-    'Virginia',
-    'Washington',
-    'West Virginia',
-    'Wisconsin',
-    'Wyoming'];
-  private filteredSchools: any;
+  private cities: string[];
+  private filteredCity: any;
+  private filteredSchool: any;
+  private autoSchools: string[] = [];
+  private schoolObject: any;
+  public code: string;
 
-  private cities: any[] = [
-    {code: 'KOL', name: 'Kolkata'},
-    {code: 'JPR', name: 'Jaipur'},
-    {code: 'JHM', name: 'Jamshedpur'}
-  ];
-  private schoolCode: string;
 
   private formErrors = {
     name: '',
@@ -100,9 +51,8 @@ export class ToscRegisterComponent implements OnInit {
     email: '',
     phone: '',
     standard: '',
-    school: '',
-    city: '',
-    schoolCity: ''
+    schoolAuto: '',
+    cityAuto: '',
   };
 
   private passErrors = {
@@ -139,16 +89,12 @@ export class ToscRegisterComponent implements OnInit {
     standard: {
       required: 'Class is required'
     },
-    school: {
-      required: 'School is required'
-    },
-    city: {
+    cityAuto: {
       required: 'City is required'
     },
-    schoolCity: {
-      required: 'schoolCity is required'
+    schoolAuto: {
+      required: 'School is required'
     }
-
   };
 
   private registerForm: FormGroup;
@@ -157,14 +103,42 @@ export class ToscRegisterComponent implements OnInit {
 
   constructor(private formBuild: FormBuilder,
               private authService: ToscAuthService,
-              private router: Router) { }
+              private router: Router,
+              private schoolService: SchoolService) { }
 
   ngOnInit() {
     this.buildForm();
-    const schoolCityControl = this.registerForm.get('schoolCity');
-      this.filteredSchools = schoolCityControl.valueChanges
+
+    this.cities = CITIES;
+    const cityAutoControl = this.registerForm.get('cityAuto');
+      this.filteredCity = cityAutoControl.valueChanges
+        .startWith(null)
+        .map(name => this.filterCity(name));
+
+    const schoolAutoControl = this.registerForm.get('schoolAuto');
+      this.filteredSchool = schoolAutoControl.valueChanges
         .startWith(null)
         .map(name => this.filterSchools(name));
+
+  }
+  
+  schoolCode(e: string) {
+    for (let school in this.schoolObject) 
+      if(this.schoolObject[school].school == e)
+        this.code = this.schoolObject[school].code;
+  }
+
+  getSchools(name: string = 'KANPUR') {
+    this.schoolService.getSchool(name)
+      .then((res) => {
+        this.schoolObject = res;
+        for (let school in res) {
+          this.autoSchools.push(res[school].school);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   buildForm() {
@@ -200,15 +174,13 @@ export class ToscRegisterComponent implements OnInit {
       'standard': ['', [
         Validators.required
       ]],
-      'school': ['', [
+      'cityAuto': ['', [
         Validators.required
       ]],
-      'city': ['', [
+      'schoolAuto': ['', [
         Validators.required
       ]],
-      'schoolCity': ['', [
-        Validators.required
-      ]]
+      'schoolCode': ['']
     });
 
     this.registerForm.valueChanges
@@ -244,9 +216,26 @@ export class ToscRegisterComponent implements OnInit {
     }
   }
 
+  filterCity(val: string) {
+    return val ? this.cities.filter(s => new RegExp(`${val}`, 'gi').test(s)) : this.cities ;
+  }
+
   filterSchools(val: string) {
-    console.log(val ? this.Schools.filter(s => new RegExp(`^${val}`, 'gi').test(s)) : []);
-    return val ? this.Schools.filter(s => new RegExp(`^${val}`, 'gi').test(s)) : [] ;
+    return val ? this.autoSchools.filter(s => new RegExp(`${val}`, 'gi').test(s)) : this.autoSchools ;
+  }
+
+  checkKey(e: KeyboardEvent,city: string) {
+    console.log(e);
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if(code == 13) { //Enter keycode
+      this.options(city);
+    }
+}
+
+  schoolCode(e: string) {
+    for (let school in this.schoolObject) {
+      if(this.schoolObject[school].school == e) this.code = this.schoolObject[school].code
+    }
   }
 
   register() {
@@ -262,12 +251,12 @@ export class ToscRegisterComponent implements OnInit {
       });
   }
 
-  selectSchool(e) {
+
+  options(e) {
     console.log(e);
-    const selectedSchool = this.schools.find((school) => {
-      return school.name === e.value;
-    });
-    this.schoolCode = selectedSchool.code;
-    console.log(this.schoolCode);
+    this.autoSchools = [];
+    let schoolinbox = this.registerForm.get('schoolAuto');
+    schoolinbox.setValue('');
+    this.getSchools(e);
   }
 }
