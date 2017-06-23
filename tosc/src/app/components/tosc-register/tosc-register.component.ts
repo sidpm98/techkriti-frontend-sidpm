@@ -121,11 +121,12 @@ export class ToscRegisterComponent implements OnInit {
         .map(name => this.filterSchools(name));
 
   }
-  
-  schoolCode(e: string) {
-    for (let school in this.schoolObject) 
-      if(this.schoolObject[school].school == e)
-        this.code = this.schoolObject[school].code;
+
+  getCode(e: KeyboardEvent,school: string) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if(code == 13) { //Enter keycode
+      this.schoolCode(school);
+    }
   }
 
   getSchools(name: string = 'KANPUR') {
@@ -225,7 +226,6 @@ export class ToscRegisterComponent implements OnInit {
   }
 
   checkKey(e: KeyboardEvent,city: string) {
-    console.log(e);
     var code = (e.keyCode ? e.keyCode : e.which);
     if(code == 13) { //Enter keycode
       this.options(city);
@@ -253,7 +253,6 @@ export class ToscRegisterComponent implements OnInit {
 
 
   options(e) {
-    console.log(e);
     this.autoSchools = [];
     let schoolinbox = this.registerForm.get('schoolAuto');
     schoolinbox.setValue('');
