@@ -101,13 +101,14 @@
     margin-top: 40vh;
 }
 
-md-card {
+.prize-card {
     margin: 2vmin;
     padding-bottom: 0;
     width: 250px;
     height: 100%;
     background-color: #e0ce94 !important;
 }
+
 md-card-header {
     display: flex;
     justify-content: center;
@@ -126,7 +127,7 @@ md-card-title {
 }
 
 @media (max-width: 412px) {
-    md-card img {
+    .contact-img {
         width: 332px !important;
     }
 }
@@ -369,26 +370,16 @@ a {
     font-size: 2.5vmin;
 }
 
-.parallax1 {
-    width: 100%;
-    height: 60vh;
-    background-image: url('http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1449008939/New-York-City-Times-Square-POPIG1215.jpg?itok=8MJM6JIU');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .contact-list{
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    margin: 5vmin;
+    padding-bottom: 5vmin;
     flex-wrap: wrap;
 }
 
-md-card img {
+.contact-img {
     height:334.19px;
     width: 348px;
 }

@@ -74,7 +74,7 @@
     {{ tabStrings[4] }}
   </div>
   <div class="con prize">
-    <md-card *ngFor="let image of imagesStrings; index as i">
+    <md-card class="prize-card" *ngFor="let image of imagesStrings; index as i">
       <md-card-header>
         <md-card-title> {{ imagesCaption[i] }}</md-card-title>
       </md-card-header>
@@ -96,8 +96,8 @@
     <app-tosc-topper [topper]="tosc.testi[1]"></app-tosc-topper>
   </div>
 </div>
-<div class="parallax" [style.background-image]="'url(/assets/details.jpg)'" [style.height.vh]="40"></div>
-<div class="my-content"
+<div class="parallax" [style.background-image]="'url(/assets/contact.jpg)'" [style.height.vh]="40"></div>
+<div class="block"
      smoothScroll
      easing="easeInQuint"
      [id]="tabStrings[9]">
@@ -106,7 +106,7 @@
   </div>
   <div class="contact-list">
     <md-card class="contact-card" *ngFor="let contact of contacts">
-      <img md-card-image [src]="contact.src">
+      <img class="contact-img" md-card-image [src]="contact.src">
       <md-card-content class="contact-content">
         <h2>{{contact.name}}</h2>
         <i>{{contact.contact}}</i>
