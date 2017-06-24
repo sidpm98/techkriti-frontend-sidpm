@@ -1,0 +1,13 @@
+@media (max-width: 412px) {
+    md-card {
+        width: 350px !important;
+    }
+}
+md-card {
+    margin-bottom: 120px;
+    width: 30vmax;
+    font-family: Lato, sans-serif;
+}
+
+
+

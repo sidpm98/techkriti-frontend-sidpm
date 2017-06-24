@@ -1,0 +1,14 @@
+<md-card *ngIf="topper">
+  <md-card-header>
+    <md-card-title><h2>{{ topper.name }}</h2></md-card-title>
+  </md-card-header>
+  <img md-card-image [src]="topper.src">
+  <md-card-content>
+    <p>
+      {{ topper.summary }}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="openDialog()">CLICK FOR MORE</button>
+  </md-card-actions>
+</md-card>

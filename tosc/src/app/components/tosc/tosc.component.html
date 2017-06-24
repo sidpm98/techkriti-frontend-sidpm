@@ -77,6 +77,19 @@
     <div *ngFor="let image of imagesStrings " [style.background-image]="'url(/assets/'+ image + ')'"></div>
   </div>
 </div>
+<div class="parallax" [style.background-image]="'url(/assets/prizes.jpg)'" [style.height.vh]="40"></div>
+<div class="block"
+     smoothScroll
+     easing="easeInQuint"
+     [id]="tabStrings[5]">
+  <div class="con-header">
+    {{ tabStrings[5] }}
+  </div>
+  <div class="con test">
+    <app-tosc-topper [topper]="tosc.testi[0]"></app-tosc-topper>
+    <app-tosc-topper [topper]="tosc.testi[1]"></app-tosc-topper>
+  </div>
+</div>
 <!-- <h1>TOSC Homepage</h1> -->
 <!-- <button (click)="fbLogin()">Facebook Login</button> -->
 <!-- <button (click)="gotoRegister()">Register</button> -->

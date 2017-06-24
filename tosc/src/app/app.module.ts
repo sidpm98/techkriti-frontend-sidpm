@@ -7,22 +7,17 @@ import { MaterialModule } from '@angular/material';
 
 // Components
 import { AppComponent } from './app.component';
-import { BackendComponent } from './components/backend/backend.component';
 import { ToscComponent } from './components/tosc/tosc.component';
-import { ToscForgotComponent } from './components/tosc-forgot/tosc-forgot.component';
-import { ToscResetComponent } from './components/tosc-reset/tosc-reset.component';
 import { ToscRegisterComponent } from './components/tosc-register/tosc-register.component';
-import { ToscLoginComponent } from './components/tosc/tosc-login/tosc-login.component';
+import { ToscTopperComponent } from './components/tosc-topper/tosc-topper.component';
+import { TopperWriteUp } from './components/tosc-topper/tosc-topper.component';
 
 // Services
-import { FbLoginService } from './services/auth/fb-login.service';
 import { ToscAuthService } from './services/auth/tosc-auth.service';
 import { ToscService } from './services/tosc.service';
 import { SchoolService } from './services/school-name';
 
 // Facebook
-import { FacebookService } from 'ngx-facebook';
-import { NgUploaderModule } from 'ngx-uploader';
 import { SmoothScrollDirective, SmoothScrollToDirective } from 'ng2-smooth-scroll';
 import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
 
@@ -32,15 +27,13 @@ import { AppRoutingModule } from './app.routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    BackendComponent,
     Parallax,
     SmoothScrollDirective,
     SmoothScrollToDirective,
     ToscComponent,
-    ToscForgotComponent,
-    ToscResetComponent,
     ToscRegisterComponent,
-    ToscLoginComponent
+    ToscTopperComponent,
+    TopperWriteUp
   ],
   imports: [
     AppRoutingModule,
@@ -50,17 +43,15 @@ import { AppRoutingModule } from './app.routing.module';
     ReactiveFormsModule,
     HttpModule,
     MaterialModule,
-    NgUploaderModule,
   ],
   providers: [
-    FacebookService,
-    FbLoginService,
     ToscAuthService,
     ToscService,
     SchoolService
   ],
   entryComponents: [
-    ToscLoginComponent
+    TopperWriteUp
+
   ],
   bootstrap: [AppComponent]
 })
