@@ -77,6 +77,26 @@
     <div *ngFor="let image of imagesStrings " [style.background-image]="'url(/assets/'+ image + ')'"></div>
   </div>
 </div>
+<div class="parallax" [style.background-image]="'url(/assets/details.jpg)'" [style.height.vh]="40"></div>
+<div class="my-content"
+     smoothScroll
+     easing="easeInQuint"
+     [id]="tabStrings[9]">
+  <div class="con-header">
+    {{ tabStrings[9] }}
+  </div>
+  <div class="contact-list">
+    <md-card class="contact-card" *ngFor="let contact of contacts">
+      <img md-card-image [src]="contact.src">
+      <md-card-content class="contact-content">
+        <h2>{{contact.name}}</h2>
+        <i>{{contact.contact}}</i>
+        <i>{{contact.email}}</i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
 <!-- <h1>TOSC Homepage</h1> -->
 <!-- <button (click)="fbLogin()">Facebook Login</button> -->
 <!-- <button (click)="gotoRegister()">Register</button> -->
