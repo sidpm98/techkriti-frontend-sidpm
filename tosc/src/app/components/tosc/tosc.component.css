@@ -125,11 +125,16 @@ md-card-title {
     }
 }
 
+@media (max-width: 412px) {
+    md-card img {
+        width: 332px !important;
+    }
+}
+
 @media (max-width: 786px) {
     .nav-container {
         justify-content: space-between;
     }
-
 
     .nav-links {
         position: absolute;
@@ -372,4 +377,33 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.contact-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 5vmin;
+    flex-wrap: wrap;
+}
+
+md-card img {
+    height:334.19px;
+    width: 348px;
+}
+
+.contact-card {
+    width: 300px;
+    height: 470px;
+    margin-top: 30px;
+}
+
+.contact-content {
+    display: flex;
+    font-family: lato;
+    font-size: 17px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

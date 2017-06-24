@@ -40,3 +40,6 @@ md-card-actions {
 .school {
   font-size: 13px;
 }
+#classes {
+  max-width: 300px;
+}
