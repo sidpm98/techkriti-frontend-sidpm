@@ -31,6 +31,7 @@ export class ToscComponent implements OnInit {
                           'SPONSORS',
                           'CONTACTS'];
   imagesStrings: string[] = ['1.jpg', '2.jpg', '3.jpg', '4.png', '5.jpg'];
+  imagesCaption: string[] = ['1st Prize', '2nd Prize', '3rd Prize', 'Top 50 Students', 'Dont Know']
 
   hamOpen: boolean = false;
   tosc = {

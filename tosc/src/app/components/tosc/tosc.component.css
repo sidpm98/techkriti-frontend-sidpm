@@ -101,6 +101,24 @@
     margin-top: 40vh;
 }
 
+md-card {
+    margin: 2vmin;
+    padding-bottom: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #e0ce94 !important;
+}
+md-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+md-card-title {
+    font-family: Lato, sans-serif;
+    font-weight: 700 !important;
+    font-size: 2vmin !important;
+}
+
 @media (max-width: 1440px) {
     .nav-void {
         display: none;

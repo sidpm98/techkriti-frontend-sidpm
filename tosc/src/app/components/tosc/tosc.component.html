@@ -74,7 +74,13 @@
     {{ tabStrings[4] }}
   </div>
   <div class="con prize">
-    <div *ngFor="let image of imagesStrings " [style.background-image]="'url(/assets/'+ image + ')'"></div>
+    <md-card *ngFor="let image of imagesStrings; index as i">
+      <md-card-header>
+        <md-card-title> {{ imagesCaption[i] }}</md-card-title>
+      </md-card-header>
+      <img md-card-image [src]="'/assets/' + image">
+    </md-card>
+    <!-- <div *ngFor="let image of imagesStrings " [style.background-image]="'url(/assets/'+ image + ')'"></div> -->
   </div>
 </div>
 <div class="parallax" [style.background-image]="'url(/assets/prizes.jpg)'" [style.height.vh]="40"></div>

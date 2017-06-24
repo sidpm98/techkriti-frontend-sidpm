@@ -1,12 +1,21 @@
 @media (max-width: 412px) {
     md-card {
-        width: 350px !important;
+        width: 330px !important;
     }
 }
 md-card {
     margin-bottom: 120px;
     width: 30vmax;
     font-family: Lato, sans-serif;
+}
+
+md-card-header {
+    display:flex;
+    justify-content: center;
+}
+
+md-card-title {
+    font-size: 2vmax !important;
 }
 
 
