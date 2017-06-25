@@ -16,6 +16,8 @@ import { TopperWriteUp } from './components/tosc-topper/tosc-topper.component';
 import { ToscAuthService } from './services/auth/tosc-auth.service';
 import { ToscService } from './services/tosc.service';
 import { SchoolService } from './services/school-name';
+import { ScriptService } from './services/script.service';
+import { PaymentService } from './services/payment.service';
 
 // Facebook
 import { SmoothScrollDirective, SmoothScrollToDirective } from 'ng2-smooth-scroll';
@@ -45,8 +47,10 @@ import { AppRoutingModule } from './app.routing.module';
     MaterialModule,
   ],
   providers: [
+    PaymentService,
     ToscAuthService,
     ToscService,
+    ScriptService,
     SchoolService
   ],
   entryComponents: [

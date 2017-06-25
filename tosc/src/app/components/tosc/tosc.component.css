@@ -370,6 +370,11 @@ a {
     font-size: 2.5vmin;
 }
 
+.gal img {
+    width: 80%;
+}
+
+
 .contact-list{
     display: flex;
     align-items: center;

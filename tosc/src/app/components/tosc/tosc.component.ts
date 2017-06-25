@@ -5,6 +5,7 @@ import { MdDialog } from '@angular/material';
 
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 import { ToscService } from '../../services/tosc.service';
+import { PaymentService } from '../../services/payment.service';
 
 import { ToscLoginComponent } from './tosc-login/tosc-login.component';
 
@@ -98,6 +99,7 @@ export class ToscComponent implements OnInit {
   constructor(private authService: ToscAuthService,
               private toscService: ToscService,
               private router: Router,
+              private payService: PaymentService,
               private dialog: MdDialog) { }
 
   @HostListener('window:scroll', ['$event'])
@@ -147,16 +149,7 @@ export class ToscComponent implements OnInit {
         });
     }
 
-  gotoRegister() {
-    this.router.navigate(['tosc-register']);
-  }
-
-  gotoBackend() {
-    this.router.navigate(['backend']);
-  }
-
   goto(section: string) {
-    console.log(section);
     this.router.navigate(['tosc'], { fragment: section});
   }
 

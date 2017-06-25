@@ -62,7 +62,20 @@
     {{ tabStrings[2] }}
   </div>
   <div class="con">
-    <p *ngFor="let point of tosc.conduction"> {{ point }} </p>
+    <ul>
+      <li *ngFor="let point of tosc.conduction"> {{ point }} </li>
+    </ul>
+  </div>
+</div>
+<div class="parallax" [style.background-image]="'url(/assets/conduction.jpg)'" [style.height.vh]="40"></div>
+<div class="block"
+     smoothScroll
+     easing="easeInQuint"
+     [id]="tabStrings[3]">
+  <div class="con-header">
+    {{ tabStrings[3] }}
+  </div>
+  <div class="con cities">
   </div>
 </div>
 <div class="parallax" [style.background-image]="'url(/assets/conduction.jpg)'" [style.height.vh]="40"></div>
@@ -80,7 +93,6 @@
       </md-card-header>
       <img md-card-image [src]="'/assets/' + image">
     </md-card>
-    <!-- <div *ngFor="let image of imagesStrings " [style.background-image]="'url(/assets/'+ image + ')'"></div> -->
   </div>
 </div>
 <div class="parallax" [style.background-image]="'url(/assets/prizes.jpg)'" [style.height.vh]="40"></div>
@@ -96,6 +108,18 @@
     <app-tosc-topper [topper]="tosc.testi[1]"></app-tosc-topper>
   </div>
 </div>
+<div class="parallax" [style.background-image]="'url(/assets/prizes.jpg)'" [style.height.vh]="40"></div>
+<div class="block"
+     smoothScroll
+     easing="easeInQuint"
+     [id]="tabStrings[7]">
+  <div class="con-header">
+    {{ tabStrings[7] }}
+  </div>
+  <div class="con gal">
+    <img src="/assets/galleryback.jpg">
+  </div>
+</div>
 <div class="parallax" [style.background-image]="'url(/assets/contact.jpg)'" [style.height.vh]="40"></div>
 <div class="block"
      smoothScroll
@@ -109,8 +133,8 @@
       <img class="contact-img" md-card-image [src]="contact.src">
       <md-card-content class="contact-content">
         <h2>{{contact.name}}</h2>
-        <i>{{contact.contact}}</i>
-        <i>{{contact.email}}</i>
+        <p>{{contact.contact}}</p>
+        <p>{{contact.email}}</p>
         <i class="fa fa-facebook" aria-hidden="true"></i>
       </md-card-content>
     </md-card>

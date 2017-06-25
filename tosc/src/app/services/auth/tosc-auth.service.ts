@@ -54,7 +54,7 @@ export class ToscAuthService {
   }
 
   signUp(user: TOSCUser): Promise<any> {
-    return this.http.post('api/tosc/user', JSON.stringify(user), { headers: this.headers })
+    return this.http.post('api/techkriti/tosc/register', JSON.stringify(user), { headers: this.headers })
       .toPromise()
       .then((res) => {
         return res;
