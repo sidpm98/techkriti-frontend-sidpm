@@ -95,6 +95,40 @@ export class ToscComponent implements OnInit {
       href:"https://www.facebook.com/yazurgupta?fref=grp_mmbr_list"
     }
   ]
+
+  sponsors = [
+    {
+      src: '/assets/sponsors/buddy.jpg',
+      partner: 'Online Media Partner',
+      size: '60'
+    },
+    {
+      src: '/assets/sponsors/deepika.png',
+      partner: 'Media Partner',
+      size: '50'
+    },
+    {
+      src: '/assets/sponsors/mahindra.jpg',
+      partner: 'Associate Title Sponsor',
+      size: '50'
+    },
+    {
+      src: '/assets/sponsors/mcgraw.png',
+      partner: 'Education Partner',
+      size: '40'
+    },
+    {
+      src: '/assets/sponsors/instichoose.png',
+      partner: 'Schooling Partner',
+      size: '40'
+    },
+    {
+      src: '/assets/sponsors/wifistudy.jpg',
+      partner: 'Online Media Partner',
+      size: '40'
+    }
+  ]
+
   constructor(private authService: ToscAuthService,
               private toscService: ToscService,
               private router: Router,
