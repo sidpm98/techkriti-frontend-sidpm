@@ -34,12 +34,16 @@ md-card-actions {
   margin-top: 13px;
   margin-bottom: 27px;
 }
-.schoolcode {
+/*.schoolcode {
   color: black;
-}
+}*/
 .school {
   font-size: 13px;
 }
 #classes {
-  max-width: 300px;
+  max-width: 100px;
+}
+#progress {
+  width: 100%;
+  top: 0vh;
 }
