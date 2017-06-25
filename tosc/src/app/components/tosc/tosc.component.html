@@ -21,7 +21,7 @@
       <div class="header2">
         <span class="weight">MAKE</span> THINGS <span class="weight">HAPPEN</span>
       </div>
-    <a class="apply" routerLink="/tosc/register">APPLY HERE</a>
+    <a md-button class="apply" routerLink="/tosc/register">APPLY HERE</a>
     </div>
     <div class="down"> &#x26DB; </div>
   </div>
@@ -76,6 +76,7 @@
     {{ tabStrings[3] }}
   </div>
   <div class="con cities">
+    <a class="apply" md-button *ngFor="let city of cities"> {{ city._id }} </a>
   </div>
 </div>
 <div class="parallax" [style.background-image]="'url(/assets/conduction.jpg)'" [style.height.vh]="40"></div>
@@ -112,12 +113,26 @@
 <div class="block"
      smoothScroll
      easing="easeInQuint"
+     [id]="tabStrings[6]">
+  <div class="con-header">
+    {{ tabStrings[6] }}
+  </div>
+  <div class="con test pad-down">
+    <app-tosc-faq></app-tosc-faq>
+  </div>
+</div>
+<div class="parallax" [style.background-image]="'url(/assets/prizes.jpg)'" [style.height.vh]="40"></div>
+<div class="block"
+     smoothScroll
+     easing="easeInQuint"
      [id]="tabStrings[7]">
   <div class="con-header">
     {{ tabStrings[7] }}
   </div>
-  <div class="con gal">
-    <img src="/assets/galleryback.jpg">
+  <div class="gallery">
+    <div class="con gal">
+      <a md-button class="apply" target="_blank" href="https://www.instagram.com/techkriti.iitk/">VISIT INSTAGRAM</a>
+    </div>
   </div>
 </div>
 <div class="parallax" [style.background-image]="'url(/assets/contact.jpg)'" [style.height.vh]="40"></div>
@@ -140,16 +155,5 @@
     </md-card>
   </div>
 </div>
-<!-- <h1>TOSC Homepage</h1> -->
-<!-- <button (click)="fbLogin()">Facebook Login</button> -->
-<!-- <button (click)="gotoRegister()">Register</button> -->
-<!-- <button (click)="openSignIn()">SignIn</button> -->
-<!-- <button (click)="logOut()">LogOut</button> -->
-<!-- <button (click)="isLoggedIn()">CheckStatus</button> -->
-<!-- <button (click)="userQuiz()">Quiz</button> -->
-<!-- <button (click)="gotoToscForgot()">Forgot Password</button> -->
-<!-- <button (click)="gotoBackend()">Backend</button> -->
-<!-- <div *ngIf="user"> -->
-<!-- {{ currentUser.name }} -->
-<!-- </div><!--  --> 
+
 

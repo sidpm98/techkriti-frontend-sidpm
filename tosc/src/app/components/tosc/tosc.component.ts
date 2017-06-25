@@ -5,7 +5,7 @@ import { MdDialog } from '@angular/material';
 
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 import { ToscService } from '../../services/tosc.service';
-import { PaymentService } from '../../services/payment.service';
+import { RegistrationFormService } from '../../services/registration-form-service';
 
 import { ToscLoginComponent } from './tosc-login/tosc-login.component';
 
@@ -35,6 +35,8 @@ export class ToscComponent implements OnInit {
   imagesCaption: string[] = ['1st Prize', '2nd Prize', '3rd Prize', 'Top 50 Students', 'Dont Know']
 
   hamOpen: boolean = false;
+  cities: string[];
+
   tosc = {
     about: ['Techkriti is the Asia’s largest annual international technical & entrepreneurship festival of IIT Kanpur and definitely the greatest exponent of exuberance and creativity of its students. Witnessing nearly 40,000 footfalls with over 1000 participants from all over the nation, the festival is a much-awaited event in the technical and business calendar of the student community.',
             'Techkriti Open School Championship(TOSC) is an annual school aptitude examination for classes 9th to 12th, conducted and organized by Techkriti. It consists of 3 Rounds. Phase 1 is a written exam, based on which 1000 students will be selected and asked to submit (online) the abstract of the project in Phase 2 and for the final phase, 100 selected students will be invited at IIT Kanpur to give a presentation about their abstract and get a chance to win a variety of prizes and goodies.',
@@ -99,7 +101,7 @@ export class ToscComponent implements OnInit {
   constructor(private authService: ToscAuthService,
               private toscService: ToscService,
               private router: Router,
-              private payService: PaymentService,
+              private regService: RegistrationFormService,
               private dialog: MdDialog) { }
 
   @HostListener('window:scroll', ['$event'])
@@ -113,6 +115,11 @@ export class ToscComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.regService.getCity()
+      .then((cities) => {
+        console.log(cities);
+        this.cities = cities;
+      });
   }
 
   openSignIn() {

@@ -25,6 +25,7 @@ import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
 
 // Routing Module
 import { AppRoutingModule } from './app.routing.module';
+import { ToscFaqComponent } from './components/tosc-faq/tosc-faq.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AppRoutingModule } from './app.routing.module';
     ToscComponent,
     ToscRegisterComponent,
     ToscTopperComponent,
-    TopperWriteUp
+    TopperWriteUp,
+    ToscFaqComponent
   ],
   imports: [
     AppRoutingModule,

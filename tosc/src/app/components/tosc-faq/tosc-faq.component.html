@@ -1,0 +1,12 @@
+<div class="faq">
+  <div class="question">
+    <div *ngFor="let faq of faqs" (click)="selectFaq(faq)"
+    [class.select]="faq === selectedFaq">
+      {{ faq.question }}
+    </div>
+  </div>
+  <div class="answer">
+    <h2> {{ selectedFaq.question }} </h2>
+    <p> {{ selectedFaq.answer }} </p>
+  </div>
+</div>

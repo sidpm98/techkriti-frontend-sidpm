@@ -94,6 +94,10 @@
     flex-wrap: wrap;
 }
 
+.pad-down {
+    padding-bottom: 6vmin;
+}
+
 .down {
     position: absolute;
     color: white;
@@ -370,10 +374,36 @@ a {
     font-size: 2.5vmin;
 }
 
-.gal img {
-    width: 80%;
+.cities {
+    display: flex;
+    font-size: 2vmin;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 6vmin;;
 }
 
+.cities a {
+    background-color: #865535 !important;
+    font-size: 110%;
+    color: white;
+    margin: 2vmin;
+}
+
+.gal {
+    background-image: url('/assets/galleryback.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6vmin 0;
+}
 
 .contact-list{
     display: flex;

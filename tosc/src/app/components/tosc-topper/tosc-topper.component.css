@@ -7,11 +7,16 @@ md-card {
     margin-bottom: 120px;
     width: 30vmax;
     font-family: Lato, sans-serif;
+    background-color: #e0ce94 !important;
 }
 
 md-card-header {
     display:flex;
     justify-content: center;
+}
+
+md-card-content {
+    font-size: 110%;
 }
 
 md-card-title {
