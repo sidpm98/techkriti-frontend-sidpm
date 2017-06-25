@@ -131,7 +131,10 @@ md-card-title {
 }
 
 @media (max-width: 412px) {
-    .contact-img {
+    .sponsor-card {
+        width: 50vmax !important; 
+    }
+    md-card img {
         width: 332px !important;
     }
 }
@@ -405,12 +408,12 @@ a {
     padding: 6vmin 0;
 }
 
-.contact-list{
+.contact-list {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    padding-bottom: 5vmin;
+    padding: 5vmin 0;
     flex-wrap: wrap;
 }
 
@@ -432,4 +435,20 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.sponsor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vmax; 
+}
+
+.sponsors {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 2vmin;
+    padding-top: 2vmin;
+    flex-wrap: wrap;
 }

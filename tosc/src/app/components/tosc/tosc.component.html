@@ -136,6 +136,24 @@
   </div>
 </div>
 <div class="parallax" [style.background-image]="'url(/assets/contact.jpg)'" [style.height.vh]="40"></div>
+<div class="parallax" [style.background-image]="'url(/assets/2.jpg)'" [style.height.vh]="40"></div>
+<div class="block"
+     smoothScroll
+     easing="easeInQuint"
+     [id]="tabStrings[8]">
+  <div class="con-header">
+    PREVIOUS {{ tabStrings[8] }}
+  </div>
+  <div class="con sponsors">
+    <div class="sponsor-card" *ngFor="let sponsor of sponsors">
+      <img [src]="sponsor.src"
+           [style.width.%]="sponsor.size"
+           [style.height.%]="sponsor.size">
+      <h3>{{ sponsor.partner }}</h3>
+    </div>
+  </div>
+</div>
+<div class="parallax" [style.background-image]="'url(/assets/details.jpg)'" [style.height.vh]="40"></div>
 <div class="block"
      smoothScroll
      easing="easeInQuint"
