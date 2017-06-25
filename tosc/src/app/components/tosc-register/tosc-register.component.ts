@@ -3,9 +3,8 @@ import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms'
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
-import { Cities as CITIES }  from '../../apidata/city-name';
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
-import { SchoolService } from '../../services/school-name';
+import { RegistrationFormService } from '../../services/registration-form-service';
 
 import { TOSCUser } from '../../models/users';
 
@@ -31,18 +30,14 @@ export class ToscRegisterComponent implements OnInit {
     {group: 'B', std: '12'}
   ];
 
-  private schools: any[] = [
-    {code: 'DAV', name: 'DAV Public School'},
-    {code: 'GUR', name: 'Gurukul'},
-    {code: 'JOS', name: 'St.Joseph'}
-  ];
-
-  private cities: string[];
+  private cities: string[] = [];
   private filteredCity: any;
   private filteredSchool: any;
   private autoSchools: string[] = [];
   private schoolObject: any;
   public code: string;
+  public gotCities: boolean = false;
+  public gotSchools: boolean = true;
 
 
   private formErrors = {
@@ -51,8 +46,8 @@ export class ToscRegisterComponent implements OnInit {
     email: '',
     phone: '',
     standard: '',
-    schoolAuto: '',
-    cityAuto: '',
+    school: '',
+    city: '',
   };
 
   private passErrors = {
@@ -89,10 +84,10 @@ export class ToscRegisterComponent implements OnInit {
     standard: {
       required: 'Class is required'
     },
-    cityAuto: {
+    city: {
       required: 'City is required'
     },
-    schoolAuto: {
+    school: {
       required: 'School is required'
     }
   };
@@ -104,22 +99,32 @@ export class ToscRegisterComponent implements OnInit {
   constructor(private formBuild: FormBuilder,
               private authService: ToscAuthService,
               private router: Router,
-              private schoolService: SchoolService) { }
+              private registrationFormService: RegistrationFormService) { }
 
   ngOnInit() {
     this.buildForm();
+    this.getCities();
 
-    this.cities = CITIES;
-    const cityAutoControl = this.registerForm.get('cityAuto');
-      this.filteredCity = cityAutoControl.valueChanges
+    const cityControl = this.registerForm.get('city');
+      this.filteredCity = cityControl.valueChanges
         .startWith(null)
         .map(name => this.filterCity(name));
 
-    const schoolAutoControl = this.registerForm.get('schoolAuto');
-      this.filteredSchool = schoolAutoControl.valueChanges
+    const schoolControl = this.registerForm.get('school');
+      this.filteredSchool = schoolControl.valueChanges
         .startWith(null)
         .map(name => this.filterSchools(name));
 
+  }
+  public getCities() {
+    this.registrationFormService.getCity()
+    .then((res) =>  {
+      for(let city in res) {
+        this.cities.push(res[city]._id);
+      }
+      this.cities.sort();
+      this.gotCities = true;
+    })
   }
 
   getCode(e: KeyboardEvent,school: string) {
@@ -130,12 +135,14 @@ export class ToscRegisterComponent implements OnInit {
   }
 
   getSchools(name: string = 'KANPUR') {
-    this.schoolService.getSchool(name)
+    this.gotSchools = false;
+    this.registrationFormService.getSchool(name)
       .then((res) => {
         this.schoolObject = res;
         for (let school in res) {
           this.autoSchools.push(res[school].school);
         }
+        this.gotSchools = true;
       })
       .catch((err) => {
         console.log(err);
@@ -175,13 +182,12 @@ export class ToscRegisterComponent implements OnInit {
       'standard': ['', [
         Validators.required
       ]],
-      'cityAuto': ['', [
+      'city': ['', [
         Validators.required
       ]],
-      'schoolAuto': ['', [
+      'school': ['', [
         Validators.required
       ]],
-      'schoolCode': ['']
     });
 
     this.registerForm.valueChanges
@@ -230,6 +236,7 @@ export class ToscRegisterComponent implements OnInit {
     if(code == 13) { //Enter keycode
       this.options(city);
     }
+    else {console.log(this.autoSchools);this.autoSchools = [];console.log("lol");console.log(this.autoSchools);}
 }
 
   schoolCode(e: string) {
@@ -242,6 +249,8 @@ export class ToscRegisterComponent implements OnInit {
     this.registerForm.value.password = this.registerForm.value.passwords.password;
     delete this.registerForm.value.passwords;
     this.user = this.registerForm.value;
+    this.user['school_code'] = this.code;
+    console.log(this.user);
     this.authService.signUp(this.user)
       .then((res) => {
         console.log('register successfully');
@@ -254,7 +263,7 @@ export class ToscRegisterComponent implements OnInit {
 
   options(e) {
     this.autoSchools = [];
-    let schoolinbox = this.registerForm.get('schoolAuto');
+    let schoolinbox = this.registerForm.get('school');
     schoolinbox.setValue('');
     this.getSchools(e);
   }
