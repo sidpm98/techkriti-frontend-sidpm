@@ -1,0 +1,25 @@
+
+.header {
+    font-family: Lato;
+}
+
+.actions {
+    margin-top: 2vmin;
+    display: flex;
+    justify-content: space-between;
+    font-family: Lato;
+    align-items: flex-end;
+}
+
+.mat-raised-button {
+    background-color: #4285f4 !important;
+    color: #fff !important;
+    font-family: Lato !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+}
+
+.mat-dialog-container {
+    box-shadow: 0 13px 19px 0px rgba(0,0,0,.2), 0 4px 8px 4px rgba(0,0,0,.14), 0 2px 15px 8px rgba(0,0,0,.12) !important;
+    overflow: hidden !important;
+}

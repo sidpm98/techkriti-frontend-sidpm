@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MdDialog } from '@angular/material';
+
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
+
+import { SuccessfullDialogComponent } from '../successfull-dialog/successfull-dialog.component'
+
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 import { RegistrationFormService } from '../../services/registration-form-service';
 
 import { TOSCUser } from '../../models/users';
-
-const passwordMatchValidator: ValidatorFn = function(g: FormGroup) {
-    return g.get('password').value === g.get('passwordConfirm').value
-      ? null : {'mismatch': true};
-};
-
 
 @Component({
   selector: 'app-tosc-register',
@@ -42,35 +41,16 @@ export class ToscRegisterComponent implements OnInit {
 
   private formErrors = {
     name: '',
-    username: '',
     email: '',
     phone: '',
-    standard: '',
+    class: '',
     school: '',
     city: '',
-  };
-
-  private passErrors = {
-    password: '',
-    passwordConfirm: ''
   };
 
   private validationMessages = {
     name: {
       required: 'Name is required',
-    },
-    username: {
-      required: 'Username is required',
-      minlength: 'Minimum length of the username should be 4',
-      maxlength: 'Maximum length of the username should be 10'
-    },
-    password: {
-      required: 'Password is required',
-      minlength: 'Password should be minimum of 8 characters long'
-    },
-    passwordConfirm: {
-      required: 'Password is required',
-      mismatch: 'Password doesnt match'
     },
     email: {
       required: 'Email is required',
@@ -81,7 +61,7 @@ export class ToscRegisterComponent implements OnInit {
       pattern: 'Phone number is not valid',
       maxlength: 'Phone number exceeds 10 digit'
     },
-    standard: {
+    class: {
       required: 'Class is required'
     },
     city: {
@@ -94,12 +74,12 @@ export class ToscRegisterComponent implements OnInit {
 
   private registerForm: FormGroup;
   private phoneRe: RegExp = new RegExp('^[0-9]{10}$');
-  private passwords: FormGroup;
 
   constructor(private formBuild: FormBuilder,
               private authService: ToscAuthService,
               private router: Router,
-              private registrationFormService: RegistrationFormService) { }
+              private registrationFormService: RegistrationFormService,
+              private dialog: MdDialog) { }
 
   ngOnInit() {
     this.buildForm();
@@ -119,17 +99,17 @@ export class ToscRegisterComponent implements OnInit {
   public getCities() {
     this.registrationFormService.getCity()
     .then((res) =>  {
-      for(let city in res) {
+      for (let city in res) {
         this.cities.push(res[city]._id);
       }
       this.cities.sort();
       this.gotCities = true;
-    })
+    });
   }
 
-  getCode(e: KeyboardEvent,school: string) {
-    var code = (e.keyCode ? e.keyCode : e.which);
-    if(code == 13) { //Enter keycode
+  getCode(e: KeyboardEvent, school: string) {
+    const code = (e.keyCode ? e.keyCode : e.which);
+    if (code === 13) { // Enter keycode
       this.schoolCode(school);
     }
   }
@@ -146,30 +126,14 @@ export class ToscRegisterComponent implements OnInit {
       })
       .catch((err) => {
         console.log(err);
-      })
+      });
   }
 
   buildForm() {
-    this.passwords =  this.formBuild.group({
-        'password': ['', [
-          Validators.required,
-          Validators.minLength(8)
-        ]],
-        'passwordConfirm': ['', [
-          Validators.required,
-      ]]
-    }, { validator: passwordMatchValidator });
-
     this.registerForm = this.formBuild.group({
       'name': ['', [
         Validators.required
       ]],
-      'username': ['', [
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(10)
-      ]],
-      'passwords': this.passwords,
       'email': ['', [
         Validators.required,
         Validators.email
@@ -179,7 +143,7 @@ export class ToscRegisterComponent implements OnInit {
         Validators.pattern(this.phoneRe),
         Validators.maxLength(10)
       ]],
-      'standard': ['', [
+      'class': ['', [
         Validators.required
       ]],
       'city': ['', [
@@ -200,15 +164,6 @@ export class ToscRegisterComponent implements OnInit {
   onValueChanged(data?: any) {
     if (!this.registerForm) { return; }
     const form = this.registerForm;
-    const passForm = this.registerForm.get('passwords');
-
-      const controll = passForm.get('password');
-      if (controll && !controll.pristine && !controll.valid) {
-        const messages = this.validationMessages['password'];
-        const key = Object.keys(controll.errors)[0];
-        this.passErrors['password'] = messages[key];
-      }
-
 
     for (const field in this.formErrors) {
       if (this.formErrors.hasOwnProperty(field)) {
@@ -231,29 +186,43 @@ export class ToscRegisterComponent implements OnInit {
     return val ? this.autoSchools.filter(s => new RegExp(`${val}`, 'gi').test(s)) : this.autoSchools ;
   }
 
-  checkKey(e: KeyboardEvent,city: string) {
-    var code = (e.keyCode ? e.keyCode : e.which);
-    if(code == 13) { //Enter keycode
+  checkKey(e: KeyboardEvent, city: string) {
+    let code = (e.keyCode ? e.keyCode : e.which);
+    if (code === 13) { // Enter keycode
       this.options(city);
+    } else {
+      this.autoSchools = [];
     }
-    else {console.log(this.autoSchools);this.autoSchools = [];console.log("lol");console.log(this.autoSchools);}
 }
 
   schoolCode(e: string) {
     for (let school in this.schoolObject) {
-      if(this.schoolObject[school].school == e) this.code = this.schoolObject[school].code
+      if (this.schoolObject[school].school === e) {
+        this.code = this.schoolObject[school].code;
+      }
     }
   }
 
   register() {
-    this.registerForm.value.password = this.registerForm.value.passwords.password;
-    delete this.registerForm.value.passwords;
     this.user = this.registerForm.value;
     this.user['school_code'] = this.code;
     console.log(this.user);
-    this.authService.signUp(this.user)
-      .then((res) => {
-        console.log('register successfully');
+    this.registrationFormService.registration(this.user)
+      .then((prefillData) => {
+        const content = {
+          header: 'You have registered Succesfully',
+          body: `You will be receiving a mail from us at ${prefillData.emailid}.<br>
+If you want to make your Payment later, please follow the link provided in the mail.<br>
+            <b>Note</b>: Last date for payment is xxxxxx`,
+          prefillData: prefillData
+        };
+        const dialogRef = this.dialog.open(SuccessfullDialogComponent, {
+          disableClose: true,
+          data: {
+            data: content,
+          }
+        });
+        dialogRef.afterClosed().subscribe(() => this.router.navigate(['tosc']));
       })
       .catch((err) => {
         console.error(err);
@@ -263,7 +232,7 @@ export class ToscRegisterComponent implements OnInit {
 
   options(e) {
     this.autoSchools = [];
-    let schoolinbox = this.registerForm.get('school');
+    const schoolinbox = this.registerForm.get('school');
     schoolinbox.setValue('');
     this.getSchools(e);
   }

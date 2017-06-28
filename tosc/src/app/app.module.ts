@@ -11,6 +11,9 @@ import { ToscComponent } from './components/tosc/tosc.component';
 import { ToscRegisterComponent } from './components/tosc-register/tosc-register.component';
 import { ToscTopperComponent } from './components/tosc-topper/tosc-topper.component';
 import { TopperWriteUp } from './components/tosc-topper/tosc-topper.component';
+import { ToscFaqComponent } from './components/tosc-faq/tosc-faq.component';
+import { SuccessfullDialogComponent } from './components/successfull-dialog/successfull-dialog.component';
+import { StatusComponent } from './components/status/status.component';
 
 // Services
 import { ToscAuthService } from './services/auth/tosc-auth.service';
@@ -25,7 +28,6 @@ import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
 
 // Routing Module
 import { AppRoutingModule } from './app.routing.module';
-import { ToscFaqComponent } from './components/tosc-faq/tosc-faq.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +35,13 @@ import { ToscFaqComponent } from './components/tosc-faq/tosc-faq.component';
     Parallax,
     SmoothScrollDirective,
     SmoothScrollToDirective,
+    SuccessfullDialogComponent,
+    StatusComponent,
     ToscComponent,
     ToscRegisterComponent,
     ToscTopperComponent,
     TopperWriteUp,
-    ToscFaqComponent
+    ToscFaqComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -56,8 +60,8 @@ import { ToscFaqComponent } from './components/tosc-faq/tosc-faq.component';
     RegistrationFormService
   ],
   entryComponents: [
-    TopperWriteUp
-
+    TopperWriteUp,
+    SuccessfullDialogComponent,
   ],
   bootstrap: [AppComponent]
 })

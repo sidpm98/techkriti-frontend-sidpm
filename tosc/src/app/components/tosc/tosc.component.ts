@@ -18,8 +18,6 @@ import { ToscLoginComponent } from './tosc-login/tosc-login.component';
 
 export class ToscComponent implements OnInit {
 
-  private user: any;
-  private currentUser: any;
   scroll: boolean = false;
   tabStrings: string[] = ['ABOUT',
                           'DETAILS',
@@ -32,10 +30,11 @@ export class ToscComponent implements OnInit {
                           'SPONSORS',
                           'CONTACTS'];
   imagesStrings: string[] = ['1.jpg', '2.jpg', '3.jpg', '4.png', '5.jpg'];
-  imagesCaption: string[] = ['1st Prize', '2nd Prize', '3rd Prize', 'Top 50 Students', 'Dont Know']
+  imagesCaption: string[] = ['1st Prize', '2nd Prize', '3rd Prize', 'Top 50 Students', 'Dont Know'];
 
   hamOpen: boolean = false;
   cities: string[];
+  selectedTab: string;
 
   tosc = {
     about: ['Techkriti is the Asia’s largest annual international technical & entrepreneurship festival of IIT Kanpur and definitely the greatest exponent of exuberance and creativity of its students. Witnessing nearly 40,000 footfalls with over 1000 participants from all over the nation, the festival is a much-awaited event in the technical and business calendar of the student community.',
@@ -192,6 +191,10 @@ export class ToscComponent implements OnInit {
 
   goto(section: string) {
     this.router.navigate(['tosc'], { fragment: section});
+    this.selectedTab = section;
+    if (window.innerWidth <= 786) {
+      this.toggle();
+    }
   }
 
   toggle() {

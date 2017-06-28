@@ -1,0 +1,10 @@
+<noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
+
+<div class="header">
+  <h2> {{ content?.header }}</h2>
+</div>
+<div class="content" [innerHTML]="content?.body"></div>
+<div class="actions" *ngIf="content.prefillData">
+  <button md--raised-button class="tsbutton" (click)="makePayment()">Proceed To Pay</button>
+  <button md-raised-button md-dialog-close>PAY LATER</button>
+</div>

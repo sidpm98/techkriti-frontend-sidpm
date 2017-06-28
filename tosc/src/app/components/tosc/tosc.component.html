@@ -1,19 +1,25 @@
 <div class="nav-container" [class.nav-container-scroll1]="scroll"
      [class.nav-container-scroll2]="!scroll">
   <div class="nav-tosc" [class.nav-tosc-scroll1]="scroll"
-       [class.nav-tosc-scroll2]="!scroll">
+       [class.nav-tosc-scroll2]="!scroll"
+       scrollTo="cover">
     TOSC
   </div>
   <div class="nav-void"></div>
-  <div class="nav-ham" (click)="toggle()">H</div>
+  <div class="nav-ham" (click)="toggle()">
+    <i class="fa fa-bars fa-lg" aria-hidden="true" *ngIf="!hamOpen"></i>
+    <i class="fa fa-times fa-lg" aria-hidden="true" *ngIf="hamOpen"></i>
+  </div>
   <div class="nav-links" [class.open]="hamOpen">
-    <div *ngFor="let tab of tabStrings" [scrollTo]="tab" (click)="goto(tab)">
+    <div *ngFor="let tab of tabStrings" [scrollTo]="tab"
+         (click)="goto(tab)"
+         [class.active]="tab === selectedTab">
       {{ tab }}
     </div>
   </div>
 </div>
 <div class="parallax" [style.background-image]="'url(/assets/cover.jpg)'">
-  <div class="cover-detail">
+  <div class="cover-detail" id="cover">
     <div class="header">
       <div class="header1">
         TECHKRITI OPEN SCHOOL COMPETITION
@@ -21,9 +27,9 @@
       <div class="header2">
         <span class="weight">MAKE</span> THINGS <span class="weight">HAPPEN</span>
       </div>
-    <a md-button class="apply" routerLink="/tosc/register">APPLY HERE</a>
+    <a md-button class="apply" routerLink="register">APPLY HERE</a>
     </div>
-    <div class="down"> &#x26DB; </div>
+    <div class="down" scrollTo="ABOUT"> &#x26DB; </div>
   </div>
 </div>
 <div class="my-content"
@@ -90,7 +96,7 @@
   <div class="con prize">
     <md-card class="prize-card" *ngFor="let image of imagesStrings; index as i">
       <md-card-header>
-        <md-card-title> {{ imagesCaption[i] }}</md-card-title>
+        <md-card-title> {{ imagesCaption[i] }} </md-card-title>
       </md-card-header>
       <img md-card-image [src]="'/assets/' + image">
     </md-card>
@@ -166,9 +172,14 @@
       <img class="contact-img" md-card-image [src]="contact.src">
       <md-card-content class="contact-content">
         <h2>{{contact.name}}</h2>
-        <p>{{contact.contact}}</p>
-        <p>{{contact.email}}</p>
-        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <p>
+          <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>
+          {{contact.contact}}
+        </p>
+        <p>
+          <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+           {{contact.email}}
+        </p>
       </md-card-content>
     </md-card>
   </div>

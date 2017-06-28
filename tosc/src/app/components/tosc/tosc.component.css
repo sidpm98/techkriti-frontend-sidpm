@@ -63,7 +63,6 @@
 
 .apply {
     margin-top: 2vmin;
-    background-color: red;
     letter-spacing: .2vmin;
     padding: .75vmin 2vmin;
     background-color: white;
@@ -99,6 +98,7 @@
 }
 
 .down {
+    cursor: pointer;
     position: absolute;
     color: white;
     font-size: 4vmin;
@@ -121,7 +121,7 @@ md-card-header {
 md-card-title {
     font-family: Lato, sans-serif;
     font-weight: 700 !important;
-    font-size: 2vmin !important;
+    font-size: 3vmin !important;
 }
 
 @media (max-width: 1440px) {
@@ -133,9 +133,6 @@ md-card-title {
 @media (max-width: 412px) {
     .sponsor-card {
         width: 50vmax !important; 
-    }
-    md-card img {
-        width: 332px !important;
     }
 }
 
@@ -155,7 +152,7 @@ md-card-title {
     }
 
     .nav-container-scroll2 .nav-links {
-        top: 15vmin;
+        top: 10vmin;
     }
 
     .open {
@@ -196,8 +193,8 @@ md-card-title {
 
     .nav-ham {
         display: flex !important;
-        background-color: red;
         align-items: center;
+        color: white;
         padding: 0 2vw;
     }
 }
@@ -260,6 +257,7 @@ md-card-title {
 
 .nav-tosc {
     display: flex;
+    cursor: pointer;
     flex: .3 0 0;
     color: white;
     font-family: Lato, sans-serif;
@@ -328,12 +326,22 @@ a {
 
 .nav-links {
     display: flex;
+    cursor: pointer;
     font-family: Lato, sans-serif;
+    font-size: 1.7vmin;
     font-weight: 300;
     color: white;
     justify-content: space-around;
     align-items: center;
     flex: 1 0 0;
+}
+
+.active {
+    border-bottom: 2px solid white;
+}
+
+.nav-links div:hover {
+    border-bottom: 2px solid white;
 }
 
 .block {
@@ -419,7 +427,6 @@ a {
 
 .contact-img {
     height:334.19px;
-    width: 348px;
 }
 
 .contact-card {

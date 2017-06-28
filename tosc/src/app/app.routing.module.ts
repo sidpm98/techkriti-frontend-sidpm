@@ -7,11 +7,12 @@ import { ToscForgotComponent } from './components/tosc-forgot/tosc-forgot.compon
 import { ToscResetComponent } from './components/tosc-reset/tosc-reset.component';
 import { ToscRegisterComponent } from './components/tosc-register/tosc-register.component';
 import { ToscLoginComponent } from './components/tosc/tosc-login/tosc-login.component';
+import { StatusComponent } from './components/status/status.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/tosc', pathMatch: 'full' },
-  { path: 'tosc', component: ToscComponent },
-  { path: 'tosc/register', component: ToscRegisterComponent },
+  { path: '', component: ToscComponent },
+  { path: 'register', component: ToscRegisterComponent },
+  { path: 'status', component: StatusComponent },
 ];
 
 @NgModule({

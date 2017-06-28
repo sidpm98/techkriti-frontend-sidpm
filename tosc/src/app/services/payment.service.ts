@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 import { ScriptService } from './script.service';
 import 'rxjs/add/operator/toPromise';
 
+declare var popupWithAutoFill: any;
+
 @Injectable()
 
 export class PaymentService {
@@ -14,5 +16,11 @@ export class PaymentService {
     this.waitPromise = this.script.loadScript('townscript')
       .then((res) => console.log(res))
       .catch((err) => console.error('Phat Gaya Townscript'));
+  }
+
+  payment(prefillData: any) {
+    this.waitPromise.then(() => {
+      popupWithAutoFill(prefillData);
+    });
   }
 }
