@@ -88,12 +88,13 @@
 
 .test {
     display: flex;
-    padding-top: 20px;
     justify-content: space-around;
+    padding-top: 10vmin;;
     flex-wrap: wrap;
 }
 
 .pad-down {
+    padding-top: 3vmin;
     padding-bottom: 6vmin;
 }
 
@@ -111,6 +112,10 @@
     width: 250px;
     height: 100%;
     background-color: #e0ce94 !important;
+}
+
+.prize-card img {
+    height: auto;
 }
 
 md-card-header {
@@ -384,6 +389,11 @@ a {
     font-family: Lato, sans-serif;
     font-size: 2.5vmin;
 }
+
+.con ul li {
+    padding-bottom: 1vmin;
+}
+
 
 .cities {
     display: flex;

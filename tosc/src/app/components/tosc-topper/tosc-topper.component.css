@@ -23,5 +23,11 @@ md-card-title {
     font-size: 2vmax !important;
 }
 
+md-card-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
