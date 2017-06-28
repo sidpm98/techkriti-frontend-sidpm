@@ -17,7 +17,7 @@ export class CAService {
 
   getApplications(params: {} = null): Promise<any> {
     const urlparams = this.paramservice.generateParams(params);
-    return this.http.get(`api/backend/techkriti/CAforms`, { params: urlparams})
+    return this.http.get(`api/backend/techkriti/caforms`, { params: urlparams})
       .then((res) => {
         console.log(res);
         return res.json();
@@ -27,4 +27,3 @@ export class CAService {
       });
   }
 }
-

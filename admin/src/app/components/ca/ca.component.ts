@@ -15,7 +15,7 @@ export class CAComponent implements OnInit {
               private authService: AuthService) { }
 
   ngOnInit() {
-    this.signIn();
+    this.getCAForms();
   }
 
   getCAForms() {
@@ -28,11 +28,4 @@ export class CAComponent implements OnInit {
       });
   }
 
-  signIn() {
-    this.authService.login('pratham', 'pratham')
-      .then((res) => {
-        this.getCAForms();
-      })
-      .catch((err) => console.error(err));
-  }
 }

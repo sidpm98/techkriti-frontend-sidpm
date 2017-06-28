@@ -17,7 +17,7 @@ export class AuthService {
     this.token = localStorage.getItem('token');
   }
 
-  login(username: string, password: string): Promise<string> {
+  public login(username: string, password: string): Promise<string> {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     const url = '/api/backend/techkriti/user/get-token';
@@ -33,5 +33,9 @@ export class AuthService {
       .catch((err) => {
         return Promise.reject(err);
       });
+  }
+  public logout() {
+    localStorage.removeItem('token');
+
   }
 }

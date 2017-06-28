@@ -1,7 +1,8 @@
 .detail-box{
     padding: 2vmin;
-    background-color: #718792;
+    background-color: #cca969;
     font-size: 2vmin;
+    font-family: Roboto, sans-serif;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -18,4 +19,21 @@
 }
 .major-detail p{
     white-space: pre;
+    display: flex;
+  }
+td {
+  padding-bottom: 5px;
+
+}
+.questions {
+  width: 20%;
+  text-align: left;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+.answers {
+  text-align: left;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
 }

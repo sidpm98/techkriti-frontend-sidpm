@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing.module';
 
 // Components
 import { AppComponent } from './app.component';
 import { CAComponent } from './components/ca/ca.component';
 import { CaListComponent } from './components/ca-list/ca-list.component';
 import { CaDetailComponent } from './components/ca-detail/ca-detail.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 // Services
 import { CAService } from './services/ca.service';
@@ -21,18 +24,15 @@ import { AuthService } from './services/auth.service';
     AppComponent,
     CAComponent,
     CaDetailComponent,
-    CaListComponent
+    CaListComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'ca',
-        component: CAComponent
-      }
-    ])
   ],
   providers: [
     CAService,
