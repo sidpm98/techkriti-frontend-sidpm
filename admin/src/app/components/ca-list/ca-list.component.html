@@ -1,0 +1,7 @@
+<div class="resultItem" *ngIf="ca" (click)="toggleDetail(ca)">
+  <div class="fields" >{{ ca.personal.name }}</div>
+  <div class="fields" >{{ ca.college.name }}</div>
+  <div class="fields" >{{ ca.personal.contact }}</div>
+  <div class="fields" >{{ ca.personal.email }}</div>
+</div>
+  <app-ca-detail *ngIf="detailFlag" [ca]="ca"></app-ca-detail>
