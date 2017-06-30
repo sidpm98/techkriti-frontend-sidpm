@@ -80,6 +80,7 @@ export class ToscComponent implements OnInit {
       contact: "+91-9453994643",
       email: "keshav@techkriti.org",
       src: '/assets/keshav.jpg',
+      tel: '0512-2594822',
       href:"https://www.facebook.com/keshav.verma.900?fref=grp_mmbr_list"
     },
     {
@@ -94,6 +95,7 @@ export class ToscComponent implements OnInit {
       contact: "+91-9532657683",
       email: "yazur@techkriti.org",
       src: '/assets/yazur.jpg',
+      tel: '0512-2594822',
       href:"https://www.facebook.com/yazurgupta?fref=grp_mmbr_list"
     }
   ]

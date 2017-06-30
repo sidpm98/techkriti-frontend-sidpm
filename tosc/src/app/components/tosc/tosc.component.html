@@ -175,9 +175,15 @@
           <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>
           {{contact.contact}}
         </p>
-        <p>
-          <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-           {{contact.email}}
+        <a [href]="'mailto:' + contact.email">
+          <p>
+            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            {{contact.email}}
+          </p>
+        </a>
+        <p *ngIf="contact.tel">
+          <i class="fa fa-phone-square icon" aria-hidden="true"></i>
+          {{contact.tel}}
         </p>
       </md-card-content>
     </md-card>
