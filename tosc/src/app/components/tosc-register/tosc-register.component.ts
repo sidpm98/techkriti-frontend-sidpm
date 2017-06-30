@@ -20,26 +20,26 @@ import { TOSCUser } from '../../models/users';
 })
 export class ToscRegisterComponent implements OnInit {
 
-  private user = new TOSCUser();
+  user = new TOSCUser();
   selected: string = '';
-  private standards: any[] = [
+  standards: any[] = [
     {group: 'A', std: '09'},
     {group: 'A', std: '10'},
     {group: 'B', std: '11'},
     {group: 'B', std: '12'}
   ];
 
-  private cities: string[] = [];
-  private filteredCity: any;
-  private filteredSchool: any;
-  private autoSchools: string[] = [];
-  private schoolObject: any;
+  cities: string[] = [];
+  filteredCity: any;
+  filteredSchool: any;
+  autoSchools: string[] = [];
+  schoolObject: any;
   public code: string;
   public gotCities: boolean = false;
   public gotSchools: boolean = true;
 
 
-  private formErrors = {
+  formErrors = {
     name: '',
     email: '',
     phone: '',
@@ -48,7 +48,7 @@ export class ToscRegisterComponent implements OnInit {
     city: '',
   };
 
-  private validationMessages = {
+  validationMessages = {
     name: {
       required: 'Name is required',
     },
@@ -72,8 +72,8 @@ export class ToscRegisterComponent implements OnInit {
     }
   };
 
-  private registerForm: FormGroup;
-  private phoneRe: RegExp = new RegExp('^[0-9]{10}$');
+  registerForm: FormGroup;
+  phoneRe: RegExp = new RegExp('^[0-9]{10}$');
 
   constructor(private formBuild: FormBuilder,
               private authService: ToscAuthService,
@@ -213,7 +213,7 @@ export class ToscRegisterComponent implements OnInit {
           header: 'You have registered Succesfully',
           body: `You will be receiving a mail from us at ${prefillData.emailid}.<br>
 If you want to make your Payment later, please follow the link provided in the mail.<br>
-            <b>Note</b>: Last date for payment is xxxxxx`,
+            <span>Note</span>: Last date for payment is <span>10 July</span>`,
           prefillData: prefillData
         };
         const dialogRef = this.dialog.open(SuccessfullDialogComponent, {
@@ -222,7 +222,7 @@ If you want to make your Payment later, please follow the link provided in the m
             data: content,
           }
         });
-        dialogRef.afterClosed().subscribe(() => this.router.navigate(['tosc']));
+        dialogRef.afterClosed().subscribe(() => this.router.navigate(['']));
       })
       .catch((err) => {
         console.error(err);

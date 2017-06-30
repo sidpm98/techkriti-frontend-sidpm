@@ -3,6 +3,10 @@
     width: 30vmax;
 }
 
+span {
+    font-weight: 700;
+}
+
 .content {
     display: flex;
     flex-direction: column;

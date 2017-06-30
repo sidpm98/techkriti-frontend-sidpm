@@ -1,14 +1,10 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 import { MdDialog } from '@angular/material';
 
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 import { ToscService } from '../../services/tosc.service';
 import { RegistrationFormService } from '../../services/registration-form-service';
-
-import { ToscLoginComponent } from './tosc-login/tosc-login.component';
-
 
 @Component({
   selector: 'app-tosc',
@@ -30,7 +26,7 @@ export class ToscComponent implements OnInit {
                           'SPONSORS',
                           'CONTACTS'];
   imagesStrings: string[] = ['1.jpg', '2.jpg', '3.jpg', '4.png', '5.jpg'];
-  imagesCaption: string[] = ['1st Prize', '2nd Prize', '3rd Prize', 'Top 50 Students', 'Dont Know'];
+  imagesCaption: string[] = ['1st Prize', '2nd Prize', '3rd Prize', 'Top 50 Students', 'School Toppers'];
 
   hamOpen: boolean = false;
   cities: string[];
@@ -154,40 +150,6 @@ export class ToscComponent implements OnInit {
         this.cities = cities;
       });
   }
-
-  openSignIn() {
-    let height = '40vmin';
-    let width = '40vmin';
-    if (window.innerWidth <= 412 ) {
-      width = '60vw';
-      height = '300px';
-    }
-    const dialogRef = this.dialog.open(ToscLoginComponent, {
-      hasBackdrop: true,
-      width: width,
-      height: height
-    });
-  }
-
-  logOut() {
-    this.authService.signOut()
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-    userQuiz() {
-      this.toscService.getQuiz()
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
 
   goto(section: string) {
     this.router.navigate(['tosc'], { fragment: section});

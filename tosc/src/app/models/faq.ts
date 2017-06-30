@@ -25,7 +25,7 @@ export const FAQS: FAQ[] = [
     answer: 'You must be studying in standard 9th-12th in the year 2016-17. Classes 9th and 10th comprise the pool A while classes 11th and 12th comprise the pool B. No prerequisite knowledge is required for solving questions.'
   },
   {
-    question: 'What if two participants equal marks?',
+    question: 'What if two participants get equal marks?',
     answer: 'There will be few starred marked question in the paper which will serve the basis for deciding ranks in case of tie. For e.g. candidate with more number of correct starred questions will be allotted higher rank.'
   },
   {
