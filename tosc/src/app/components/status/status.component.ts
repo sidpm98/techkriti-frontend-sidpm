@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { MdDialog } from '@angular/material';
 
 import { SuccessfullDialogComponent } from '../../components/successfull-dialog/successfull-dialog.component';
@@ -18,6 +18,7 @@ export class StatusComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private payService: PaymentService,
               private dialog: MdDialog,
+              private router: Router,
               private regService: RegistrationFormService) { }
 
   ngOnInit() {
@@ -43,7 +44,7 @@ export class StatusComponent implements OnInit {
         } else {
           content = {
             header: 'You have registered Succesfully',
-            body: `<b>Note</b>: Last date for payment is xxxxxx`, // TODO
+            body: `<span>Note</span>: Last date for payment is <span>10 July</span>`, 
             prefillData: prefillData
           };
         }
@@ -53,6 +54,7 @@ export class StatusComponent implements OnInit {
             data: content,
           }
         });
+        dialogRef.afterClosed().subscribe(() => this.router.navigate(['']));
       })
       .catch(err => this.message = err.json().message);
 

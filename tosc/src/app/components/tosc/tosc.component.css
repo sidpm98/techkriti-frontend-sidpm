@@ -75,6 +75,7 @@
     background-color: #fefae5;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 6vmin;
 }
 
 .prize div {
@@ -108,19 +109,25 @@
 
 .prize-card {
     margin: 2vmin;
+    padding-top: 0;
     padding-bottom: 0;
     width: 250px;
     height: 100%;
     background-color: #e0ce94 !important;
 }
 
-.prize-card img {
-    height: auto;
+.prize-card md-card-header {
+    padding: 1vmin 0;
+}
+
+.prize-card .mat-card-title {
+    margin-bottom: 0 !important;
 }
 
 md-card-header {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 md-card-title {

@@ -19,6 +19,7 @@
             <input type="email" mdInput placeholder="Email"
                    required formControlName="email">
             <md-error> {{ formErrors.email }} </md-error>
+            <md-hint>Enter a valid email-id. You will be receiving an <span>UNIQUE ID</span> for further processes</md-hint>
           </md-input-container>
 
           <md-input-container>
@@ -57,6 +58,7 @@
                    formControlName="school" required #c
                    (keyup)="getCode($event,c.value)">
               <md-error> {{ formErrors.school }} </md-error>
+              <md-hint>If your school is <span>not</span> in the list please mention the <span>full name</span> of your school along with address in all <span>CAPS</span></md-hint>
           </md-input-container>
 
 

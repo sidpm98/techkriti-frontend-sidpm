@@ -24,7 +24,6 @@ export class SuccessfullDialogComponent implements OnInit {
   makePayment() {
     const payPrefill = this.content.prefillData;
     payPrefill['eventcode'] = 'tosc-17-112141';
-    payPrefill['discountcode'] = 'DISC11';
     this.payService.payment(payPrefill);
   }
 

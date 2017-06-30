@@ -24,7 +24,6 @@ import { RegistrationFormService } from './services/registration-form-service';
 
 // Facebook
 import { SmoothScrollDirective, SmoothScrollToDirective } from 'ng2-smooth-scroll';
-import { Parallax, ParallaxConfig } from 'ng2-parallax/commonjs';
 
 // Routing Module
 import { AppRoutingModule } from './app.routing.module';
@@ -32,7 +31,6 @@ import { AppRoutingModule } from './app.routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    Parallax,
     SmoothScrollDirective,
     SmoothScrollToDirective,
     SuccessfullDialogComponent,

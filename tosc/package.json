@@ -24,7 +24,6 @@
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
-    "ng2-parallax": "^1.0.0",
     "ng2-smooth-scroll": "^1.0.1",
     "ngx-facebook": "^2.4.0",
     "ngx-uploader": "^3.0.6",
