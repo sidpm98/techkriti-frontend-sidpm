@@ -1,3 +1,6 @@
+
+<!-- NAVBAR -->
+
 <div class="nav-container" [class.nav-container-scroll1]="scroll"
      [class.nav-container-scroll2]="!scroll">
   <div class="nav-tosc" [class.nav-tosc-scroll1]="scroll"
@@ -18,6 +21,9 @@
     </div>
   </div>
 </div>
+
+<!-- COVER PAGE -->
+
 <div class="parallax" [style.background-image]="'url(/assets/cover.jpg)'">
   <div class="cover-detail" id="cover">
     <div class="header">
@@ -32,6 +38,9 @@
     <div class="down" scrollTo="ABOUT"> &#x26DB; </div>
   </div>
 </div>
+
+<!-- ABOUT SECTION -->
+
 <div class="my-content"
      smoothScroll
      duration="800"
@@ -44,7 +53,11 @@
     <p *ngFor="let point of tosc.about"> {{ point }} </p>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/about.jpg)'" [style.height.vh]="40"></div>
+
+<!-- DETAILS SECTION -->
+
 <div class="my-content details"
      smoothScroll
      easing="easeInQuint"
@@ -59,7 +72,11 @@
     </div>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/details.jpg)'" [style.height.vh]="40"></div>
+
+<!-- CONDUCTION SECTION -->
+
 <div class="my-content conduction"
      smoothScroll
      easing="easeInQuint"
@@ -73,7 +90,11 @@
     </ul>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/conduction.jpg)'" [style.height.vh]="40"></div>
+
+<!-- CITIES SECTION -->
+
 <div class="block"
      smoothScroll
      easing="easeInQuint"
@@ -85,7 +106,11 @@
     <a class="apply" md-button *ngFor="let city of cities"> {{ city._id }} </a>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/conduction.jpg)'" [style.height.vh]="40"></div>
+
+<!-- PRIZES SECTION -->
+
 <div class="block"
      smoothScroll
      easing="easeInQuint"
@@ -94,15 +119,19 @@
     {{ tabStrings[4] }}
   </div>
   <div class="con prize">
-    <md-card class="prize-card" *ngFor="let image of imagesStrings; index as i">
+    <md-card class="prize-card" *ngFor="let prize of tosc.prizes">
       <md-card-header>
-        <md-card-title> {{ imagesCaption[i] }} </md-card-title>
+        <md-card-title> {{ prize.caption }} </md-card-title>
       </md-card-header>
-      <img md-card-image [src]="'/assets/' + image">
+      <img md-card-image [src]="prize.src">
     </md-card>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/prizes.jpg)'" [style.height.vh]="40"></div>
+
+<!-- TESTIMONIAL SECTION -->
+
 <div class="block"
      smoothScroll
      easing="easeInQuint"
@@ -115,7 +144,11 @@
     <app-tosc-topper [topper]="tosc.testi[1]"></app-tosc-topper>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/hall.jpg)'" [style.height.vh]="40"></div>
+
+<!-- FAQ SECTION -->
+
 <div class="block"
      smoothScroll
      easing="easeInQuint"
@@ -127,7 +160,11 @@
     <app-tosc-faq></app-tosc-faq>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/prizes.jpg)'" [style.height.vh]="40"></div>
+
+<!-- GALLERY SECTION -->
+
 <div class="block"
      smoothScroll
      easing="easeInQuint"
@@ -141,7 +178,11 @@
     </div>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/contact.jpg)'" [style.height.vh]="40"></div>
+
+<!-- SPONSORS SECTION -->
+
 <div class="block"
      smoothScroll
      easing="easeInQuint"
@@ -150,7 +191,7 @@
     PREVIOUS {{ tabStrings[8] }}
   </div>
   <div class="con sponsors">
-    <div class="sponsor-card" *ngFor="let sponsor of sponsors">
+    <div class="sponsor-card" *ngFor="let sponsor of tosc.sponsors">
       <img [src]="sponsor.src"
            [style.width.%]="sponsor.size"
            [style.height.%]="sponsor.size">
@@ -158,7 +199,11 @@
     </div>
   </div>
 </div>
+
 <div class="parallax" [style.background-image]="'url(/assets/details.jpg)'" [style.height.vh]="40"></div>
+
+<!-- CONTACTS SECTION -->
+
 <div class="block"
      smoothScroll
      easing="easeInQuint"
@@ -167,7 +212,7 @@
     {{ tabStrings[9] }}
   </div>
   <div class="contact-list">
-    <md-card class="contact-card" *ngFor="let contact of contacts">
+    <md-card class="contact-card" *ngFor="let contact of tosc.contacts">
       <img class="contact-img" md-card-image [src]="contact.src">
       <md-card-content class="contact-content">
         <h2>{{contact.name}}</h2>
@@ -190,4 +235,4 @@
   </div>
 </div>
 
-
+<!-- END -->

@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "http://172.27.22.121:60000",
+        "target": "http://techkriti.org",
         "secure": false
     }
 }
