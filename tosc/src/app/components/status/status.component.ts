@@ -28,7 +28,7 @@ export class StatusComponent implements OnInit {
   checkPaymentStatus() {
     const params = this.route.snapshot.queryParams;
     let content = {};
-    let prefillData = {
+    const prefillData = {
       cq1: params['cq1'],
       emailid: params['emailid'],
       name: params['name']
@@ -39,13 +39,19 @@ export class StatusComponent implements OnInit {
           content = {
             header: 'Payment has already been made',
             body: 'Greetings <br> Team TOSC',
-            prefillData: false
+            prefillData: false,
+            button: {
+              value: 'VISIT TOSC'
+            }
           };
         } else {
           content = {
             header: 'You have registered Succesfully',
-            body: `<span>Note</span>: Last date for payment is <span>10 July</span>`, 
-            prefillData: prefillData
+            body: `<span>Note</span>: Last date for payment is <span>10 October</span>`,
+            prefillData: prefillData,
+            button: {
+              value: 'PAY LATER'
+            }
           };
         }
         const dialogRef = this.dialog.open(SuccessfullDialogComponent, {
@@ -57,7 +63,6 @@ export class StatusComponent implements OnInit {
         dialogRef.afterClosed().subscribe(() => this.router.navigate(['']));
       })
       .catch(err => this.message = err.json().message);
-
   }
 
 }

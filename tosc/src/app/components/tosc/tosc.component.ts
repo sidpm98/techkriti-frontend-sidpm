@@ -42,7 +42,6 @@ export class ToscComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e: Event) {
-    console.log(window.pageYOffset);
     if (window.pageYOffset > 30) {
       this.scroll = true;
     } else {
