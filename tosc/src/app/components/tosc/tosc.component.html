@@ -14,7 +14,7 @@
     <i class="fa fa-times fa-lg" aria-hidden="true" *ngIf="hamOpen"></i>
   </div>
   <div class="nav-links" [class.open]="hamOpen">
-    <div *ngFor="let tab of tabStrings" [scrollTo]="tab"
+    <div *ngFor="let tab of navStrings" [scrollTo]="tab"
          (click)="goto(tab)"
          [class.active]="tab === selectedTab">
       {{ tab }}
@@ -142,6 +142,9 @@
   <div class="con test">
     <app-tosc-topper [topper]="tosc.testi[0]"></app-tosc-topper>
     <app-tosc-topper [topper]="tosc.testi[1]"></app-tosc-topper>
+  </div>
+  <div class="other-test">
+    <button md-raised-button (click)="openTest()">See More</button>
   </div>
 </div>
 

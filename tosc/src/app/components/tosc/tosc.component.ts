@@ -5,6 +5,7 @@ import { MdDialog } from '@angular/material';
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 import { ToscService } from '../../services/tosc.service';
 import { RegistrationFormService } from '../../services/registration-form-service';
+import { OtherTestComponent } from '../../components/other-test/other-test.component';
 
 import { TOSC } from '../../config/tosc';
 
@@ -19,6 +20,16 @@ export class ToscComponent implements OnInit {
   tosc = TOSC; // TOSC config.
 
   scroll: boolean = false;
+  navStrings: string[] = [
+    'ABOUT',
+    'DETAILS',
+    'CONDUCTION',
+    'PRIZES',
+    'TESTIMONIALS',
+    'FAQ',
+    'SPONSORS',
+    'CONTACTS'
+  ]
   tabStrings: string[] = ['ABOUT',
                           'DETAILS',
                           'CONDUCTION',
@@ -42,7 +53,6 @@ export class ToscComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e: Event) {
-    console.log(window.pageYOffset);
     if (window.pageYOffset > 30) {
       this.scroll = true;
     } else {
@@ -53,7 +63,6 @@ export class ToscComponent implements OnInit {
   ngOnInit() {
     this.regService.getCity()
       .then((cities) => {
-        console.log(cities);
         this.cities = cities;
       });
   }
@@ -68,5 +77,21 @@ export class ToscComponent implements OnInit {
 
   toggle() {
     this.hamOpen = !this.hamOpen;
+  }
+
+  openTest() {
+    let height;
+    if(window.innerWidth < 412){
+      height = '80vh';
+    }else{
+      height = '45vh';
+    }
+    this.dialog.open(OtherTestComponent, {
+      data: {
+        data: this.tosc.otherToppers
+      },
+      height: height,
+      width: '80vw'
+    })
   }
 }

@@ -79,6 +79,7 @@ export const TOSC = {
       contact: '+91-7755057748',
       email: 'pradeep@techkriti.org',
       src: '/assets/pradeep.jpg',
+      tel: '0512-2594818',
       href: 'https://www.facebook.com/pchoudharykd?fref=grp_mmbr_list'
     },
     {
@@ -122,5 +123,38 @@ export const TOSC = {
       partner: 'Online Media Partner',
       size: '40'
     }
+  ],
+
+  otherToppers: [
+    {
+      name: 'Darshan Lalit Lodha',
+      rank: '3rd (Pool-A)',
+      writeup: 'TOSC helped me to think practically in some situation rather than theoretically. Techkriti is that platform where students are not only tested technically but manually too. It gives exposure to upcoming youngsters. It gave me a space, so that I could choose my own topic regarding to the problems faced by people in our surrounding and find innovative solutions to it. My topic was &quot;How to increase agricultural productivity of farm&quot;. In this attempts were made to minimise the rate of suicides done by farmers by increasing productivity using small patch of land.The most exciting thing organised by team Techkriti was the lecture by Sir H.C.Verma and campus visit. It was really epic moment to be part of Techkriti'
+    },
+    {
+      name: 'Helen Elma Mathew',
+      rank: '4th (Pool-B)',
+      writeup: 'I feel most grateful to bag the 4th position in pool B at techkriti 2017.All the experiences that I had during this epic journey will always remain as one of my fond memories .The exposure I got at IIT K was excellent all the iitians and their excellent faculty were hospitable and gave me the inspiration to work harder. The campus tour to the flight lab was very relishing .It was also an opportunity to make new friends who all had ignited minds .Even the lectures after the competition was memorable .For all this experiences ,I am forever gratified towards the TOSC organizers'
+    },
+    {
+      name: 'Siddh',
+      rank: '2nd (Pool-A)',
+      writeup:  "TOSC was a much awaited competition for me. Its three round concept opened up a new horizon of thoughts and ideas. I cleared it in my first attempt and was delighted to visit IITK campus. A visit to the air strip and an inspection of the gliders and the laboratories enlightened us with significant knowledge. Our interaction with IITians and the campus tour gave us an idea about the amazing life if an IITian and encouraged us to session was mind boggling and exposed us to new ways of learning through observation and daily activities. It cultivated in me a new perception of things. Our work was evaluated by IIT professors, which gav us room for improvement and confidence to present ourselves at higher levels. It was matchless. We learnt loads, and were able to design our own robots in the workshop held. TOSC gave me a chance to meet likeminded people from across India, thus sharing our thoughts and ideas to create better ones. I eagerly wait to be a part of the competition, workshops, discussions, interactions, next year too. TOSC is something for everyone; it forces us to do our best."
+    },
+    {
+    name: 'Tarsh Manohar',
+    rank: '3rd (Pool-B)',
+    writeup: "I have a wonderful experience with tosc right from the first stage of the competition. The three stage competition with inclusion of examination part, writeup submission and finally presentation make it a very nice platform for persons like us preparing for competition. It provides a chance to study with some extra curriculum activity. In one line i can say..... .TOSC IS ...testing opportunities in science"
+    },
+    {
+      name: 'Utkarsh Jain',
+      rank: '4th (Pool-A)',
+      writeup: "TOSC helped me nurture my mind, and see the world from a different perspective. It was the main reason behind my scientific approach that I apply in my daily life. Our tour to the facilities in the campus was completely mesmerizing and the environment and atmosphere was very serene. It is a great platform to share world changing ideas and also boost up the confidence of people by applauding them with the chance that can change the world. These types of programs help the student to see their dreams for real and work hard to the fulfilment. I enjoyed every bit of my stay at IIT Kanpur"
+    },
+    {
+      name: 'Utkarsh Munendra',
+      rank: '2nd (Pool-B)',
+      writeup: "Hello, I am Utsav Munendra from Lucknow, UP and I achieved 2 nd  rank in TOSC 2016 in Pool B. TOSC is one of the rare competitions that evaluates students on more than just academic abilities. It moves forward to reward students who are not only intellectually brilliant, but are also capable of applying their skillset to solve the most pressing problems in the world around them. Although the first round was entirely based on logical reasoning, the quality of questions was far beyond what I have ever seen in any other exam and it asked variations of some famous mathematical puzzles like the Josephus Problem. In the abstract and presentation round, I got the practical experience of applying theoretical knowledge to solve the problem of filthy rivers in India. As I went on to research for the solution, the answers I got were surprising simple and changed my perspective on river cleaning, and this whole experience would not have been possible without TOSC. My panel of judges included Prof. Santanu Misra, who did not remain a passive evaluator of presentations, but in the end gave valuable advice to all the students on how to make better presentations. To all the future participants, all I can say is that TOSC will be a memorable competition for them also and they must enjoy the tour of the campus offered after the presentations and stay till the prize distribution, or they might end up not getting the prize books, uh… like me"
+    }
   ]
-};
+}

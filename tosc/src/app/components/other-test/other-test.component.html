@@ -1,0 +1,12 @@
+<md-tab-group>
+  <md-tab *ngFor="let student of students">
+    <ng-template md-tab-label>
+      {{ student.name }}
+    </ng-template>
+    <div class="content">
+      <h1>{{ student.name }}</h1>
+      <h2>{{ student.rank }}</h2>
+      <p>{{ student.writeup }}</p>
+    </div>
+  </md-tab>
+</md-tab-group>

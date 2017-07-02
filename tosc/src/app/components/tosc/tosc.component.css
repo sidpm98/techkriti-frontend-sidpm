@@ -90,7 +90,7 @@
 .test {
     display: flex;
     justify-content: space-around;
-    padding-top: 10vmin;;
+    padding-top: 7vmin;;
     flex-wrap: wrap;
 }
 
@@ -488,4 +488,15 @@ a {
     padding-bottom: 2vmin;
     padding-top: 2vmin;
     flex-wrap: wrap;
+}
+
+.other-test {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.other-test button {
+    background-color: #e0ce94 !important;
 }
