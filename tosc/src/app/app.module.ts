@@ -7,6 +7,7 @@ import { MaterialModule } from '@angular/material';
 
 // Components
 import { AppComponent } from './app.component';
+import { OtherTestComponent } from './components/other-test/other-test.component';
 import { ToscComponent } from './components/tosc/tosc.component';
 import { ToscRegisterComponent } from './components/tosc-register/tosc-register.component';
 import { ToscTopperComponent } from './components/tosc-topper/tosc-topper.component';
@@ -31,6 +32,7 @@ import { AppRoutingModule } from './app.routing.module';
 @NgModule({
   declarations: [
     AppComponent,
+    OtherTestComponent,
     SmoothScrollDirective,
     SmoothScrollToDirective,
     SuccessfullDialogComponent,
@@ -58,6 +60,7 @@ import { AppRoutingModule } from './app.routing.module';
     RegistrationFormService
   ],
   entryComponents: [
+    OtherTestComponent,
     TopperWriteUp,
     SuccessfullDialogComponent,
   ],
