@@ -17,19 +17,27 @@
 .resultItem{
     display: flex;
     justify-content: space-around;
-    background-color: #0f0068;
-    color: #ffffff;
+    background-color: white;
+    color: black;
     padding-bottom: 1vmin;
     padding-top: 1vmin;
     border-bottom: 1px solid black;
     margin-top: 2vmin;
     align-items: center;
     box-shadow: .5px .5px 10px;
-    font-size: 2.5vmin;
+    font-size: 2vmin;
     font-family: Roboto sans-serif;
     border-radius: 2px;
 }
 
 .resultItem:hover{
-    background-color: #3f2aba;
+    background-color: #bdbdbd;
+}
+
+.selected {
+    background-color: #bdbdbd;
+}
+
+button {
+    backgroud-color: green;
 }

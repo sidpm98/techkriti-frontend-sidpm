@@ -1,4 +1,4 @@
-<div class="resultItem" *ngIf="ca" (click)="toggleDetail(ca)">
+<div class="resultItem" [ngClass]="{'selected': detailFlag}" *ngIf="ca" (click)="toggleDetail(ca)">
   <div class="fields" >{{ ca.personal.name }}</div>
   <div class="fields" >{{ ca.college.name }}</div>
   <div class="fields" >{{ ca.personal.contact }}</div>
