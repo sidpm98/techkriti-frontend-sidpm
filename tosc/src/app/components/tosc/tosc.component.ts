@@ -68,7 +68,7 @@ export class ToscComponent implements OnInit {
   }
 
   goto(section: string) {
-    this.router.navigate(['tosc'], { fragment: section});
+    this.router.navigate([''], { fragment: section});
     this.selectedTab = section;
     if (window.innerWidth <= 786) {
       this.toggle();
