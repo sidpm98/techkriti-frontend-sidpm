@@ -66,9 +66,17 @@
     {{ tabStrings[1] }}
   </div>
   <div class="con">
-    <div *ngFor="let phase of tosc.details">
-      <p> {{ phase[0] }} </p>
-      <p> {{ phase[1] }} </p>
+    <div class="detail-box">
+      <div class="detail">
+        <div *ngFor="let phase of tosc.details">
+          <p> {{ phase[0] }} </p>
+          <p> {{ phase[1] }} </p>
+        </div>
+      </div>
+      <div class="timeline-container">
+        <div class="timeline">
+        </div>
+      </div>
     </div>
   </div>
 </div>

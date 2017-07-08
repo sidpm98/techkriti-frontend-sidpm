@@ -500,3 +500,33 @@ a {
 .other-test button {
     background-color: #e0ce94 !important;
 }
+
+.detail-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+}
+
+.timeline-container {
+    display: flex;
+    flex: 1 0 0;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline {
+    flex: 1 0 0;
+    background-image: url(/assets/timeline.jpg);
+    height: 100%;
+    align-self: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
