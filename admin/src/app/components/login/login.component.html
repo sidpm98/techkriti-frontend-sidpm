@@ -1,20 +1,36 @@
-<div class="login">
-  <div class="login-box">
-    <div>
-      <img href=""/>
-    </div>
-    <div class="admin">
-      Admin
-    </div>
-    <div class="inputs">
-      <input class="details" placeholder="UserName" [(ngModel)]="username" />
-      <input class="details" placeholder="Password"  type="password" [(ngModel)]="password"/>
-    </div>
-    <div *ngIf="submit" class="error">
-      {{error}}
-    </div>
-    <div class="submit">
-      <button (click)="submit()">Submit</button>
-    </div>
-  </div>
-</div>
+<md-card>
+  <md-card-title>
+    <h1 class="mat-h1">Login</h1>
+  </md-card-title>
+  <md-card-content>
+    <md-input-container>
+      <input mdInput placeholder="Username" type="text" [(ngModel)]="username">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Password" type="password" [(ngModel)]="password">
+    </md-input-container>
+  </md-card-content>
+  <md-card-actions>
+    <button md-raised-button (click)="submit()">Login</button>
+  </md-card-actions>
+</md-card>
+<!-- <div class="login"> -->
+<!-- <md-card class="login-box"> -->
+<!-- <div> -->
+<!-- <img href=""/> -->
+<!-- </div> -->
+<!-- <div class="admin"> -->
+<!-- Admin -->
+<!-- </div> -->
+<!-- <div class="inputs"> -->
+<!-- <input class="details" placeholder="UserName" [(ngModel)]="username" /> -->
+<!-- <input class="details" placeholder="Password"  type="password" [(ngModel)]="password"/> -->
+<!-- </div> -->
+<!-- <div *ngIf="submit" class="error"> -->
+<!-- {{error}} -->
+<!-- </div> -->
+<!-- <div class="submit"> -->
+<!-- <button (click)="submit()">Submit</button> -->
+<!-- </div> -->
+<!-- </md-card> -->
+<!-- </div> -->
