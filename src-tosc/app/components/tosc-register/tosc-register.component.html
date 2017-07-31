@@ -1,0 +1,81 @@
+
+<md-progress-bar mode="indeterminate" *ngIf="!gotCities" color="primary" id="progress">
+</md-progress-bar>
+<div class="body" *ngIf="gotCities">
+  <md-card class="reg-form">
+  <md-card-header>
+    <md-card-title><h2>Registration</h2></md-card-title>
+  </md-card-header>
+  <form [formGroup]="registerForm">
+    <md-card-content class="content">
+      <md-input-container>
+
+        <input type="text" mdInput placeholder="Name"
+               required formControlName="name">
+        <md-error> {{ formErrors.name }} </md-error>
+      </md-input-container>
+
+          <md-input-container>
+            <input type="email" mdInput placeholder="Email"
+                   required formControlName="email">
+            <md-error> {{ formErrors.email }} </md-error>
+            <md-hint>Enter a valid email-id. You will be receiving an <span>UNIQUE ID</span> for further processes</md-hint>
+          </md-input-container>
+
+          <md-input-container>
+            <input type="text" mdInput placeholder="Phone No"
+                   required formControlName="phone">
+            <md-error> {{ formErrors.phone }} </md-error>
+          </md-input-container>
+
+          <md-select placeholder="Class" class="standard"
+                     required formControlName="class" id="classes">
+            <md-option *ngFor="let standard of standards"
+                       [value]="standard.std">{{ standard.std }}</md-option>
+          </md-select>
+
+          <md-input-container>
+            <input mdInput type="text" placeholder="City"
+                   [mdAutocomplete]="auto1"
+                   formControlName="city" required #z
+                   (keyup)="checkKey($event,z.value)">
+              <md-error> {{ formErrors.city }} </md-error>
+            <md-hint><span>This city will be your examination venue</span>. Please choose from the listed cities</md-hint>
+          </md-input-container>
+
+          <md-autocomplete #auto1="mdAutocomplete">
+            <md-option *ngFor="let s of filteredCity | async" #o
+                       [value]="s" (click)="options(o.value)" >
+              {{ s }}
+            </md-option>
+          </md-autocomplete>
+
+          <md-progress-bar mode="indeterminate" *ngIf="!gotSchools" id="gotSchool">
+          </md-progress-bar>
+
+          <md-input-container>
+            <input mdInput type="text" placeholder="School"
+                   [mdAutocomplete]="auto2"
+                   formControlName="school" required #c
+                   (keyup)="getCode($event,c.value)">
+              <md-error> {{ formErrors.school }} </md-error>
+              <md-hint>If your school is <span>not</span> in the list please mention the <span>full name</span> of your school along with address in all <span>CAPS</span></md-hint>
+          </md-input-container>
+
+
+          <md-autocomplete #auto2="mdAutocomplete">
+            <md-option *ngFor="let s of filteredSchool | async"  #r
+                       [value]="s" (click)="schoolCode(r.value)" class="school">
+              {{ s }}
+            </md-option>
+          </md-autocomplete>
+
+    </md-card-content>
+
+    <md-card-actions>
+      <button md-raised-button (click)="register()"
+      [disabled]="registerForm.invalid">Register</button>
+    </md-card-actions>
+  </form>
+</md-card>
+</div>

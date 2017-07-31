@@ -1,0 +1,6 @@
+<md-list *ngIf="students">
+  <md-list-item *ngFor="let student of students">
+    <h3 md-line>{{ student.name }}</h3>
+    <span md-line>{{ student.city }}</span>
+  </md-list-item>
+</md-list>
