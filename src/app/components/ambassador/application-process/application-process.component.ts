@@ -12,7 +12,7 @@ export class ApplicationProcessComponent implements OnInit {
     header: {
       one: 'Application Process',
       second: 'Eligibility',
-      third: 'Deadline for the application is 20nd August'
+      third: 'Deadline for the application is 20th August'
     },
     body: {
       one: 'The nomination form for the ambassadors is attached here along the link. Based upon the form you will be interviewed telephonically. After that, based upon short listing you will be informed about your selection.',
