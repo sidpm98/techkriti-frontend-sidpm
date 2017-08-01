@@ -21,6 +21,7 @@ import { CAService } from './services/ca.service';
 
 import { AppRoutingModule } from './app.routing.module';
 import { LandingComponent } from './components/landing/landing.component';
+import { ResourcesComponent } from './src-tosc/components/resources/resources.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { LandingComponent } from './components/landing/landing.component';
     CaWhyComponent,
     CaContactComponent,
     LandingComponent,
+    ResourcesComponent,
   ],
   imports: [
     AppRoutingModule,

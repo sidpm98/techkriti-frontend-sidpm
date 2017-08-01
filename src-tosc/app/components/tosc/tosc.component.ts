@@ -27,9 +27,10 @@ export class ToscComponent implements OnInit {
     'PRIZES',
     'TESTIMONIALS',
     'FAQ',
+    'RESOURCES',
     'SPONSORS',
     'CONTACTS'
-  ]
+  ];
   tabStrings: string[] = ['ABOUT',
                           'DETAILS',
                           'CONDUCTION',
@@ -68,10 +69,14 @@ export class ToscComponent implements OnInit {
   }
 
   goto(section: string) {
-    this.router.navigate([], { fragment: section});
-    this.selectedTab = section;
-    if (window.innerWidth <= 786) {
+    if (section === 'RESOURCES') {
+      this.router.navigate(['resources']);
+    } else {
+      this.router.navigate([], { fragment: section});
+      this.selectedTab = section;
+      if (window.innerWidth <= 786) {
       this.toggle();
+      }
     }
   }
 

@@ -1,0 +1,44 @@
+.back {
+    background-image: url("/assets/conduction.jpg");
+    font-family: Open Sans;
+    background-size: contain;
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    z-index: -10;
+}
+
+.resource-container {
+    display: flex;
+    background-color: #e0ce94 !important;
+    width: 100%;
+    height: 60vmin;
+    flex-direction: column;
+    align-items: center;
+}
+
+.res-header {
+    flex: .5 0 0;
+    padding-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vmax;
+}
+
+.res-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+
+.res-body a {
+    margin-bottom: 5px;
+}

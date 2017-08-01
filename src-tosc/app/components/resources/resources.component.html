@@ -1,0 +1,15 @@
+<div class="back">;
+  <div class="resource-container">
+    <div class="res-header">
+      Resources
+    </div>
+    <md-spinner *ngIf="!resFlag"></md-spinner>
+    <div class="res-body" *ngIf="resFlag">
+      <a md-raised-button *ngFor="let file of files"
+         [href]="file.href" target="_blank">
+        {{ file.name }}
+      </a>
+    </div>
+    <a md-raised-button routerLink="">Back</a>
+  </div>
+</div>

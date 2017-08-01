@@ -15,6 +15,7 @@ import { TopperWriteUp } from './components/tosc-topper/tosc-topper.component';
 import { ToscFaqComponent } from './components/tosc-faq/tosc-faq.component';
 import { SuccessfullDialogComponent } from './components/successfull-dialog/successfull-dialog.component';
 import { StatusComponent } from './components/status/status.component';
+import { ResourcesComponent } from './components/resources/resources.component';
 
 // Services
 import { ToscAuthService } from './services/auth/tosc-auth.service';
@@ -22,8 +23,8 @@ import { ToscService } from './services/tosc.service';
 import { ScriptService } from './services/script.service';
 import { PaymentService } from './services/payment.service';
 import { RegistrationFormService } from './services/registration-form-service';
+import { ResourcesService } from './services/resources.service';
 
-// Facebook
 import { SmoothScrollDirective, SmoothScrollToDirective } from 'ng2-smooth-scroll';
 
 // Routing Module
@@ -33,6 +34,7 @@ import { AppRoutingModule } from './app.routing.module';
   declarations: [
     AppComponent,
     OtherTestComponent,
+    ResourcesComponent,
     SmoothScrollDirective,
     SmoothScrollToDirective,
     SuccessfullDialogComponent,
@@ -41,7 +43,7 @@ import { AppRoutingModule } from './app.routing.module';
     ToscRegisterComponent,
     ToscTopperComponent,
     TopperWriteUp,
-    ToscFaqComponent,
+    ToscFaqComponent
   ],
   imports: [
     AppRoutingModule,
@@ -57,7 +59,8 @@ import { AppRoutingModule } from './app.routing.module';
     ToscAuthService,
     ToscService,
     ScriptService,
-    RegistrationFormService
+    RegistrationFormService,
+    ResourcesService
   ],
   entryComponents: [
     OtherTestComponent,
