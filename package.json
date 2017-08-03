@@ -7,6 +7,7 @@
     "start-tosc": "ng serve --app tosc --proxy-config proxy-conf.json",
     "start-tech": "ng serve --app tech --proxy-config proxy-conf.json",
     "start-admin": "ng serve --app admin --proxy-config proxy-conf.json",
+    "start-ca": "ng serve --app ca --proxy-config proxy-conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

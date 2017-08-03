@@ -81,6 +81,32 @@
                 "dev": "environments/environment.ts",
                 "prod": "environments/environment.prod.ts"
             }
+        },
+        {
+            "name": "ca",
+            "root": "src-ca",
+            "outDir": "dist-ca",
+            "assets": [
+                "assets",
+                "favicon.ico"
+            ],
+            "index": "index.html",
+            "main": "main-ca.ts",
+            "polyfills": "polyfills.ts",
+            "test": "test.ts",
+            "tsconfig": "tsconfig.app.json",
+            "testTsconfig": "tsconfig.spec.json",
+            "prefix": "app",
+            "styles": [
+                "styles.css"
+            ],
+            "scripts": [],
+            "environmentSource": "environments/environment.ts",
+            "environments": {
+                "dev": "environments/environment.ts",
+                "prod": "environments/environment.prod.ts"
+            }
+
         }
     ],
     "e2e": {
