@@ -9,12 +9,21 @@ import { MaterialModule } from '@angular/material';
 
 // Components
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 // Services
+import { FacebookService } from 'ngx-facebook';
+
+import { LoginService } from './services/login.service';
+import { ScriptService } from './services/script.service';
+import { TechkritiFeedService } from './services/techkriti-feed.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
+    LandingComponent
   ],
   imports: [
     AppRoutingModule,
@@ -25,6 +34,10 @@ import { AppComponent } from './app.component';
     MaterialModule
   ],
   providers: [
+    FacebookService,
+    LoginService,
+    ScriptService,
+    TechkritiFeedService
   ],
   bootstrap: [AppComponent]
 })

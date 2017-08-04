@@ -3123,6 +3123,10 @@ ng2-smooth-scroll@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ng2-smooth-scroll/-/ng2-smooth-scroll-1.0.1.tgz#5f970ffff3a1c4dcdd341b45044d9216c016c8a5"
 
+ngx-facebook@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/ngx-facebook/-/ngx-facebook-2.4.0.tgz#454141ce41118c1956d9db896c956f3891f8bbd7"
+
 ngx-uploader@^3.2.2:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/ngx-uploader/-/ngx-uploader-3.3.4.tgz#7f78813396a612709708814035758aed75eb32e3"
