@@ -221,7 +221,7 @@ export class RegisterComponent implements OnInit {
         let msg = '';
         this.buildForm();
         if (err.status === 400) {
-          msg = 'Invalid Form Submission';
+          msg = err.json().message;
         }
         const dialogRef = this.dialog.open(SuccessDialogComponent, {
           height: '300px',
