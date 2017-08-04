@@ -1,5 +1,6 @@
 <div class="ca-reg-body">
 </div>
+<md-progress-bar *ngIf="submitFlag" mode="indeterminate"></md-progress-bar>
 <md-card>
   <md-card-header>
     <md-card-title><h1>Application Form</h1></md-card-title>
@@ -167,7 +168,6 @@
             <md-radio-button value="No">No</md-radio-button>
           </md-radio-group>
         </div>
-
         <div class="actions">
           <button md-raised-button [disabled]="register.invalid"
                   (click)="submit()">Submit</button>

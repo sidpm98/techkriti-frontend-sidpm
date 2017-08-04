@@ -8,7 +8,7 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AmbassadorComponent } from './components/ambassador/ambassador.component';
-import { RegisterComponent } from './components/ambassador/register/register.component';
+import { RegisterComponent, SuccessDialogComponent } from './components/ambassador/register/register.component';
 import { IncentivesComponent } from './components/ambassador/incentives/incentives.component';
 import { CaHeaderComponent } from './components/ambassador/ca-header/ca-header.component';
 import { ApplicationProcessComponent } from './components/ambassador/application-process/application-process.component';
@@ -21,7 +21,6 @@ import { CAService } from './services/ca.service';
 
 import { AppRoutingModule } from './app.routing.module';
 import { LandingComponent } from './components/landing/landing.component';
-import { ResourcesComponent } from './src-tosc/components/resources/resources.component';
 
 
 @NgModule({
@@ -38,7 +37,7 @@ import { ResourcesComponent } from './src-tosc/components/resources/resources.co
     CaWhyComponent,
     CaContactComponent,
     LandingComponent,
-    ResourcesComponent,
+    SuccessDialogComponent
   ],
   imports: [
     AppRoutingModule,
@@ -52,6 +51,7 @@ import { ResourcesComponent } from './src-tosc/components/resources/resources.co
   providers: [
     CAService
   ],
+  entryComponents: [SuccessDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

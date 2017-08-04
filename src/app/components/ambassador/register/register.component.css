@@ -1,3 +1,8 @@
+md-progress-bar {
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+}
 .ca-reg-body {
     background-image: url('../assets/images/ca-4background.jpg');
     background-size: cover;

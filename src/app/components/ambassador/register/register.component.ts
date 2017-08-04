@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormArray, FormControlName, FormControl, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 import { CAService } from '../../../services/ca.service';
-import { MdSnackBar } from '@angular/material';
+import { MdSnackBar, MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 
 import { Router } from '@angular/router';
 
@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
   private step: number = 0;
   private phoneRe: RegExp = new RegExp('^[0-9]{10}$');
   private pinRe: RegExp = new RegExp('^[0-9]{6}$');
+  public submitFlag: boolean = false;
 
   private questionStrings = [ 'Primary motive to apply for this post',
                               'Relevant past experience',
@@ -63,6 +64,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuild: FormBuilder,
               public snackBar: MdSnackBar,
+              public dialog: MdDialog,
               private router: Router,
               private caService: CAService) { }
 
@@ -161,6 +163,7 @@ export class RegisterComponent implements OnInit {
 
 
   submit() {
+    this.submitFlag = true;
     this.skills.push(this.other.value);
     this.skillControl = new FormControl(this.skills.join(','));
     this.chooseControl = new FormControl(this.chosenValue);
@@ -202,23 +205,48 @@ export class RegisterComponent implements OnInit {
 
     this.caService.submit(form)
       .then((res) => {
-        console.log(res);
+        this.submitFlag = false;
         this.buildForm();
-        this.snackBar.open('Thank You', 'Registered', {
-          duration: 15000
+        const dialogRef = this.dialog.open(SuccessDialogComponent, {
+          height: '300px',
+          width: '300px',
+          data: 'Successfully registered'
         });
-        this.router.navigate(['ambassador']);
+        dialogRef.afterClosed().subscribe(() => {
+          this.router.navigate(['ambassador']);
+        });
       })
       .catch((err) => {
+        this.submitFlag = false;
         let msg = '';
         this.buildForm();
         if (err.status === 400) {
           msg = 'Invalid Form Submission';
         }
-        this.snackBar.open('ERROR', msg, {
-          duration: 3000
+        const dialogRef = this.dialog.open(SuccessDialogComponent, {
+          height: '300px',
+          width: '300px',
+          data: msg
         });
-        this.router.navigate(['ambassador/register']);
+        dialogRef.afterClosed().subscribe(() => {
+          this.router.navigate(['ambassador/register']);
+        });
       });
+  }
+}
+
+@Component({
+  selector: 'success-dialog',
+  templateUrl: './success-dialog.component.html',
+  styleUrls: ['./success-dialog.component.css']
+})
+
+export class SuccessDialogComponent {
+
+  public content: any;
+
+  constructor(@Inject(MD_DIALOG_DATA) public data: any) {
+    this.content = this.data;
+    console.log(this.content);
   }
 }
