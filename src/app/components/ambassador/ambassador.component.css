@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
+
 @font-face {
     font-family: Lovelo;
     src: url(./assets/Lovelo.otf);
 }
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
-
 
 @media (max-width: 412px) {
     .left {
@@ -107,10 +106,9 @@ a {
     text-align: center;
 }
 .body {
-    background-image: url('./assets/images/ca-4background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100vw;
+  background-size: cover;
+  background: url('./assets/images/ca-4background.jpg') no-repeat;
+  width: 100vw;
     height: 100vh;
     z-index: -1;
     position: fixed;

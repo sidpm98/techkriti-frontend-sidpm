@@ -10,8 +10,12 @@
     "start-ca": "ng serve --app ca --proxy-config proxy-conf.json",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint --format stylish",
     "e2e": "ng e2e"
+  },
+  "pre-commit": {
+    "run": "lint",
+    "silent": true
   },
   "private": true,
   "dependencies": {
@@ -48,6 +52,7 @@
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "pre-commit": "^1.2.2",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
