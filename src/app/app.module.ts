@@ -21,6 +21,8 @@ import { CAService } from './services/ca.service';
 
 import { AppRoutingModule } from './app.routing.module';
 import { LandingComponent } from './components/landing/landing.component';
+import { TechnocruiseComponent } from './components/technocruise/technocruise.component';
+import { AboutComponent } from './components/technocruise/about/about.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { LandingComponent } from './components/landing/landing.component';
     CaWhyComponent,
     CaContactComponent,
     LandingComponent,
-    SuccessDialogComponent
+    SuccessDialogComponent,
+    TechnocruiseComponent,
+    AboutComponent
   ],
   imports: [
     AppRoutingModule,
