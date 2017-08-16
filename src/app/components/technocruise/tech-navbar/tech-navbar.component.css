@@ -32,18 +32,21 @@
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.navbar-default .navbar-brand {
-  background-image: url(../img/logo.png);
-}
-.navbar-shrink .navbar-brand {
-  background-image: url(../img/logo.png);
-}
-.navbar-transparent .navbar-brand {
-  background-image: url(../img/logo.png);
-}
-.navbar-inverse .navbar-brand {
-  background-image: url(../img/logo.png);
-}
+TODO Discuss with Mohit or Aniket
+/*
+ *.navbar-default .navbar-brand {
+ *  background-image: url(../img/logo.png);
+ *}
+ *.navbar-shrink .navbar-brand {
+ *  background-image: url(../img/logo.png);
+ *}
+ *.navbar-transparent .navbar-brand {
+ *  background-image: url(../img/logo.png);
+ *}
+ *.navbar-inverse .navbar-brand {
+ *  background-image: url(../img/logo.png);
+ *}
+ */
 
 /* Navbar links */
 .navbar-nav > li > a {
