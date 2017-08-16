@@ -7,9 +7,18 @@ import { RegisterComponent } from './components/ambassador/register/register.com
 import { LandingComponent } from './components/landing/landing.component';
 
 const routes: Routes = [
-  { path: 'ambassador', component: AmbassadorComponent },
-  { path: 'ambassador/register', component: RegisterComponent },
-  { path: '**', component: LandingComponent }
+  { path: 'ambassador',
+    component: AmbassadorComponent
+  },
+  {
+    path: 'ambassador/register',
+    component: RegisterComponent
+  },
+  // todo
+  // {
+  //   path: '**',
+  //   component: LandingComponent
+  // }
 ];
 
 @NgModule({

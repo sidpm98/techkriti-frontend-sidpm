@@ -22,7 +22,16 @@ import { CAService } from './services/ca.service';
 import { AppRoutingModule } from './app.routing.module';
 import { LandingComponent } from './components/landing/landing.component';
 import { TechnocruiseComponent } from './components/technocruise/technocruise.component';
-import { AboutComponent } from './components/technocruise/about/about.component';
+import { TechnocruiseService } from './services/technocruise.service';
+import { TechnocruiseRoutingModule } from './components/technocruise/technocruise.routing.module';
+import { TechCitiesComponent } from './components/technocruise/tech-cities/tech-cities.component';
+import { TechContactComponent } from './components/technocruise/tech-contact/tech-contact.component';
+import { TechEventsComponent } from './components/technocruise/tech-events/tech-events.component';
+import { TechRegisterComponent } from './components/technocruise/tech-register/tech-register.component';
+import { TechTalksComponent } from './components/technocruise/tech-talks/tech-talks.component';
+import { TechWorkshopComponent } from './components/technocruise/tech-workshop/tech-workshop.component';
+import { TechNavbarComponent } from './components/technocruise/tech-navbar/tech-navbar.component';
+import { TechAboutComponent } from './components/technocruise/tech-about/tech-about.component';
 
 
 @NgModule({
@@ -41,10 +50,18 @@ import { AboutComponent } from './components/technocruise/about/about.component'
     LandingComponent,
     SuccessDialogComponent,
     TechnocruiseComponent,
-    AboutComponent
+    TechNavbarComponent,
+    TechAboutComponent,
+    TechWorkshopComponent,
+    TechTalksComponent,
+    TechRegisterComponent,
+    TechEventsComponent,
+    TechContactComponent,
+    TechCitiesComponent,
   ],
   imports: [
     AppRoutingModule,
+    TechnocruiseRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -53,7 +70,8 @@ import { AboutComponent } from './components/technocruise/about/about.component'
     ReactiveFormsModule,
   ],
   providers: [
-    CAService
+    CAService,
+    TechnocruiseService
   ],
   entryComponents: [SuccessDialogComponent],
   bootstrap: [AppComponent]
