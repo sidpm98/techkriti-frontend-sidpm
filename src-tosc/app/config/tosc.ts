@@ -2,19 +2,19 @@ export const TOSC = {
 
   about: [
     'Techkriti is the Asia’s largest annual international technical & entrepreneurship festival of IIT Kanpur and definitely the greatest exponent of exuberance and creativity of its students. Witnessing nearly 40,000 footfalls with over 1000 participants from all over the nation, the festival is a much-awaited event in the technical and business calendar of the student community.',
-    'Techkriti Open School Championship(TOSC) is an annual school aptitude examination for classes 9th to 12th, conducted and organized by Techkriti. It consists of 3 Rounds. Phase 1 is a written exam, based on which 1000 students will be selected and asked to submit (online) the abstract of the project in Phase 2 and for the final phase, 100 selected students will be invited at IIT Kanpur to give a presentation about their abstract and get a chance to win a variety of prizes and goodies.',
+    'Techkriti Open School Championship(TOSC) is an annual school aptitude examination for classes 9th to 12th, conducted and organized by Techkriti. It consists of 3 Rounds. Phase 1 is a written exam, based on which 2000 students will be selected and asked to submit (online) the abstract of the project in Phase 2 and for the final phase, top 50 selected students from each pool will be invited at IIT Kanpur to give a presentation about their abstract and get a chance to win a variety of prizes and goodies.',
     'The mission of TOSC is to strengthen and cultivate the talent of our nation at the grassroots level, i.e., the high-school students. TOSC aims at strengthening mental aptitude, logic and scrutiny and providing a platform to build fundamental experience and knowledge. It also encourages students to exercise coordination skills and to think out of the box while providing solutions to practical problems. Unlike other competitive examinations, TOSC focuses on innovation and pragmatism while dealing with real life problems instead of just academic aptitude.'
   ],
-  
+
   details: [
     ['PHASE 1', 'Written exam of 90 minutes duration, consisting of 60 questions broadly divided into 2 sections (Aptitude and General Awareness) to be held in various cities.'],
     ['PHASE 2', 'Online abstract submission – an abstract of your idea has to be submitted online in prescribed format for judging. Few ideas will be provided by us but student are free to choose one of their own. Telephonic interview will be held, in which participants will be asked questions on their abstract.'],
     ['PHASE 3', 'Participants, on the basis of their abstract will be selected for presenting their ideas in the final round to be held at IIT Kanpur. In this round, students will present their abstracts in front of the panel of judges.']
   ],
-  
+
   conduction: [
     '500 students from each pool will be selected for Phase 2 on the basis of their score in Phase 1.',
-    'Participants who have qualified Phase 1 will be asked to submit an abstract of their solution of any problem pertaining to the physical and social environment of the neighbourhood.',
+    'Participants who have qualified Phase 1 will be asked to submit an abstract of their solution of any problem pertaining to the economic, political, physical and social environment of the neighbourhood.',
     'Few example problems will be provided by us on the TOSC website, but students are encouraged to come up with their own problem statement and its solution.',
     'On the basis of abstract, 50 students from each pool will qualify for the final Phase to be held at IIT Kanpur.',
     'Students will have to prepare a presentation based on the abstract submitted in Phase 2.',
@@ -71,7 +71,7 @@ export const TOSC = {
       contact: '+91-9453994643',
       email: 'keshav@techkriti.org',
       src: '/assets/keshav.jpg',
-      tel: '0512-2594822',
+      tel: '0512-2594118',
       href: 'https://www.facebook.com/keshav.verma.900?fref=grp_mmbr_list'
     },
     {
