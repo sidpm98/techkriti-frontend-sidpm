@@ -35,7 +35,7 @@ export class TopperWriteUpComponent  {
 
   public topper: any;
 
-  constructor(public dialogRef: MdDialogRef<TopperWriteUp>,
+  constructor(public dialogRef: MdDialogRef<TopperWriteUpComponent>,
              @Inject(MD_DIALOG_DATA) public data: any) {
     this.topper = this.data.data;
   }

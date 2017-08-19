@@ -14,7 +14,7 @@ import { SuccessfullDialogComponent } from './components/successfull-dialog/succ
 import { ToscFaqComponent } from './components/tosc-faq/tosc-faq.component';
 import { ToscRegisterComponent } from './components/tosc-register/tosc-register.component';
 import { ToscTopperComponent } from './components/tosc-topper/tosc-topper.component';
-import { TopperWriteUp } from './components/tosc-topper/tosc-topper.component';
+import { TopperWriteUpComponent } from './components/tosc-topper/tosc-topper.component';
 import { ToscComponent } from './components/tosc/tosc.component';
 
 // Services
@@ -42,7 +42,7 @@ import { AppRoutingModule } from './app.routing.module';
     ToscComponent,
     ToscRegisterComponent,
     ToscTopperComponent,
-    TopperWriteUp,
+    TopperWriteUpComponent,
     ToscFaqComponent
   ],
   imports: [
@@ -64,7 +64,7 @@ import { AppRoutingModule } from './app.routing.module';
   ],
   entryComponents: [
     OtherTestComponent,
-    TopperWriteUp,
+    TopperWriteUpComponent,
     SuccessfullDialogComponent
   ],
   bootstrap: [AppComponent]
