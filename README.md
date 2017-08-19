@@ -1,6 +1,7 @@
 # Techkriti-Frontend
 
-# [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](http://spacemacs.org)
+[![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](http://spacemacs.org)
+[![CircleCI](https://circleci.com/gh/subhdeep/techkriti-18-frontend.svg?style=shield&circle-token=d204408d64d2941a5bcf830e2b25902f2c03629f)](https://circleci.com/gh/subhdeep/techkriti-18-frontend)
 
 The frontend to Techkriti'18
 
