@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { MdDialog } from '@angular/material';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 import { SuccessfullDialogComponent } from '../../components/successfull-dialog/successfull-dialog.component';
 
-import { RegistrationFormService } from '../../services/registration-form-service';
 import { PaymentService } from '../../services/payment.service';
+import { RegistrationFormService } from '../../services/registration-form-service';
 
 @Component({
   selector: 'app-status',
@@ -48,7 +48,7 @@ export class StatusComponent implements OnInit {
           content = {
             header: 'You have registered Succesfully',
             body: `<span>Note</span>: Last date for payment is <span>10 October</span>`,
-            prefillData: prefillData,
+            prefillData,
             button: {
               value: 'PAY LATER'
             }
@@ -57,7 +57,7 @@ export class StatusComponent implements OnInit {
         const dialogRef = this.dialog.open(SuccessfullDialogComponent, {
           disableClose: true,
           data: {
-            data: content,
+            data: content
           }
         });
         dialogRef.afterClosed().subscribe(() => this.router.navigate(['']));

@@ -1,3 +1,4 @@
+/* tslint:disable:max-line-length */
 export interface FAQ {
   question: string;
   answer: string;

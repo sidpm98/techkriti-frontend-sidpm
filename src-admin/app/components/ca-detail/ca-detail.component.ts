@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -9,19 +9,18 @@ import 'rxjs/add/operator/switchMap';
 })
 export class CaDetailComponent implements OnInit {
 
-  public questions : string[]=[
-    "Primary Motive",
-    "Relevent Experience",
-    "Approach",
-    "Skills",
-    "Can organize workshop ?"
-  ]
+  public questions: string[] = [
+    'Primary Motive',
+    'Relevent Experience',
+    'Approach',
+    'Skills',
+    'Can organize workshop ?'
+  ];
   @Input() ca: any;
   constructor(
   ) { }
 
   ngOnInit() {
   }
-
 
 }

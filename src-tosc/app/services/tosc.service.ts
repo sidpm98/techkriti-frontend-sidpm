@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response} from '@angular/http';
+import { Headers, Http, Response} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class ToscService {
   }
 
   forgot(email: string): Promise<string> {
-    return this.http.get('/api/tosc/forgot', { params: { email: email } })
+    return this.http.get('/api/tosc/forgot', { params: { email } })
       .toPromise()
       .then((res) => {
         return res.json();
@@ -43,6 +43,5 @@ export class ToscService {
         return Promise.reject(err);
       });
   }
-
 
 }

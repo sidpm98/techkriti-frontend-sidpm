@@ -1,25 +1,25 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MdDialog } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { ToscAuthService } from '../../services/auth/tosc-auth.service';
-import { ToscService } from '../../services/tosc.service';
-import { RegistrationFormService } from '../../services/registration-form-service';
 import { OtherTestComponent } from '../../components/other-test/other-test.component';
+import { ToscAuthService } from '../../services/auth/tosc-auth.service';
+import { RegistrationFormService } from '../../services/registration-form-service';
+import { ToscService } from '../../services/tosc.service';
 
 import { TOSC } from '../../config/tosc';
 
 @Component({
   selector: 'app-tosc',
   templateUrl: './tosc.component.html',
-  styleUrls: ['./tosc.component.css'],
+  styleUrls: ['./tosc.component.css']
 })
 
 export class ToscComponent implements OnInit {
 
   tosc = TOSC; // TOSC config.
 
-  scroll: boolean = false;
+  scroll = false;
   navStrings: string[] = [
     'ABOUT',
     'DETAILS',
@@ -42,7 +42,7 @@ export class ToscComponent implements OnInit {
                           'SPONSORS',
                           'CONTACTS'];
 
-  hamOpen: boolean = false; // Mobile Ham Open
+  hamOpen = false; // Mobile Ham Open
   cities: string[];
   selectedTab: string;
 
@@ -95,7 +95,7 @@ export class ToscComponent implements OnInit {
       data: {
         data: this.tosc.otherToppers
       },
-      height: height,
+      height,
       width: '80vw'
     });
   }

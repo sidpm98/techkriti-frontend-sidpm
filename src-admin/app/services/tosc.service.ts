@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
 import { TechHttp } from './tech-http.service';
 
 import { ParamsService } from './params.service';
@@ -7,7 +7,6 @@ import { ParamsService } from './params.service';
 @Injectable()
 
 export class ToscService {
-
 
   constructor(
     private http: TechHttp,

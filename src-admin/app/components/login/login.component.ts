@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -16,17 +16,16 @@ export class LoginComponent {
               private router: Router) {
   }
 
-
   public submit() {
     this.username = this.username.trim();
     this.password = this.password.trim();
-    this.authService.login(this.username,this.password)
+    this.authService.login(this.username, this.password)
     .then((res) =>  {
       this.router.navigate(['dashboard']);
     })
     .catch((res) => {
       this.error = res.statusText;
-    })
+    });
   }
 
 }

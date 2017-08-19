@@ -11,7 +11,7 @@ import { ResourcesService } from '../../services/resources.service';
 export class ResourcesComponent implements OnInit {
 
   public files: any[] = [];
-  public resFlag: boolean = false;
+  public resFlag = false;
 
   constructor(private http: Http,
               private resService: ResourcesService) { }

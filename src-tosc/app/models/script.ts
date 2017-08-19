@@ -4,5 +4,5 @@ interface Scripts {
 }
 
 export const ScriptStore: Scripts[] = [
-  { name: 'townscript', src: 'https://www.townscript.com/popup-widget/townscript-widget.nocache.js' },
+  { name: 'townscript', src: 'https://www.townscript.com/popup-widget/townscript-widget.nocache.js' }
 ];

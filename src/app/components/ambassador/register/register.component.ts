@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FormGroup, FormArray, FormControlName, FormControl, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormControlName, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { MD_DIALOG_DATA, MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
 import { CAService } from '../../../services/ca.service';
-import { MdSnackBar, MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 
 import { Router } from '@angular/router';
 
@@ -26,10 +26,10 @@ export class RegisterComponent implements OnInit {
   private director: FormGroup;
   private miscellaneous: FormArray;
   flags = [ true, false, false ];
-  private step: number = 0;
+  private step = 0;
   private phoneRe: RegExp = new RegExp('^[0-9]{10}$');
   private pinRe: RegExp = new RegExp('^[0-9]{6}$');
-  public submitFlag: boolean = false;
+  public submitFlag = false;
 
   private questionStrings = [ 'Primary motive to apply for this post',
                               'Relevant past experience',
@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
                             'Poster Design', 'Marketing', 'Publicity'];
 
   private skills: string[] = [];
-  private chosenValue: string = '';
+  private chosenValue = '';
   private other: FormControl = new FormControl('');
 
   private addressControls = {
@@ -92,7 +92,7 @@ export class RegisterComponent implements OnInit {
 
     this.personal = this.formBuild.group({
       'name': ['', [
-        Validators.required,
+        Validators.required
       ]],
       'contact': ['', [
         Validators.required,
@@ -161,7 +161,6 @@ export class RegisterComponent implements OnInit {
     this.chosenValue = event.value;
   }
 
-
   submit() {
     this.submitFlag = true;
     this.skills.push(this.other.value);
@@ -169,10 +168,13 @@ export class RegisterComponent implements OnInit {
     this.chooseControl = new FormControl(this.chosenValue);
     this.miscellaneous.push(this.skillControl);
     this.miscellaneous.push(this.chooseControl);
-    let form = this.register.value;
+    const form = this.register.value;
     let temp = '';
 
-    for (let field in form.personal.address) {
+    for (const field in form.personal.address) {
+      if (!form.personal.address.hasOwnProperty(field)) {
+        continue;
+      }
       temp += form.personal.address[field] + ',';
     };
 
@@ -180,7 +182,10 @@ export class RegisterComponent implements OnInit {
     form.personal.address = temp;
 
     temp = '';
-    for (let field in form.college.address) {
+    for (const field in form.college.address) {
+      if (!form.college.address.hasOwnProperty(field)) {
+        continue;
+      }
       temp += form.college.address[field] + ',';
     };
 
@@ -188,7 +193,10 @@ export class RegisterComponent implements OnInit {
     form.college.address = temp;
 
     temp = '';
-    for (let field in form.college.contact.director) {
+    for (const field in form.college.contact.director) {
+      if (!form.college.contact.director.hasOwnProperty(field)) {
+        continue;
+      }
       temp += form.college.contact.director[field] + ',';
     };
 
@@ -196,7 +204,10 @@ export class RegisterComponent implements OnInit {
     form.college.director = temp;
 
     temp = '';
-    for (let field in form.college.contact.president) {
+    for (const field in form.college.contact.president) {
+      if (!form.college.contact.president.hasOwnProperty(field)) {
+        continue;
+      }
       temp += form.college.contact.president[field] + ',';
     };
 
@@ -236,7 +247,7 @@ export class RegisterComponent implements OnInit {
 }
 
 @Component({
-  selector: 'success-dialog',
+  selector: 'app-success-dialog',
   templateUrl: './success-dialog.component.html',
   styleUrls: ['./success-dialog.component.css']
 })

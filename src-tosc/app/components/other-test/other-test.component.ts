@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MD_DIALOG_DATA, MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-other-test',
@@ -12,7 +12,7 @@ export class OtherTestComponent implements OnInit {
 
   constructor(public dialogRef: MdDialogRef<OtherTestComponent>,
               @Inject(MD_DIALOG_DATA) public data: any) {
-    this.students = this.data.data
+    this.students = this.data.data;
   }
 
   ngOnInit() {

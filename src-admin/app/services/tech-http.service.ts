@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response, RequestOptionsArgs, RequestOptions, RequestMethod, Request } from '@angular/http';
+import { Headers, Http, Request, RequestMethod, RequestOptions, RequestOptionsArgs, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { AuthService } from './auth.service';
@@ -7,7 +7,6 @@ import { AuthService } from './auth.service';
 @Injectable()
 
 export class TechHttp {
-
 
   constructor(private http: Http,
               private authService: AuthService) {}

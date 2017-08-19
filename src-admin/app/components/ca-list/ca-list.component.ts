@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ca-list',
@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CaListComponent implements OnInit {
 
   @Input() ca: any;
-  public detailFlag: boolean = false;
+  public detailFlag = false;
 
   constructor() { }
 

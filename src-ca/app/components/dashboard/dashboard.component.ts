@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TechkritiFeedService } from '../../services/techkriti-feed.service';
 import { LoginService } from '../../services/login.service';
+import { TechkritiFeedService } from '../../services/techkriti-feed.service';
 
 @Component({
   selector: 'app-dashboard',

@@ -2,19 +2,16 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-
-
 @Injectable()
 export class RegistrationFormService {
 
-  private baseUrl: string = 'api/techkriti/tosc/school/?city=';
+  private baseUrl = 'api/techkriti/tosc/school/?city=';
 
   public School: any;
   constructor(private http: Http) {}
 
-
   public getSchool(city: string) {
-    let url = `${this.baseUrl}${city}`;
+    const url = `${this.baseUrl}${city}`;
     return this.http.get(url)
     .toPromise()
     .then((res) => {

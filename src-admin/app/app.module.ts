@@ -1,19 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app.routing.module';
 import { MaterialModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { NgUploaderModule } from 'ngx-uploader';
+import { AppRoutingModule } from './app.routing.module';
 
 // Components
 import { AppComponent } from './app.component';
 import { BackendComponent } from './components/backend/backend.component';
-import { CAComponent } from './components/ca/ca.component';
-import { CaListComponent } from './components/ca-list/ca-list.component';
 import { CaDetailComponent } from './components/ca-detail/ca-detail.component';
+import { CaListComponent } from './components/ca-list/ca-list.component';
+import { CAComponent } from './components/ca/ca.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { ToscComponent } from './components/tosc/tosc.component';

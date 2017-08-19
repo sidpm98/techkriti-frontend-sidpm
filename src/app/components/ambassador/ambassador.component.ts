@@ -1,23 +1,25 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { content } from './assets/content';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-ambassador',
   templateUrl: './ambassador.component.html',
-  styleUrls: ['./ambassador.component.css'],
+  styleUrls: ['./ambassador.component.css']
 })
 export class AmbassadorComponent implements OnInit {
   boo = true;
   hamOpen = true; // hamberger-icon boolean
   tabVisibility = false;
 
-  tabLabels: string[] = ['About Us',
-                                 'Why CA?',
-                                 'Responsibilities',
-                                 'Incentives',
-                                 'Application Process',
-                                 'Contact Us'];
+  tabLabels: string[] = [
+    'About Us',
+    'Why CA?',
+    'Responsibilities',
+    'Incentives',
+    'Application Process',
+    'Contact Us'
+  ];
 
   tabs: {} = {
     'About Us' : {'state': true},
@@ -28,7 +30,7 @@ export class AmbassadorComponent implements OnInit {
     'Contact Us': {'state': false}
   };
 
-  currTab: string = 'About Us';
+  currTab = 'About Us';
 
   constructor() { }
 

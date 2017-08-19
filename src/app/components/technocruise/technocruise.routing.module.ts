@@ -1,14 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {TechnocruiseComponent} from './technocruise.component';
-import {TechEventsComponent} from './tech-events/tech-events.component';
+import {TechAboutComponent} from './tech-about/tech-about.component';
 import {TechCitiesComponent} from './tech-cities/tech-cities.component';
 import {TechContactComponent} from './tech-contact/tech-contact.component';
+import {TechEventsComponent} from './tech-events/tech-events.component';
 import {TechRegisterComponent} from './tech-register/tech-register.component';
 import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
-import {TechAboutComponent} from './tech-about/tech-about.component';
-
+import {TechnocruiseComponent} from './technocruise.component';
 
 const TechRoutes: Routes = [
   {
@@ -44,7 +43,7 @@ const TechRoutes: Routes = [
         component: TechWorkshopComponent
       }
     ]
-  },
+  }
 ];
 
 @NgModule({
@@ -53,7 +52,7 @@ const TechRoutes: Routes = [
   ],
   exports: [
     RouterModule
-  ],
+  ]
 })
 export class TechnocruiseRoutingModule {
 

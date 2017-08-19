@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { TOSCUser } from '../../models/users';

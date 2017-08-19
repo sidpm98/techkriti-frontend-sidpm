@@ -3,11 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ca-about-us',
   templateUrl: './ca-about-us.component.html',
-  styleUrls: ['./ca-about-us.component.css'],
+  styleUrls: ['./ca-about-us.component.css']
 
 })
 export class CaAboutUsComponent implements OnInit {
-
 
   abData = {
     header: 'About Us',

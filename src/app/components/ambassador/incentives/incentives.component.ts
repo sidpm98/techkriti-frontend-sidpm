@@ -1,3 +1,4 @@
+/* tslint:disable:max-line-length */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,9 +17,8 @@ export class IncentivesComponent implements OnInit {
                                     'A webinar will be organised only for campus ambassadors on social media analytics to get a better understanding of event publicity',
                                  ' Get to become a part of Campus Ambassador diaries through Techkriti Facebook Page'];
 
-
   constructor() { }
-  
+
   ngOnInit() {
   }
 

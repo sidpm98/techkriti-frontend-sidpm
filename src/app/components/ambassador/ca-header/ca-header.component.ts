@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ca-header',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CaHeaderComponent implements OnInit {
 
-  @Input() header: string = '';
+  @Input() header = '';
 
   constructor() { }
 

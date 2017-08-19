@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
-import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MD_DIALOG_DATA, MdDialog, MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-tosc-topper',
@@ -13,7 +13,7 @@ export class ToscTopperComponent implements OnInit {
   constructor(private dialog: MdDialog) { }
 
   openDialog() {
-    this.dialog.open(TopperWriteUp, {
+    this.dialog.open(TopperWriteUpComponent, {
       width: '75vmax',
       data: {
         data: this.topper
@@ -31,8 +31,7 @@ export class ToscTopperComponent implements OnInit {
   styleUrls: ['./topper-writeup.css']
 })
 
-
-export class TopperWriteUp  {
+export class TopperWriteUpComponent  {
 
   public topper: any;
 

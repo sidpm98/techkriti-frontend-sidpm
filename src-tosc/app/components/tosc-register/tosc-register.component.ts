@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { MdDialog } from '@angular/material';
+import { Router } from '@angular/router';
 
-import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/startWith';
 
-import { SuccessfullDialogComponent } from '../successfull-dialog/successfull-dialog.component'
+import { SuccessfullDialogComponent } from '../successfull-dialog/successfull-dialog.component';
 
 import { ToscAuthService } from '../../services/auth/tosc-auth.service';
 import { RegistrationFormService } from '../../services/registration-form-service';
@@ -21,7 +21,7 @@ import { TOSCUser } from '../../models/users';
 export class ToscRegisterComponent implements OnInit {
 
   user = new TOSCUser();
-  selected: string = '';
+  selected = '';
   standards: any[] = [
     {group: 'A', std: '09'},
     {group: 'A', std: '10'},
@@ -35,9 +35,8 @@ export class ToscRegisterComponent implements OnInit {
   autoSchools: string[] = [];
   schoolObject: any;
   public code: string;
-  public gotCities: boolean = false;
-  public gotSchools: boolean = true;
-
+  public gotCities = false;
+  public gotSchools = true;
 
   formErrors = {
     name: '',
@@ -45,12 +44,12 @@ export class ToscRegisterComponent implements OnInit {
     phone: '',
     class: '',
     school: '',
-    city: '',
+    city: ''
   };
 
   validationMessages = {
     name: {
-      required: 'Name is required',
+      required: 'Name is required'
     },
     email: {
       required: 'Email is required',
@@ -99,7 +98,10 @@ export class ToscRegisterComponent implements OnInit {
   public getCities() {
     this.registrationFormService.getCity()
     .then((res) =>  {
-      for (let city in res) {
+      for (const city in res) {
+        if (!res.hasOwnProperty(city)) {
+          continue;
+        }
         this.cities.push(res[city]._id);
       }
       this.cities.sort();
@@ -119,7 +121,10 @@ export class ToscRegisterComponent implements OnInit {
     this.registrationFormService.getSchool(name)
       .then((res) => {
         this.schoolObject = res;
-        for (let school in res) {
+        for (const school in res) {
+          if (!res.hasOwnProperty(school)) {
+            continue;
+          }
           this.autoSchools.push(res[school].school);
         }
         this.gotSchools = true;
@@ -151,7 +156,7 @@ export class ToscRegisterComponent implements OnInit {
       ]],
       'school': ['', [
         Validators.required
-      ]],
+      ]]
     });
 
     this.registerForm.valueChanges
@@ -159,7 +164,6 @@ export class ToscRegisterComponent implements OnInit {
 
     this.onValueChanged();
   }
-
 
   onValueChanged(data?: any) {
     if (!this.registerForm) { return; }
@@ -187,7 +191,7 @@ export class ToscRegisterComponent implements OnInit {
   }
 
   checkKey(e: KeyboardEvent, city: string) {
-    let code = (e.keyCode ? e.keyCode : e.which);
+    const code = (e.keyCode ? e.keyCode : e.which);
     if (code === 13) { // Enter keycode
       this.options(city);
     } else {
@@ -196,7 +200,7 @@ export class ToscRegisterComponent implements OnInit {
 }
 
   schoolCode(e: string) {
-    for (let school in this.schoolObject) {
+    for (const school in this.schoolObject) {
       if (this.schoolObject[school].school === e) {
         this.code = this.schoolObject[school].code;
       }
@@ -214,7 +218,7 @@ export class ToscRegisterComponent implements OnInit {
           body: `You will be receiving a mail from us at ${prefillData.emailid}.<br>
 If you want to make your Payment later, please follow the link provided in the mail.<br>
             <span>Note</span>: Last date for payment is <span>10 October</span>`,
-          prefillData: prefillData,
+          prefillData,
           button: {
             value: 'PAY LATER'
           }
@@ -222,7 +226,7 @@ If you want to make your Payment later, please follow the link provided in the m
         const dialogRef = this.dialog.open(SuccessfullDialogComponent, {
           disableClose: true,
           data: {
-            data: content,
+            data: content
           }
         });
         dialogRef.afterClosed().subscribe(() => this.router.navigate(['']));
@@ -231,7 +235,6 @@ If you want to make your Payment later, please follow the link provided in the m
         console.error(err);
       });
   }
-
 
   options(e) {
     this.autoSchools = [];

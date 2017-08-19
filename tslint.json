@@ -35,16 +35,22 @@
     ],
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [
-      true,
-      "log",
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    // TODO: Current codebase uses a lot of console logs.
+    // Should they all be removed?
+    // Or should they be retained for testing purposes?
+    // "no-console": [
+    //   true,
+    //   "log",
+    //   "debug",
+    //   "info",
+    //   "time",
+    //   "timeEnd",
+    //   "trace"
+    // ],
+    "no-conditional-assignment": true,
     "no-construct": true,
+    "no-consecutive-blank-lines": true,
+    "no-trailing-whitespace": true,
     "no-debugger": true,
     "no-empty": false,
     "no-empty-interface": true,
@@ -62,6 +68,7 @@
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
+    "object-literal-shorthand": true,
     "one-line": [
       true,
       "check-open-brace",
@@ -69,6 +76,7 @@
       "check-else",
       "check-whitespace"
     ],
+    "ordered-imports": true,
     "prefer-const": true,
     "quotemark": [
       true,
@@ -101,7 +109,9 @@
       "check-decl",
       "check-operator",
       "check-separator",
-      "check-type"
+      "check-type",
+      "check-preblock",
+      "check-module"
     ],
     "directive-selector": [
       true,
@@ -126,6 +136,8 @@
     "directive-class-suffix": true,
     "no-access-missing-member": true,
     "templates-use-public": true,
-    "invoke-injectable": true
+    "invoke-injectable": true,
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}]
   }
 }

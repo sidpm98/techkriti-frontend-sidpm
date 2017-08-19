@@ -1,6 +1,5 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
-import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-uploader';
-
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { humanizeBytes, UploadFile, UploadInput, UploadOutput } from 'ngx-uploader';
 
 const URL = 'http://localhost:60000/api/backend/upload';
 

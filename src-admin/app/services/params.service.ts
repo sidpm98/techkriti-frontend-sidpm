@@ -4,9 +4,12 @@ import { URLSearchParams } from '@angular/http';
 @Injectable()
 
 export class ParamsService {
-  generateParams(params : {}) : URLSearchParams{
-    let urlParams = new URLSearchParams;
-    for(let key in params){
+  generateParams(params: {}): URLSearchParams {
+    const urlParams = new URLSearchParams;
+    for (const key in params) {
+      if (!params.hasOwnProperty(key)) {
+        continue;
+      }
       urlParams.set(key, params[key]);
     }
     return urlParams;

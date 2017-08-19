@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FAQS, FAQ } from '../../models/faq';
+import { FAQ, FAQS } from '../../models/faq';
 
 @Component({
   selector: 'app-tosc-faq',

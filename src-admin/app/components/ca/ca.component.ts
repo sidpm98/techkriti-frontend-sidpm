@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { CAService } from '../../services/ca.service';
 
 import { AuthService } from '../../services/auth.service';

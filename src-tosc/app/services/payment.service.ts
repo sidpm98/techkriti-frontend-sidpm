@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { ScriptService } from './script.service';
 import 'rxjs/add/operator/toPromise';
+import { ScriptService } from './script.service';
 
 declare var popupWithAutoFill: any;
 

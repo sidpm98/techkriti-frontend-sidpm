@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
-import { TechHttp } from './tech-http.service';
+import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { TechHttp } from './tech-http.service';
 
 import { ParamsService } from './params.service';
 
 @Injectable()
 
 export class CAService {
-
 
   constructor(
     private http: TechHttp,

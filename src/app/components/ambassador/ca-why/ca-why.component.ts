@@ -13,7 +13,7 @@ export class CaWhyComponent implements OnInit {
     'Golden opportunity to get involved in national level event promotion and brand management',
     'Opportunity to be a part of a pool of thousands of enthusiastic and innovative students from all across the country',
     'Chance to keep abreast of recent trends in Entrepreneurship and cutting-edge technologies from IIT Kanpur'
-  ]
+  ];
 
   constructor() { }
 
