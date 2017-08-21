@@ -1,0 +1,7 @@
+<div class="dialog">
+<md-tab-group>
+  <md-tab *ngFor="let tab of Tech.getWorkshopTabs() | async" [label]="tab.name">
+    <div class="contents">{{data[tab.name]}}</div>
+  </md-tab>
+</md-tab-group>
+</div>

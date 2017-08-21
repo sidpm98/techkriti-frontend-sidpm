@@ -1,0 +1,9 @@
+.dialog{
+  height: 50vh;
+  width: 60vw;
+  display: block;
+}
+
+.contents{
+  font-size: 3vh;
+}

@@ -1,0 +1,52 @@
+.initial {
+  width: 100vw;
+  height: 100%;
+  padding: 0 10vw 0 10vw;
+}
+
+.tiles {
+  display: block;
+  width: 350px;
+  background-size: cover;
+  height: 350px;
+  margin: 10px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pic {
+  display: block;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+  position: absolute;
+}
+
+.pic img {
+  height: 350px;
+  transition: all 0.35s ease-out;
+}
+
+.tiles .tile-content {
+  color: orange;
+  font-size: 25px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.001);
+  opacity: 0;
+  transition: all 0.35s ease-out;
+  background-color: rgba(50, 50, 50, 0.9);
+  overflow: hidden;
+  text-align: center;
+}
+
+.tiles:hover img {
+  transform: scale(1.5);
+}
+
+.tiles:hover .tile-content {
+  opacity: 1;
+  transform: scale(1);
+}

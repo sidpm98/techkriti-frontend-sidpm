@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MdDialog} from '@angular/material';
+import {TechnocruiseService} from '../../../services/technocruise.service';
+import {WorkshopDialogComponent} from './workshop-dialog/workshop-dialog.component';
 
 @Component({
   selector: 'app-tech-workshop',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechWorkshopComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MdDialog, public Tech: TechnocruiseService) {
+  }
+
+  openDialog(city_name) {
+    const dialogRef = this.dialog.open(WorkshopDialogComponent, {data: city_name});
+    dialogRef.afterClosed();
+  }
 
   ngOnInit() {
   }
-
 }

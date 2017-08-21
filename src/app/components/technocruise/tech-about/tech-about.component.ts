@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TechnocruiseService} from '../../../services/technocruise.service';
 
 @Component({
   selector: 'app-tech-about',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tech-about.component.css']
 })
 export class TechAboutComponent implements OnInit {
+  data: string;
 
-  constructor() { }
+  constructor(public Tech: TechnocruiseService) {
+    this.Tech.getAbout()
+      .subscribe(res => this.data = res);
+  }
 
   ngOnInit() {
   }

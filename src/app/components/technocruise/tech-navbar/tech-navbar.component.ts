@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tech-navbar',
@@ -6,20 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tech-navbar.component.css']
 })
 export class TechNavbarComponent implements OnInit {
-
-  navbar: [
+  menuClicked = true;
+  activeTab: string;
+  navbar = [
     {'name': 'About', 'link': 'about'},
-    {'name': 'Talks', 'link': 'talks'},
-    {'name': 'Events', 'link': 'events'},
     {'name': 'Workshop', 'link': 'workshop'},
     {'name': 'Cities', 'link': 'cities'},
-    {'name': 'Contact', 'link': 'contact'},
-    {'name': 'Sponsers', 'link': 'sponsers'},
+    {'name': 'Talks', 'link': 'talks'},
+    {'name': 'Events', 'link': 'events'},
+    // {'name': 'Sponsors', 'link': 'sponsors'},
     {'name': 'Register', 'link': 'register'},
+    {'name': 'Contact', 'link': 'contact'},
     {'name': 'Login', 'link': 'login'}
-    ];
+  ];
 
-  constructor() { }
+  constructor() {
+  }
+
+  toogleMenu() {
+    this.menuClicked = !this.menuClicked;
+  }
 
   ngOnInit() {
   }

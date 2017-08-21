@@ -1,0 +1,34 @@
+.contact-card {
+  width: 250px;
+  height: 300px;
+  transition: all 0.2s ease-in-out;
+  -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(70%);
+}
+
+.contact-card:hover {
+  transform-origin: bottom;
+  transform: scale(1.05);
+  -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0);
+}
+
+.heading {
+  font-size: 25px;
+  padding:2px;
+  margin: 10px;
+  overflow: visible;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.contact-img{
+  height: 60%;
+  overflow: hidden;
+}
+img{
+  width: 100% ;
+}
+
+.diff{
+  height: 75% ;
+  overflow: hidden;
+}

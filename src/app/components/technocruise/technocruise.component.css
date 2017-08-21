@@ -1,0 +1,8 @@
+.background{
+  position: fixed;
+  height: 100vh;
+  width:100vw;
+  background: url('/assets/Technocruise/back.jpg') no-repeat center;
+  background-size: cover;
+  z-index: -1000;
+}

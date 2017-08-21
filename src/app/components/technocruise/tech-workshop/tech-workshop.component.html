@@ -1,3 +1,13 @@
-<p>
-  tech-workshop works!
-</p>
+<div class="initial">
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutWrap="wrap">
+    <div *ngFor="let work of Tech.getWorkshopName()| async" class="tiles" fxLayoutAlign="center center"
+         (click)="openDialog(work.name)">
+      <div class="pic">
+        <img [src]="work.pic">
+      </div>
+      <div class="tile-content" fxLayoutAlign="center center">
+        <span>{{work.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>

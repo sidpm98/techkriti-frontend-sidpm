@@ -5,6 +5,7 @@ import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { AmbassadorComponent } from './components/ambassador/ambassador.component';
 import { ApplicationProcessComponent } from './components/ambassador/application-process/application-process.component';
@@ -25,10 +26,12 @@ import { TechAboutComponent } from './components/technocruise/tech-about/tech-ab
 import { TechCitiesComponent } from './components/technocruise/tech-cities/tech-cities.component';
 import { TechContactComponent } from './components/technocruise/tech-contact/tech-contact.component';
 import { TechEventsComponent } from './components/technocruise/tech-events/tech-events.component';
+import { TechLandingComponent } from './components/technocruise/tech-landing/landing.component';
 import { TechNavbarComponent } from './components/technocruise/tech-navbar/tech-navbar.component';
 import { TechRegisterComponent } from './components/technocruise/tech-register/tech-register.component';
 import { TechTalksComponent } from './components/technocruise/tech-talks/tech-talks.component';
 import { TechWorkshopComponent } from './components/technocruise/tech-workshop/tech-workshop.component';
+import { WorkshopDialogComponent } from './components/technocruise/tech-workshop/workshop-dialog/workshop-dialog.component';
 import { TechnocruiseComponent } from './components/technocruise/technocruise.component';
 import { TechnocruiseRoutingModule } from './components/technocruise/technocruise.routing.module';
 import { TechnocruiseService } from './services/technocruise.service';
@@ -46,9 +49,10 @@ import { TechnocruiseService } from './services/technocruise.service';
     ResponsiblityComponent,
     CaWhyComponent,
     CaContactComponent,
-    LandingComponent,
     SuccessDialogComponent,
+    LandingComponent,
     TechnocruiseComponent,
+    TechLandingComponent,
     TechNavbarComponent,
     TechAboutComponent,
     TechWorkshopComponent,
@@ -56,7 +60,8 @@ import { TechnocruiseService } from './services/technocruise.service';
     TechRegisterComponent,
     TechEventsComponent,
     TechContactComponent,
-    TechCitiesComponent
+    TechCitiesComponent,
+    WorkshopDialogComponent
   ],
   imports: [
     AppRoutingModule,
@@ -66,13 +71,17 @@ import { TechnocruiseService } from './services/technocruise.service';
     FormsModule,
     HttpModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [
     CAService,
     TechnocruiseService
   ],
-  entryComponents: [SuccessDialogComponent],
+  entryComponents: [
+    SuccessDialogComponent,
+    WorkshopDialogComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
