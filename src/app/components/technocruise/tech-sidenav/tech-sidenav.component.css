@@ -1,0 +1,40 @@
+@media (max-width: 412px) {
+  .side-body {
+    width: 50vw !important;
+  }
+
+  .pic {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-body {
+  display:flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100vh;
+  background-color: grey;
+}
+
+.pro-pic {
+  flex: 2 0 0;
+  margin-top: 10vmin;
+}
+
+.pic {
+  border-radius: 50%;
+}
+
+.user-data {
+  flex-direction: column;
+  flex: 6 0 0;
+}
+
+

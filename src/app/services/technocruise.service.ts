@@ -5,6 +5,7 @@ import {WorkshopInterface} from '../models/workshop.interface';
 
 @Injectable()
 export class TechnocruiseService {
+
   about: Observable<string>;
   cities: Observable<Array<any>>;
   tabs: Observable<Array<any>>;

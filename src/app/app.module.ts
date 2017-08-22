@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+import {MaterialModule, MdDatepickerModule, MdNativeDateModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
+
+// Ambassador Component
 import { AmbassadorComponent } from './components/ambassador/ambassador.component';
 import { ApplicationProcessComponent } from './components/ambassador/application-process/application-process.component';
 import { CaAboutUsComponent } from './components/ambassador/ca-about-us/ca-about-us.component';
@@ -18,10 +20,7 @@ import { RegisterComponent, SuccessDialogComponent } from './components/ambassad
 import { ResponsiblityComponent } from './components/ambassador/responsiblity/responsiblity.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-import { CAService } from './services/ca.service';
 
-import { AppRoutingModule } from './app.routing.module';
-import { LandingComponent } from './components/landing/landing.component';
 import { TechAboutComponent } from './components/technocruise/tech-about/tech-about.component';
 import { TechCitiesComponent } from './components/technocruise/tech-cities/tech-cities.component';
 import { TechContactComponent } from './components/technocruise/tech-contact/tech-contact.component';
@@ -32,9 +31,23 @@ import { TechRegisterComponent } from './components/technocruise/tech-register/t
 import { TechTalksComponent } from './components/technocruise/tech-talks/tech-talks.component';
 import { TechWorkshopComponent } from './components/technocruise/tech-workshop/tech-workshop.component';
 import { WorkshopDialogComponent } from './components/technocruise/tech-workshop/workshop-dialog/workshop-dialog.component';
+//Technocruise Component
 import { TechnocruiseComponent } from './components/technocruise/technocruise.component';
-import { TechnocruiseRoutingModule } from './components/technocruise/technocruise.routing.module';
+
+//Services
+import { FacebookService } from 'ngx-facebook';
+import { AuthService } from './services/auth.service';
+import { CAService } from './services/ca.service';
+import { ScriptService } from './services/script.service';
 import { TechnocruiseService } from './services/technocruise.service';
+
+import { AppRoutingModule } from './app.routing.module';
+import { LandingComponent } from './components/landing/landing.component';
+import { TechDashboardComponent } from './components/technocruise/tech-dashboard/tech-dashboard.component';
+import { TechSidenavComponent } from './components/technocruise/tech-sidenav/tech-sidenav.component';
+import {LoggedInGuardService, WeakLoggedInGaurd} from './services/guards.service';
+
+// todo Make module for Technocruise Component and improve the routing..
 
 @NgModule({
   declarations: [
@@ -61,22 +74,31 @@ import { TechnocruiseService } from './services/technocruise.service';
     TechEventsComponent,
     TechContactComponent,
     TechCitiesComponent,
-    WorkshopDialogComponent
+    WorkshopDialogComponent,
+    TechDashboardComponent,
+    TechSidenavComponent
   ],
   imports: [
     AppRoutingModule,
-    TechnocruiseRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    FlexLayoutModule,
     HttpModule,
     MaterialModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MdDatepickerModule,
+    MdNativeDateModule
   ],
   providers: [
+    AuthService,
     CAService,
-    TechnocruiseService
+    FacebookService,
+    ScriptService,
+    TechnocruiseService,
+    LoggedInGuardService,
+    WeakLoggedInGaurd
   ],
   entryComponents: [
     SuccessDialogComponent,

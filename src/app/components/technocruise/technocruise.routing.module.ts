@@ -6,7 +6,6 @@ import {TechCitiesComponent} from './tech-cities/tech-cities.component';
 import {TechContactComponent} from './tech-contact/tech-contact.component';
 import {TechEventsComponent} from './tech-events/tech-events.component';
 import {TechLandingComponent} from './tech-landing/landing.component';
-import {TechRegisterComponent} from './tech-register/tech-register.component';
 import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
 import {TechnocruiseComponent} from './technocruise.component';
@@ -19,6 +18,7 @@ const TechRoutes: Routes = [
       {
         path: 'about',
         component: TechAboutComponent
+
       },
       {
         path: 'events',
@@ -33,12 +33,8 @@ const TechRoutes: Routes = [
         component: TechContactComponent
       },
       {
-        path: 'register',
-        component: TechRegisterComponent
-      },
-      {
         path: 'talks',
-        component: TechTalksComponent
+        component: TechTalksComponent,
       },
       {
         path: 'workshop',

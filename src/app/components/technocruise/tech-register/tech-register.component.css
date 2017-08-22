@@ -1,0 +1,39 @@
+@media (max-width: 412px) {
+  md-input-container {
+    padding: 5vmin 0;
+  }
+
+  .reg-form {
+    width: 80vw;
+  }
+}
+
+span {
+  font-weight: 700;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+md-input-container, md-select {
+  margin-bottom: 1.5vmin;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reg-form {
+  width: 50vmax;
+}
+
+.standard {
+  margin-top: 13px;
+  margin-bottom: 27px;
+}
+
+

@@ -1,3 +1,62 @@
-<p>
-  tech-register works!
-</p>
+<div class="reg-form" *ngIf="user">
+  <h2>Registration</h2>
+  <form [formGroup]="registerForm">
+    <div class="content">
+      <md-input-container>
+        <input mdInput placeholder="Name"
+               required formControlName="name">
+        <md-error> {{ formErrors.name }} </md-error>
+      </md-input-container>
+
+      <md-input-container>
+        <input type="email" mdInput placeholder="Email"
+               required formControlName="email">
+        <md-error> {{ formErrors.email }} </md-error>
+        <md-hint>Enter a valid email-id. You will be receiving an <span>UNIQUE ID</span> for further processes</md-hint>
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput [mdDatepicker]="picker" placeholder="Date of birth"
+               formControlName="dob">
+        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+      </md-input-container>
+      <md-datepicker touchUi="true" #picker></md-datepicker>
+
+      <md-input-container>
+        <input mdInput placeholder="Gender"
+               required formControlName="gender">
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="City"
+               required formControlName="city">
+        <md-error> {{ formErrors.city }} </md-error>
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="Phone No"
+               required formControlName="phone">
+        <md-error> {{ formErrors.phone }} </md-error>
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="WhatsApp No"
+               required formControlName="whatsapp">
+        <md-error> {{ formErrors.whatsapp }} </md-error>
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="College"
+               required formControlName="college">
+        <md-error> {{ formErrors.college }} </md-error>
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="Campus Ambassador Referral Code"
+               required formControlName="ref_code">
+      </md-input-container>
+
+      <button md-raised-button (click)="register()">Register</button>
+    </div>
+  </form>
+</div>

@@ -1,6 +1,8 @@
 {
     "/api": {
-        "target": "https://techkriti.org",
-        "secure": false
+        "target": "https://test.techkriti.org",
+        "secure": false,
+      "logLevel": "info",
+      "changeOrigin": true
     }
 }

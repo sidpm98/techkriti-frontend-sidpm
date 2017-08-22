@@ -1,0 +1,10 @@
+.dash-container {
+  display: flex
+}
+
+.dash-body {
+  flex: 1 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
