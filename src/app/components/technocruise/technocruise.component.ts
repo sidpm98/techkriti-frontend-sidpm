@@ -14,16 +14,4 @@ export class TechnocruiseComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  login() {
-    this.authService.fbLogin()
-      .then(() => {
-      console.log('Logged In Successfully');
-      this.router.navigate(['technocruise/dashboard']);
-      });
-  }
-
-  update() {
-  }
-
 }

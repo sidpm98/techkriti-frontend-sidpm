@@ -30,21 +30,6 @@ export class TechCitiesComponent implements OnInit {
   }
 
   makePayment(eventcode: string) {
-    this.authService.checkLogin().then((res) => {
-      if (res === 1) {
-        this.router.navigate(['technocruise/dashboard']);
-      } else if (res === 2) {
-        const payPrefill = {
-          cq1: this.authService.user.facebook.id,
-          emailid: this.authService.user.email,
-          name: this.authService.user.name,
-        };
-        payPrefill['eventcode'] = eventcode;
-        this.paymentService.payment(payPrefill);
-      } else {
-        console.log('No Internet Connection');
-      }
-    });
 
   }
 

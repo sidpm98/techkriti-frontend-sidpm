@@ -75,82 +75,82 @@ export const cruise = {
 
   cities: [
     {
-      name: 'Dehradun',
+      name: 'dehradun',
       date: '2-3 September',
       eventcode: 'technocruise17-kanpur-014011',
       pic: '',
       row: 1
     },
     {
-      name: 'Raipur',
-      date: 'Coming Soon',
+      name: 'raipur',
+      date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 1
     },
     {
-      name: 'Hyderabad',
-      date: 'Coming Soon',
+      name: 'hyderabad',
+      date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 1
     },
     {
-      name: 'Allahabad',
-      date: 'Coming Soon',
+      name: 'allahabad',
+      date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 1
     },
     {
-      name: 'Indore',
-      date: 'Coming Soon',
+      name: 'indore',
+      date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 2
     },
     {
-      name: 'Jabalpur',
-      date: 'Coming Soon',
+      name: 'jabalpur',
+      date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 2
     },
     {
-      name: 'Jodhpur',
-      date: 'Coming Soon',
+      name: 'chandigarh',
+      date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 2
     },
     {
-      name: 'Mathura',
-      date: 'Coming Soon',
+      name: 'agra',
+      date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 3
     },
     {
-      name: 'Bareilly',
-      date: 'Coming Soon',
-      eventcode: 'technocruise-raipur-213040',
-      pic: '',
-      row: 3
-    },
-    {
-      name: 'Patna',
-      date: 'Coming Soon',
-      eventcode: 'technocruise-raipur-213040',
-      pic: '',
-      row: 3
-    },
-    {
-      name: 'Gorakhpur',
-      date: 'Coming Soon',
+      name: 'chennai',
+      date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 3
     }
+    // {
+    //   name: 'patna',
+    //   date: 'Coming Soon',
+    //   eventcode: 'technocruise-raipur-213040',
+    //   pic: '',
+    //   row: 3
+    // },
+    // {
+    //   name: 'gorakhpur',
+    //   date: 'Coming Soon',
+    //   eventcode: 'technocruise-raipur-213040',
+    //   pic: '',
+    //   row: 3
+    // }
   ],
 
   tabs: [
@@ -221,6 +221,38 @@ export const cruise = {
         'cities': ''
       }
     ]
-
+  ]),
+  cityWorkshop: new Map([
+    ['dehradun',
+      [
+        {
+          'id': 'internet-of-things',
+          'home': `The number of Internet-connected devices (12.5 billion) surpassed the number of human beings (7 billion) on
+           the planet in 2011, and by 2020, Internet-connected devices are expected to number between 26 billion and 50 billion
+            globally. Internet of Things will drive new consumer and business behavior that will demand increasingly intelligent
+             industry solutions, which, in turn, will drive trillions of dollars in opportunity for IT industry and even more for
+              the companies that take advantage of the IoT.This Workshop helps to get you ready for the future.
+           **Please bring your Laptops for the Workshop**
+           ####"The Internet of Things isn't a concept. It's a network; true technology based Network of all networks."-Edewede Oriwoh`,
+          'name': 'Internet Of Things',
+          'content': '',
+          'benefits': 'Certificate of Participation for each participant from Techkriti, IIT Kanpur.',
+          'cities': ''
+        },
+        {
+          'id': 'ethical-hacking',
+          'home': `This workshop is specifically designed to provide the right knowledge to the
+        'aspiring Cyber Forensics & Ethical Hacking enthusiasts. This workshop will
+        'explore the various means that an intruder has available to gain access to computer
+        'resources. It will investigate weaknesses of cyber security systems by discussing the
+        'theoretical background behind it, and whenever possible, actually performing the attacks.
+        `,
+          'name': 'Ethical Hacking',
+          'content': '',
+          'benefits': 'Certificate of Participation for each participant from Techkriti, IIT Kanpur.',
+          'cities': ''
+        }
+      ]
+    ]
   ])
 };

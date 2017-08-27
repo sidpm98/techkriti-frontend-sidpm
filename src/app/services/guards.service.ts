@@ -56,7 +56,7 @@ export class LoggedInGuardService implements CanActivate {
         if (res === 2) {
           return true;
         } else if (res === 1) {
-          this.router.navigate(['technocruise/talks']);
+          this.router.navigate(['technocruise/dashboard']);
           return false;
         }
         return false;
@@ -75,9 +75,14 @@ export class WeakLoggedInGaurd implements CanActivate {
     return this.authService.checkLogin()
       .then((res) => {
       if (res === 0) {
+        console.log('Weak Login 0');
+        return this.authService.fbLogin().then(() => {
+          return true;
+        }).catch((err) => {
+          return false;
+        });
         // todo a dialog box which tells the user to login first
         // this.router.navigate(['technocruise/talks']);
-        return false;
       } else {
         return true;
       }

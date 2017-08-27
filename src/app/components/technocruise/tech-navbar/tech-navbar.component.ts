@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-tech-navbar',
@@ -7,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TechNavbarComponent implements OnInit {
   menuClicked = true;
+  username: string = 'Login';
   activeTab: string;
   navbar = [
     {'name': 'About', 'link': 'about'},
@@ -17,10 +19,15 @@ export class TechNavbarComponent implements OnInit {
     // {'name': 'Sponsors', 'link': 'sponsors'},
     {'name': 'Dashboard', 'link': 'dashboard'},
     {'name': 'Contact', 'link': 'contact'},
-    // {'name': 'Login', 'link': 'login'}
+    {'name': this.username, 'link': 'dashboard'}
   ];
 
-  constructor() {
+  constructor(private authService: AuthService) {
+    if (this.authService.user !== undefined) {
+      this.username = this.authService.user.name;
+    } else {
+      this.username = 'Login';
+    }
   }
 
   toogleMenu() {

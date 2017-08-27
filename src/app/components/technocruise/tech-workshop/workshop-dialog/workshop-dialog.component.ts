@@ -18,7 +18,7 @@ export class WorkshopDialogComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.city_name);
-    this.Tech.getCityWorkshops(this.city_name)
+    this.Tech.getWorkshop(this.city_name)
       .subscribe(workshop => this.data = workshop);
   }
 
