@@ -1,0 +1,40 @@
+.links{
+  display: block;
+  width: 200px;
+  height: 100px;
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+}
+
+.links span{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  transition: transform 0.5s;
+}
+
+.links span:hover{
+  transform: rotateZ(360deg);
+  cursor: pointer;
+}
+
+span:nth-child(1){
+  background-color: #3b5998;
+}
+
+span:nth-child(2){
+  background-color: #1da1f2;
+}
+
+span:nth-child(3){
+  background-color: #007bb6;
+}
+
+span:nth-child(4){
+  background-color: #c94398;
+}

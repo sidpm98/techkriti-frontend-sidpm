@@ -3,6 +3,7 @@
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutWrap="wrap" *ngFor="let Cities of getCities()">
       <div *ngFor="let city of Cities" class="tiles" fxLayoutAlign="center center">
         <div class="pic">
+          <img class="pic1" [src]="'/assets/Technocruise/city/'+city.name.toLowerCase()+'.jpg'"/>
           <div class="tile-content" fxLayout="column" fxLayoutAlign="center center">
             <span>{{city.name}}</span>
             <div class="desc">{{city.date}}</div>

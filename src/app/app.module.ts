@@ -46,6 +46,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { TechDashboardComponent } from './components/technocruise/tech-dashboard/tech-dashboard.component';
 import { TechSidenavComponent } from './components/technocruise/tech-sidenav/tech-sidenav.component';
 import {LoggedInGuardService, WeakLoggedInGaurd} from './services/guards.service';
+import {SocLinksComponent} from './components/technocruise/soc-links/soc-links.component';
 
 // todo Make module for Technocruise Component and improve the routing..
 
@@ -76,7 +77,8 @@ import {LoggedInGuardService, WeakLoggedInGaurd} from './services/guards.service
     TechCitiesComponent,
     WorkshopDialogComponent,
     TechDashboardComponent,
-    TechSidenavComponent
+    TechSidenavComponent,
+    SocLinksComponent
   ],
   imports: [
     AppRoutingModule,
