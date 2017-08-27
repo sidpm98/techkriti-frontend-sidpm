@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 import {FacebookService, InitParams, LoginResponse, LoginStatus} from 'ngx-facebook';
 
-import { ScriptService } from './script.service';
 import 'rxjs/add/operator/toPromise';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { ScriptService } from './script.service';
 
 @Injectable()
 export class AuthService {
@@ -12,8 +12,6 @@ export class AuthService {
   private waitPromise: Promise<any>;
   private token = '';
   public user: any;
-
-
 
   constructor(private script: ScriptService,
               private http: Http,
@@ -63,9 +61,9 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
     const payload = {
       token: accessToken,
-      userId: userId
+      userId
     };
-    return this.http.post(url, payload, {headers: headers})
+    return this.http.post(url, payload, {headers})
       .toPromise()
       .then((res) => {
         this.user = res.json();

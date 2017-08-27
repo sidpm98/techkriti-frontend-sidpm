@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
 
 @Component({
@@ -20,7 +20,7 @@ export class TechRegisterComponent implements OnInit, OnChanges {
 
   validationMessages = {
     name: {
-      required: 'Name is required',
+      required: 'Name is required'
     },
     email: {
       required: 'Email is required',
@@ -99,7 +99,6 @@ export class TechRegisterComponent implements OnInit, OnChanges {
     this.onValueChanged();
   }
 
-
   onValueChanged(data?: any) {
     if (!this.registerForm) { return; }
     const form = this.registerForm;
@@ -117,8 +116,8 @@ export class TechRegisterComponent implements OnInit, OnChanges {
     }
   }
 
-  updateUser(olduser:any, newuser: any) {
-    for(const keys in newuser) {
+  updateUser(olduser: any, newuser: any) {
+    for (const keys in newuser) {
       console.log(keys);
       olduser[keys] = newuser[keys];
     }
@@ -126,13 +125,12 @@ export class TechRegisterComponent implements OnInit, OnChanges {
   }
 
   register() {
-    let myUser = this.registerForm.value;
+    const myUser = this.registerForm.value;
     this.authService.updateUser(this.updateUser(this.user, myUser)).then((res) => {
       this.user = res;
-      console.log(this.user, "User Updated");
+      console.log(this.user, 'User Updated');
     }).catch((err) => {
       console.error(err);
     });
   }
 }
-

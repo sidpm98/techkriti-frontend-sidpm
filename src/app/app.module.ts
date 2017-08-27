@@ -20,7 +20,6 @@ import { RegisterComponent, SuccessDialogComponent } from './components/ambassad
 import { ResponsiblityComponent } from './components/ambassador/responsiblity/responsiblity.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-
 import { TechAboutComponent } from './components/technocruise/tech-about/tech-about.component';
 import { TechCitiesComponent } from './components/technocruise/tech-cities/tech-cities.component';
 import { TechContactComponent } from './components/technocruise/tech-contact/tech-contact.component';
@@ -43,10 +42,10 @@ import { TechnocruiseService } from './services/technocruise.service';
 
 import { AppRoutingModule } from './app.routing.module';
 import { LandingComponent } from './components/landing/landing.component';
+import {SocLinksComponent} from './components/technocruise/soc-links/soc-links.component';
 import { TechDashboardComponent } from './components/technocruise/tech-dashboard/tech-dashboard.component';
 import { TechSidenavComponent } from './components/technocruise/tech-sidenav/tech-sidenav.component';
 import {LoggedInGuardService, WeakLoggedInGaurd} from './services/guards.service';
-import {SocLinksComponent} from './components/technocruise/soc-links/soc-links.component';
 
 // todo Make module for Technocruise Component and improve the routing..
 

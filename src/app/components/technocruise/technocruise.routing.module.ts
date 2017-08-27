@@ -34,7 +34,7 @@ const TechRoutes: Routes = [
       },
       {
         path: 'talks',
-        component: TechTalksComponent,
+        component: TechTalksComponent
       },
       {
         path: 'workshop',
