@@ -11,19 +11,19 @@ export const cruise = {
     [
       {
         name: 'Ethical Hacking',
-        pic: '/assets/testImage.jpg'
+        pic: '/assets/Technocruise/workshops/ethical.jpg'
       },
       {
         name: 'Internet Of Things',
-        pic: '/assets/testImage.jpg'
+        pic: '/assets/Technocruise/workshops/iot.jpg'
       },
       {
         name: 'Android App Development',
-        pic: '/assets/testImage.jpg'
+        pic: '/assets/Technocruise/workshops/android.jpg'
       },
       {
         name: 'Data Analytics',
-        pic: '/assets/testImage.jpg'
+        pic: '/assets/Technocruise/workshops/data.jpg'
       }
     ],
   contacts: [{
@@ -77,7 +77,7 @@ export const cruise = {
     {
       name: 'dehradun',
       date: '2-3 September',
-      eventcode: 'technocruise17-kanpur-014011',
+      eventcode: 'technocruise-dehradun-443331',
       pic: '',
       row: 1
     },
@@ -226,15 +226,14 @@ export const cruise = {
     ['dehradun',
       [
         {
-          'id': 'internet-of-things',
-          'home': `The number of Internet-connected devices (12.5 billion) surpassed the number of human beings (7 billion) on
-           the planet in 2011, and by 2020, Internet-connected devices are expected to number between 26 billion and 50 billion
-            globally. Internet of Things will drive new consumer and business behavior that will demand increasingly intelligent
-             industry solutions, which, in turn, will drive trillions of dollars in opportunity for IT industry and even more for
-              the companies that take advantage of the IoT.This Workshop helps to get you ready for the future.
-           **Please bring your Laptops for the Workshop**
-           ####"The Internet of Things isn't a concept. It's a network; true technology based Network of all networks."-Edewede Oriwoh`,
-          'name': 'Internet Of Things',
+          'id': 'android-app-dev',
+          'home': `Android is an open-source software stack for mobile devices that include an operating system,
+           middleware and key applications. Android's mobile operating system is based upon a modified version of the Linux
+           kernel. The Android Open Source Project (AOSP) is tasked with the maintenance and further development of Android.
+           It's open-source software stack consisting of Java applications running on a Java-based, object-oriented application
+           framework on the top of Java core libraries; running on a Dalvik virtual machine featuring JIT compilation.
+           **Please bring your Laptops for the Workshop**`,
+          'name': 'Android App Development',
           'content': '',
           'benefits': 'Certificate of Participation for each participant from Techkriti, IIT Kanpur.',
           'cities': ''

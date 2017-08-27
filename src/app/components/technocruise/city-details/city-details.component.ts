@@ -23,9 +23,7 @@ export class CityDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) => this.technoService.getCityWorkshops(params['city']))
-      .subscribe(workshops => {
-        this.workshops = workshops;
-      });
+      .subscribe(workshops => this.workshops = workshops)
   }
 
   payNow(ticketname: string) {

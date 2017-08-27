@@ -1,13 +1,14 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
+import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-tech-register',
   templateUrl: './tech-register.component.html',
   styleUrls: ['./tech-register.component.css']
 })
-export class TechRegisterComponent implements OnInit, OnChanges {
+export class TechRegisterComponent implements OnInit {
 
   formErrors = {
     name: '',
@@ -20,7 +21,7 @@ export class TechRegisterComponent implements OnInit, OnChanges {
 
   validationMessages = {
     name: {
-      required: 'Name is required',
+      required: 'Name is required'
     },
     email: {
       required: 'Email is required',
@@ -50,14 +51,11 @@ export class TechRegisterComponent implements OnInit, OnChanges {
   user = this.authService.user;
 
   constructor(private formBuild: FormBuilder,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              private snackbar: MdSnackBar) { }
 
   ngOnInit() {
     this.buildForm();
-  }
-
-  ngOnChanges() {
-    console.log(this.user);
   }
 
   buildForm() {
@@ -69,16 +67,16 @@ export class TechRegisterComponent implements OnInit, OnChanges {
         Validators.required,
         Validators.email
       ]],
-      'phone': ['1231231231', [
+      'phone': [this.user.phone, [
         Validators.required,
         Validators.pattern(this.phoneRe),
         Validators.maxLength(10)
       ]],
-      'whatsapp': ['1231231231', [
+      'whatsapp': [this.user.whatsapp, [
         Validators.pattern(this.phoneRe),
         Validators.maxLength(10)
       ]],
-      'college': ['My college', [
+      'college': [this.user.college, [
         Validators.required
       ]],
       'gender': [this.user.gender, [
@@ -99,7 +97,6 @@ export class TechRegisterComponent implements OnInit, OnChanges {
     this.onValueChanged();
   }
 
-
   onValueChanged(data?: any) {
     if (!this.registerForm) { return; }
     const form = this.registerForm;
@@ -117,8 +114,8 @@ export class TechRegisterComponent implements OnInit, OnChanges {
     }
   }
 
-  updateUser(olduser:any, newuser: any) {
-    for(const keys in newuser) {
+  updateUser(olduser: any, newuser: any) {
+    for (const keys in newuser) {
       console.log(keys);
       olduser[keys] = newuser[keys];
     }
@@ -126,13 +123,14 @@ export class TechRegisterComponent implements OnInit, OnChanges {
   }
 
   register() {
-    let myUser = this.registerForm.value;
+    const myUser = this.registerForm.value;
     this.authService.updateUser(this.updateUser(this.user, myUser)).then((res) => {
       this.user = res;
-      console.log(this.user, "User Updated");
+      this.snackbar.open('User is updated', '', {
+        duration: 2000
+      });
     }).catch((err) => {
       console.error(err);
     });
   }
 }
-

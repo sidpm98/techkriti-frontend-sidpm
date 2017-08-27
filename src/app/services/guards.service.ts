@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import {MdSnackBar} from '@angular/material';
 import {CanActivate, Router} from '@angular/router';
 import {AuthService} from './auth.service';
-import {MdSnackBar} from '@angular/material';
 
 @Injectable()
 export class GuardsService implements CanActivate {
@@ -29,13 +29,17 @@ export class GuardsService implements CanActivate {
 export class UpdateGuardService implements CanActivate {
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private snackbar: MdSnackBar) { }
 
   canActivate(): Promise<never | boolean> {
     return this.authService.checkLogin()
       .then((res: 0 | 1 | 2) => {
         if (res === 1) {
           this.router.navigate(['technocruise/dashboard']);
+          this.snackbar.open('Please fill the form', '', {
+            duration: 2000
+          });
           return false;
         }
         return true;
@@ -47,7 +51,8 @@ export class UpdateGuardService implements CanActivate {
 export class LoggedInGuardService implements CanActivate {
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private snackbar: MdSnackBar) { }
 
   canActivate(): Promise<never | boolean> {
     console.log('logged In guard service');
@@ -56,7 +61,10 @@ export class LoggedInGuardService implements CanActivate {
         if (res === 2) {
           return true;
         } else if (res === 1) {
-          this.router.navigate(['technocruise/dashboard']);
+          this.router.navigate(['technocruise/dashboard'])
+          this.snackbar.open('Please fill the form', '', {
+            duration: 2000
+          });
           return false;
         }
         return false;
@@ -72,20 +80,16 @@ export class WeakLoggedInGaurd implements CanActivate {
 
   canActivate(): Promise<boolean> {
     console.log('Weak Log In');
-    return this.authService.checkLogin()
-      .then((res) => {
+    return this.authService.checkLogin().then((res) => {
       if (res === 0) {
-        console.log('Weak Login 0');
-        return this.authService.fbLogin().then(() => {
+        this.authService.fbLogin().then(() => {
           return true;
-        }).catch((err) => {
+        }).catch(() => {
           return false;
-        });
-        // todo a dialog box which tells the user to login first
-        // this.router.navigate(['technocruise/talks']);
+        })
       } else {
         return true;
       }
-      });
+    });
   }
 }

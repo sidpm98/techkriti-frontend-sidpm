@@ -1,4 +1,7 @@
 <noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
+<div *ngIf="!workshops">
+  <h1 class="coming"> COMING SOON ... </h1>
+</div>
 <div *ngIf="workshops">
   <md-tab-group>
     <md-tab *ngFor="let workshop of workshops" [label]="workshop.name">

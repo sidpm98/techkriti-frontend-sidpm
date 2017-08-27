@@ -11,7 +11,7 @@ import {TechLandingComponent} from './tech-landing/landing.component';
 import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
 import {TechnocruiseComponent} from './technocruise.component';
-import {LoggedInGuardService, WeakLoggedInGaurd} from '../../services/guards.service';
+import {LoggedInGuardService, UpdateGuardService, WeakLoggedInGaurd} from '../../services/guards.service';
 
 const TechRoutes: Routes = [
   {
@@ -37,7 +37,7 @@ const TechRoutes: Routes = [
       },
       {
         path: 'talks',
-        component: TechTalksComponent,
+        component: TechTalksComponent
       },
       {
         path: 'workshop',
@@ -46,12 +46,12 @@ const TechRoutes: Routes = [
       {
         path: 'dashboard',
         component: TechDashboardComponent,
-        canActivate: [ WeakLoggedInGaurd, LoggedInGuardService ]
+        canActivate: [ WeakLoggedInGaurd ]
       },
       {
         path: ':city',
         component: CityDetailsComponent,
-        canActivate: [ WeakLoggedInGaurd ]
+        canActivate: [ WeakLoggedInGaurd, LoggedInGuardService ]
       },
       {
         path: '**',
@@ -59,10 +59,6 @@ const TechRoutes: Routes = [
       }
     ]
   },
-  {
-    path: '**',
-    component: LandingComponent
-  }
 ];
 
 @NgModule({

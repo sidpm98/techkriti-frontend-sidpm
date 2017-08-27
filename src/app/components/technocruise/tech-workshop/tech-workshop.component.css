@@ -6,9 +6,9 @@
 
 .tiles {
   display: block;
-  width: 350px;
+  width: 300px;
   background-size: cover;
-  height: 350px;
+  height: 300px;
   margin: 10px;
   overflow: hidden;
   z-index: 1;
@@ -24,12 +24,12 @@
 }
 
 .pic img {
-  height: 350px;
+  height: 300px;
   transition: all 0.35s ease-out;
 }
 
 .tiles .tile-content {
-  color: orange;
+  color: #eee;
   font-size: 25px;
   z-index: 2;
   width: 100%;
@@ -49,4 +49,15 @@
 .tiles:hover .tile-content {
   opacity: 1;
   transform: scale(1);
+}
+@media only screen and (max-width: 768px) {
+  .tiles{
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .pic img{
+    width: 80vw;
+    height: 80vw;
+  }
 }

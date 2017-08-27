@@ -9,6 +9,17 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .side-body {
+    width: 50vw !important;
+  }
+
+  .pic {
+    height: 200px;
+    width: 200px;
+  }
+}
+
 .center-center {
   display: flex;
   align-items: center;
@@ -30,6 +41,8 @@
 
 .pic {
   border-radius: 50%;
+  height: 300px;
+  width: 300px;
 }
 
 .user-data {

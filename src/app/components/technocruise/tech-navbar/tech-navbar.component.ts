@@ -34,6 +34,11 @@ export class TechNavbarComponent implements OnInit {
     this.menuClicked = !this.menuClicked;
   }
 
+  menuClick(nav) {
+    this.menuClicked = true;
+    this.activeTab = nav;
+  }
+
   ngOnInit() {
   }
 

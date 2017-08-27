@@ -27,10 +27,9 @@
   transition: all 0.2s ease-in-out;
 }
 
-.pic::after {
+.pic1 {
   content: '';
   background-size: cover;
-  background-image: url("/assets/testImage.jpg");
   background-repeat: no-repeat;
   display: block;
   position: absolute;
@@ -45,7 +44,8 @@
 }
 
 .tiles .tile-content {
-  color: orange;
+  color: white;
+  text-shadow: 2px 2px 2px #000;
   font-size: 20px;
   z-index: 3;
   padding: 20px;
@@ -80,8 +80,16 @@
   transform: rotateZ(0deg);
 }
 
-.tiles:hover .pic::after {
+.tiles:hover .pic1 {
   transform: scale(1);
   top: 0;
   left: 0;
+}
+
+@media only screen and (width: 1024px) {
+  .tiles{
+    width: 120px;
+    height: 120px;
+    border: 5px solid white;
+  }
 }
