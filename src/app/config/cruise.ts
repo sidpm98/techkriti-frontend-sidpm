@@ -77,66 +77,77 @@ export const cruise = {
     {
       name: 'Dehradun',
       date: '2-3 September',
+      eventcode: 'technocruise17-kanpur-014011',
       pic: '',
       row: 1
     },
     {
       name: 'Raipur',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 1
     },
     {
       name: 'Hyderabad',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 1
     },
     {
       name: 'Allahabad',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 1
     },
     {
       name: 'Indore',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 2
     },
     {
       name: 'Jabalpur',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 2
     },
     {
       name: 'Jodhpur',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 2
     },
     {
       name: 'Mathura',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 3
     },
     {
       name: 'Bareilly',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 3
     },
     {
       name: 'Patna',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 3
     },
     {
       name: 'Gorakhpur',
       date: 'Coming Soon',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 3
     }

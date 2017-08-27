@@ -1,9 +1,11 @@
+///<reference path="components/technocruise/technocruise.module.ts"/>
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {MaterialModule, MdDatepickerModule, MdNativeDateModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
@@ -46,6 +48,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { TechDashboardComponent } from './components/technocruise/tech-dashboard/tech-dashboard.component';
 import { TechSidenavComponent } from './components/technocruise/tech-sidenav/tech-sidenav.component';
 import {LoggedInGuardService, WeakLoggedInGaurd} from './services/guards.service';
+import {TechnocruiseModule} from './components/technocruise/technocruise.module';
 
 // todo Make module for Technocruise Component and improve the routing..
 
@@ -64,19 +67,6 @@ import {LoggedInGuardService, WeakLoggedInGaurd} from './services/guards.service
     CaContactComponent,
     SuccessDialogComponent,
     LandingComponent,
-    TechnocruiseComponent,
-    TechLandingComponent,
-    TechNavbarComponent,
-    TechAboutComponent,
-    TechWorkshopComponent,
-    TechTalksComponent,
-    TechRegisterComponent,
-    TechEventsComponent,
-    TechContactComponent,
-    TechCitiesComponent,
-    WorkshopDialogComponent,
-    TechDashboardComponent,
-    TechSidenavComponent
   ],
   imports: [
     AppRoutingModule,
@@ -89,20 +79,17 @@ import {LoggedInGuardService, WeakLoggedInGaurd} from './services/guards.service
     ReactiveFormsModule,
     FlexLayoutModule,
     MdDatepickerModule,
-    MdNativeDateModule
+    MdNativeDateModule,
+    TechnocruiseModule
   ],
   providers: [
     AuthService,
     CAService,
     FacebookService,
     ScriptService,
-    TechnocruiseService,
-    LoggedInGuardService,
-    WeakLoggedInGaurd
   ],
   entryComponents: [
     SuccessDialogComponent,
-    WorkshopDialogComponent
   ],
   bootstrap: [AppComponent]
 })

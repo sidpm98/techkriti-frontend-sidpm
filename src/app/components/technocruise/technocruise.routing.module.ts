@@ -1,9 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LandingComponent} from '../landing/landing.component';
+import {CityDetailsComponent} from './city-details/city-details.component';
 import {TechAboutComponent} from './tech-about/tech-about.component';
 import {TechCitiesComponent} from './tech-cities/tech-cities.component';
 import {TechContactComponent} from './tech-contact/tech-contact.component';
+import {TechDashboardComponent} from './tech-dashboard/tech-dashboard.component';
 import {TechEventsComponent} from './tech-events/tech-events.component';
 import {TechLandingComponent} from './tech-landing/landing.component';
 import {TechTalksComponent} from './tech-talks/tech-talks.component';
@@ -39,6 +41,14 @@ const TechRoutes: Routes = [
       {
         path: 'workshop',
         component: TechWorkshopComponent
+      },
+      {
+        path: 'dashboard',
+        component: TechDashboardComponent
+      },
+      {
+        path: ':city',
+        component: CityDetailsComponent
       },
       {
         path: '**',

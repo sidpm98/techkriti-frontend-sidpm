@@ -64,5 +64,4 @@ export class StatusComponent implements OnInit {
       })
       .catch(err => this.message = err.json().message);
   }
-
 }

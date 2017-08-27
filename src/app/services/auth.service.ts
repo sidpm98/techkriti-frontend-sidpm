@@ -91,7 +91,7 @@ export class AuthService {
     console.log(user);
     const olduser = this.user;
     this.user = user;
-    const url = `/api/techkriti/user/${ this.user._id }`;
+    const url = `/api/techkriti/user`;
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.put(url, user, { headers })

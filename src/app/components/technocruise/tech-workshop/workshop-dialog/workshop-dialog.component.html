@@ -2,6 +2,7 @@
 <md-tab-group>
   <md-tab *ngFor="let tab of Tech.getWorkshopTabs() | async" [label]="tab.name">
     <div class="contents">{{data[tab.name]}}</div>
+    <button md-raised-button class="tsbutton" >Register Now</button>
   </md-tab>
 </md-tab-group>
 </div>

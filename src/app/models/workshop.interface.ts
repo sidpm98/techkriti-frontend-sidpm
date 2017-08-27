@@ -5,5 +5,4 @@ export interface WorkshopInterface {
   content: string;
   cities: string;
   benefits: string;
-
 }

@@ -21,52 +21,12 @@ const routes: Routes = [
   {
     path: 'ambassador/register',
     component: RegisterComponent
-  },
-  {
-    path: 'technocruise',
-    component: TechnocruiseComponent,
-    children: [
-      {
-        path: 'about',
-        component: TechAboutComponent
-
-      },
-      {
-        path: 'event',
-        component: TechEventsComponent
-      },
-      {
-        path: 'cities',
-        component: TechCitiesComponent
-      },
-      {
-        path: 'contact',
-        component: TechContactComponent
-      },
-      {
-        path: 'talks',
-        component: TechTalksComponent
-      },
-      {
-        path: 'workshop',
-        component: TechWorkshopComponent
-      },
-      {
-        path: 'dashboard',
-        component: TechDashboardComponent,
-        canActivate: [ WeakLoggedInGaurd ],
-      },
-      {
-        path: '**',
-        component: TechLandingComponent
-      }
-    ]
-  },
-  // todo
-  // {
-  //   path: '**',
-  //   component: LandingComponent
-  // }
+  }
+// todo
+// {
+//   path: '**',
+//   component: LandingComponent
+// }
 ];
 
 @NgModule({

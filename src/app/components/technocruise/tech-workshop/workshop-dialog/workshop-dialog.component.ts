@@ -14,11 +14,13 @@ export class WorkshopDialogComponent implements OnInit {
 
   constructor(public dialogRef: MdDialogRef<WorkshopDialogComponent>,
               public Tech: TechnocruiseService,
-              @Inject(MD_DIALOG_DATA) public city_name: any) {
-  }
+              @Inject(MD_DIALOG_DATA) public city_name: any) { }
 
   ngOnInit(): void {
+    console.log(this.city_name);
     this.Tech.getCityWorkshops(this.city_name)
       .subscribe(workshop => this.data = workshop);
   }
+
+
 }
