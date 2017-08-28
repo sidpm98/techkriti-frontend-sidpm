@@ -21,7 +21,6 @@ export class TechnocruiseService {
     this.tabs = Observable.of(cruise.tabs);
     this.workshops = Observable.of(new Map(cruise.workshops));
     this.contacts = Observable.of(cruise.contacts);
-    this.cityWorkshops = Observable.of(new Map(cruise.cityWorkshop));
   }
 
   getAbout() {
@@ -41,7 +40,7 @@ export class TechnocruiseService {
   }
 
   getCityWorkshops(city: string): Observable<any> {
-    return this.cityWorkshops.map(workshop => workshop.get(city));
+    return this.cities.map(_city => _city.filter(City => (City.name === city)));
   }
 
   getWorkshopName() {

@@ -1,24 +1,27 @@
 <noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
-<div *ngIf="!workshops">
+<div *ngIf="!workshopStrings">
   <h1 class="coming"> COMING SOON ... </h1>
 </div>
-<div *ngIf="workshops">
-  <md-tab-group>
-    <md-tab *ngFor="let workshop of workshops" [label]="workshop.name">
-      <div class="work-body">
-        <div class="head">
-          {{ workshop.name }}
+<div *ngIf="workshopStrings">
+  <app-dialog-sidenav></app-dialog-sidenav>
+  <div class="workshopTabs">
+    <md-tab-group>
+      <md-tab *ngFor="let Workshop of workshopStrings" [label]="Workshop.name">
+        <div class="work-body">
+          <div class="head">
+            {{ Workshop.name }}
+          </div>
+          <h2>Description</h2>
+          <div markdown-to-html>{{Workshop.home}}</div>
+          <h2>Content</h2>
+          <div markdown-to-html>{{Workshop.content}}</div>
+          <h2>Benefits</h2>
+          {{Workshop.benefits}}
+          <div>
+            <button md-raised-button (click)="payNow(Workshop.name)">Register</button>
+          </div>
         </div>
-        <h2>Description</h2>
-        <div markdown-to-html>{{workshop.home}}</div>
-        <h2>Content</h2>
-        {{workshop.content}}
-        <h2>Benefits</h2>
-        {{workshop.benefits}}
-        <div>
-          <button md-raised-button (click)="payNow(workshop.name)">Register</button>
-        </div>
-      </div>
-    </md-tab>
-  </md-tab-group>
+      </md-tab>
+    </md-tab-group>
+  </div>
 </div>

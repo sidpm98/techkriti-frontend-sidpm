@@ -14,16 +14,23 @@ import {PaymentService} from '../../../../../src-tosc/app/services/payment.servi
 export class CityDetailsComponent implements OnInit {
 
   public workshops: Array<WorkshopInterface>;
+  public workshopStrings =[]
   constructor(private route: ActivatedRoute,
-              private technoService: TechnocruiseService,
+              public technoService: TechnocruiseService,
               private authService: AuthService,
               private paymentService: PaymentService,
               private router: Router) { }
-
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) => this.technoService.getCityWorkshops(params['city']))
-      .subscribe(workshops => this.workshops = workshops)
+      .subscribe(workshops => {
+        for (let workshop of workshops[0].workshop) {
+          this.technoService.getWorkshop(workshop).subscribe((workshop) => {
+            this.workshopStrings.push(workshop);
+          });
+        }
+        console.log(workshops[0].workshop);
+      } );
   }
 
   payNow(ticketname: string) {

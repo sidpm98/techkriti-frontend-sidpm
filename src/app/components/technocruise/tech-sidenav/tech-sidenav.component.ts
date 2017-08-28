@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../services/auth.service';
+import {TechnocruiseService} from '../../../services/technocruise.service';
 
 @Component({
   selector: 'app-tech-sidenav',
@@ -25,7 +26,7 @@ phn: boolean;
 
 export class DialogSidenavComponent implements OnInit {
   phn: boolean;
-  constructor() {}
+  constructor(public Tech: TechnocruiseService) {}
   ngOnInit() {
     this.phn = (window.screen.width < 1024);
   }
