@@ -47,7 +47,7 @@ const TechRoutes: Routes = [
       {
         path: 'dashboard',
         component: TechDashboardComponent,
-        canActivate: [ LoggedInGuardService ]
+        canActivate: [ WeakLoggedInGaurd ]
       },
       {
         path: 'login',

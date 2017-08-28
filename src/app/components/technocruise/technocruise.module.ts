@@ -14,7 +14,7 @@ import {TechEventsComponent} from './tech-events/tech-events.component';
 import {TechLandingComponent} from './tech-landing/landing.component';
 import {TechNavbarComponent} from './tech-navbar/tech-navbar.component';
 import {TechRegisterComponent} from './tech-register/tech-register.component';
-import {TechSidenavComponent} from './tech-sidenav/tech-sidenav.component';
+import {DialogSidenavComponent, TechSidenavComponent} from './tech-sidenav/tech-sidenav.component';
 import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
 import {WorkshopDialogComponent} from './tech-workshop/workshop-dialog/workshop-dialog.component';
@@ -55,7 +55,8 @@ import { TechnoLoginComponent } from './techno-login/techno-login.component';
     WorkshopDialogComponent,
     CityDetailsComponent,
     SocLinksComponent,
-    TechnoLoginComponent
+    TechnoLoginComponent,
+    DialogSidenavComponent
   ],
   exports: [ TechnocruiseComponent ],
   providers: [

@@ -5,9 +5,8 @@
 <md-sidenav-container class="_sidenav">
   <md-sidenav mode=side [opened]="!phn" class='_side' #sidenav>
     <section fxLayout="column" fxLayoutAlign="top center">
-      <img class="pic" [src]="user.facebook.picture">
-      <div>
-        {{ user.name }}
+      <div *ngFor="let city of Tech.getCities() |async" id="cityNames" [routerLink]="'../'+city.name">
+        {{city.name}}
       </div>
     </section>
   </md-sidenav>

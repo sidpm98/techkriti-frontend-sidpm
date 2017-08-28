@@ -11,6 +11,7 @@ export class TechNavbarComponent implements OnInit {
   username: string = 'Login';
   activeTab: string;
   navbar = [
+    {'name': 'Register', 'link': 'dehradun'},
     {'name': 'About', 'link': 'about'},
     {'name': 'Workshop', 'link': 'workshop'},
     {'name': 'Cities', 'link': 'cities'},
@@ -19,8 +20,7 @@ export class TechNavbarComponent implements OnInit {
     // {'name': 'Sponsors', 'link': 'sponsors'},
     {'name': 'Dashboard', 'link': 'dashboard'},
     {'name': 'Contact', 'link': 'contact'},
-    {'name': 'Login', 'link': 'login'},
-    {'name': 'Register', 'link': 'dehradun'}
+    {'name': 'Login', 'link': 'login'}
   ];
 
   constructor(private authService: AuthService) { }
@@ -30,7 +30,7 @@ export class TechNavbarComponent implements OnInit {
   }
 
   signOut() {
-    this.authService.logout()
+    this.authService.logout();
   }
 
   menuClick(nav) {

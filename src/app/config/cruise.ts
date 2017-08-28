@@ -79,9 +79,8 @@ export const cruise = {
       date: '2-3 September',
       eventcode: 'technocruise-dehradun-443331',
       pic: '',
-      workshop: new Map([
-        ['Ethical Hacking', 'Android App Development']
-      ]),
+      workshop:
+        ['Ethical Hacking', 'Android App Development'],
       row: 1
     },
     {
@@ -302,40 +301,6 @@ discussed. Indian IT act with reference to case studies from HICUBE will be disc
 `,
         'cities': ''
       }
-    ]
-  ]),
-  cityWorkshop: new Map([
-    ['dehradun',
-      [
-        {
-          'id': 'android-app-dev',
-          'home': `Android is an open-source software stack for mobile devices that include an operating system,
-           middleware and key applications. Android's mobile operating system is based upon a modified version of the Linux
-           kernel. The Android Open Source Project (AOSP) is tasked with the maintenance and further development of Android.
-           It's open-source software stack consisting of Java applications running on a Java-based, object-oriented application
-           framework on the top of Java core libraries; running on a Dalvik virtual machine featuring JIT compilation.
-           **Please bring your Laptops for the Workshop**`,
-          'name': 'Android App Development',
-          'content': '',
-          'benefits': `
-* Certificate of Participation for each participant from Techkriti, IIT Kanpur.
-`,
-          'cities': ''
-        },
-        {
-          'id': 'ethical-hacking',
-          'home': `This workshop is specifically designed to provide the right knowledge to the
-        'aspiring Cyber Forensics & Ethical Hacking enthusiasts. This workshop will
-        'explore the various means that an intruder has available to gain access to computer
-        'resources. It will investigate weaknesses of cyber security systems by discussing the
-        'theoretical background behind it, and whenever possible, actually performing the attacks.
-        `,
-          'name': 'Ethical Hacking',
-          'content': '',
-          'benefits': 'Certificate of Participation for each participant from Techkriti, IIT Kanpur.',
-          'cities': ''
-        }
-      ]
     ]
   ])
 };

@@ -61,7 +61,6 @@ export class LoggedInGuardService implements CanActivate {
         if (res === 2) {
           return true;
         } else if (res === 1) {
-          this.router.navigate(['technocruise/dashboard'])
           this.snackbar.open('Please fill the form', '', {
             duration: 2000
           });
@@ -85,11 +84,8 @@ export class WeakLoggedInGaurd implements CanActivate {
     console.log('Weak Log In');
     return this.authService.checkLogin().then((res) => {
       if (res === 0) {
-        return this.authService.fbLogin().then(() => {
-          return true;
-        }).catch(() => {
-          return false;
-        });
+        this.router.navigate(['login']);
+        return false;
       } else {
         return true;
       }
