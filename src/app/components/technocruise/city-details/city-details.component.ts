@@ -40,7 +40,7 @@ export class CityDetailsComponent implements OnInit {
         this.router.navigate(['technocruise/dashboard']);
       } else if (res === 2) {
         const payPrefill = {
-          cq1: this.authService.user.facebook.id,
+          cq1: this.authService.user._id,
           emailid: this.authService.user.email,
           name: this.authService.user.name,
           ticketname1: `${ ticketname } Workshop`,
@@ -49,7 +49,7 @@ export class CityDetailsComponent implements OnInit {
         payPrefill['eventcode'] = eventcode;
         this.paymentService.payment(payPrefill);
       } else {
-        console.log('No Internet Connection');
+        this.router.navigate(['technocruise/login']);
       }
     });
   }

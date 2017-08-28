@@ -1,10 +1,25 @@
-import { Injectable } from '@angular/core';
+import {Component, Injectable} from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import {FacebookService, InitParams, LoginResponse, LoginStatus} from 'ngx-facebook';
 
 import 'rxjs/add/operator/toPromise';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { ScriptService } from './script.service';
+import {MdDialog, MdDialogRef} from '@angular/material';
+
+@Component({
+  selector: 'app-dialog-overview-example-dialog',
+  template: `
+    <p> Please Check Your Internet Connection </p>
+    <p> Also <b>firefox private browsing</b> is not supported </p>
+  `
+})
+export class DialogComponent {}
+
+@Component({
+  selector: 'app-wait-dialog',
+  template: `<md-spinner></md-spinner>`
+})
+export class WaitDialogComponent {}
 
 @Injectable()
 export class AuthService {
@@ -15,7 +30,8 @@ export class AuthService {
 
   constructor(private script: ScriptService,
               private http: Http,
-              private fb: FacebookService) {
+              private fb: FacebookService,
+              private dialog: MdDialog) {
     const params: InitParams = {
       // appId: '1592892520744958',
       appId: '1023878031002316',
@@ -24,7 +40,7 @@ export class AuthService {
     };
     this.waitPromise = this.script.loadScript('facebook')
       .then(() => this.fb.init(params))
-      .catch((err) => console.error(err));
+      .catch((err) => this.dialog.open(DialogComponent));
   }
 
   checkLogin(): Promise<1 | 2 | 0> {
@@ -39,7 +55,8 @@ export class AuthService {
     return this.waitPromise.then(() => this.fb.getLoginStatus().then((res: LoginStatus) => {
       if (res.status === 'connected') {
         this.token = res.authResponse.accessToken;
-        return this.backendLogin(res.authResponse.accessToken, res.authResponse.userID);
+        const dialogRef = this.dialog.open(WaitDialogComponent);
+        return this.backendLogin(res.authResponse.accessToken, res.authResponse.userID, dialogRef);
       } else {
         return 0;
       }
@@ -52,11 +69,12 @@ export class AuthService {
     }).then((res: LoginResponse) => {
       console.log(res);
       this.token = res.authResponse.accessToken;
-      return this.backendLogin(res.authResponse.accessToken, res.authResponse.userID);
+      const dialogRef = this.dialog.open(WaitDialogComponent)
+      return this.backendLogin(res.authResponse.accessToken, res.authResponse.userID, dialogRef);
     }).catch((err) => console.error(err)));
   }
 
-  backendLogin(accessToken: string, userId: string): Promise<0 | 1 | 2> {
+  backendLogin(accessToken: string, userId: string, dialogRef: MdDialogRef<WaitDialogComponent>): Promise<0 | 1 | 2> {
     const url = '/api/techkriti/user.fblogin';
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -67,8 +85,9 @@ export class AuthService {
     return this.http.post(url, payload, {headers})
       .toPromise()
       .then((res) => {
-        this.user = res.json();
+        dialogRef.close();
         if (res.status === 202) {
+          this.user = res.json();
           if (!this.user.completed) {
             console.log('First Login Attempt');
             return 1;
@@ -81,9 +100,10 @@ export class AuthService {
           return 0;
         }
       }).catch((err) => {
-      console.error(err);
-      return Promise.resolve(0);
-    });
+        dialogRef.close();
+        console.error(err);
+        return Promise.resolve(0);
+      });
   }
 
   updateUser(user: any) {

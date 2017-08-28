@@ -66,6 +66,9 @@ export class LoggedInGuardService implements CanActivate {
             duration: 2000
           });
           return false;
+        } else if (res === 0) {
+          this.router.navigate(['technocruise/login']);
+          return false;
         }
         return false;
       });
@@ -82,11 +85,11 @@ export class WeakLoggedInGaurd implements CanActivate {
     console.log('Weak Log In');
     return this.authService.checkLogin().then((res) => {
       if (res === 0) {
-        this.authService.fbLogin().then(() => {
+        return this.authService.fbLogin().then(() => {
           return true;
         }).catch(() => {
           return false;
-        })
+        });
       } else {
         return true;
       }

@@ -33,11 +33,10 @@ import { TechTalksComponent } from './components/technocruise/tech-talks/tech-ta
 import { TechWorkshopComponent } from './components/technocruise/tech-workshop/tech-workshop.component';
 import { WorkshopDialogComponent } from './components/technocruise/tech-workshop/workshop-dialog/workshop-dialog.component';
 //Technocruise Component
-import { TechnocruiseComponent } from './components/technocruise/technocruise.component';
 
 //Services
 import { FacebookService } from 'ngx-facebook';
-import { AuthService } from './services/auth.service';
+import {AuthService, DialogComponent, WaitDialogComponent} from './services/auth.service';
 import { CAService } from './services/ca.service';
 import { ScriptService } from './services/script.service';
 import { TechnocruiseService } from './services/technocruise.service';
@@ -67,8 +66,11 @@ import {TechnocruiseModule} from './components/technocruise/technocruise.module'
     CaContactComponent,
     SuccessDialogComponent,
     LandingComponent,
+    WaitDialogComponent,
+    DialogComponent,
   ],
   imports: [
+    TechnocruiseModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -80,7 +82,6 @@ import {TechnocruiseModule} from './components/technocruise/technocruise.module'
     FlexLayoutModule,
     MdDatepickerModule,
     MdNativeDateModule,
-    TechnocruiseModule
   ],
   providers: [
     AuthService,
@@ -90,6 +91,8 @@ import {TechnocruiseModule} from './components/technocruise/technocruise.module'
   ],
   entryComponents: [
     SuccessDialogComponent,
+    DialogComponent,
+    WaitDialogComponent
   ],
   bootstrap: [AppComponent]
 })

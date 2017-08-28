@@ -25,6 +25,7 @@ import {ScriptService} from '../../../../src-tosc/app/services/script.service';
 import { CityDetailsComponent } from './city-details/city-details.component';
 import {SocLinksComponent} from './soc-links/soc-links.component';
 import {MarkdownToHtmlModule} from 'ng2-markdown-to-html';
+import { TechnoLoginComponent } from './techno-login/techno-login.component';
 
 @NgModule({
   imports:  [
@@ -53,7 +54,8 @@ import {MarkdownToHtmlModule} from 'ng2-markdown-to-html';
     TechWorkshopComponent,
     WorkshopDialogComponent,
     CityDetailsComponent,
-    SocLinksComponent
+    SocLinksComponent,
+    TechnoLoginComponent
   ],
   exports: [ TechnocruiseComponent ],
   providers: [

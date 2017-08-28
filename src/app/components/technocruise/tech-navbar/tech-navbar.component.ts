@@ -19,7 +19,7 @@ export class TechNavbarComponent implements OnInit {
     // {'name': 'Sponsors', 'link': 'sponsors'},
     {'name': 'Dashboard', 'link': 'dashboard'},
     {'name': 'Contact', 'link': 'contact'},
-    {'name': this.username, 'link': 'dashboard'}
+    {'name': 'Login', 'link': 'login'}
   ];
 
   constructor(private authService: AuthService) {

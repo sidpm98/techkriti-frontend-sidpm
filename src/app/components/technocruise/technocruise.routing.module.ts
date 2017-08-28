@@ -12,6 +12,7 @@ import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
 import {TechnocruiseComponent} from './technocruise.component';
 import {LoggedInGuardService, UpdateGuardService, WeakLoggedInGaurd} from '../../services/guards.service';
+import {TechnoLoginComponent} from './techno-login/techno-login.component';
 
 const TechRoutes: Routes = [
   {
@@ -46,12 +47,16 @@ const TechRoutes: Routes = [
       {
         path: 'dashboard',
         component: TechDashboardComponent,
-        canActivate: [ WeakLoggedInGaurd ]
+        canActivate: [ LoggedInGuardService ]
+      },
+      {
+        path: 'login',
+        component: TechnoLoginComponent
       },
       {
         path: ':city',
         component: CityDetailsComponent,
-        canActivate: [ WeakLoggedInGaurd, LoggedInGuardService ]
+        canActivate: [ LoggedInGuardService ]
       },
       {
         path: '**',

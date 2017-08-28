@@ -79,6 +79,9 @@ export const cruise = {
       date: '2-3 September',
       eventcode: 'technocruise-dehradun-443331',
       pic: '',
+      workshop: new Map([
+        ['Ethical Hacking', 'Android App Development']
+      ]),
       row: 1
     },
     {
@@ -86,6 +89,7 @@ export const cruise = {
       date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
+      workshop: '',
       row: 1
     },
     {
@@ -93,6 +97,7 @@ export const cruise = {
       date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
+      workshop: '',
       row: 1
     },
     {
@@ -100,6 +105,7 @@ export const cruise = {
       date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
+      workshop: '',
       row: 1
     },
     {
@@ -107,6 +113,7 @@ export const cruise = {
       date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
+      workshop: '',
       row: 2
     },
     {
@@ -114,6 +121,7 @@ export const cruise = {
       date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
+      workshop: '',
       row: 2
     },
     {
@@ -121,6 +129,7 @@ export const cruise = {
       date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
+      workshop: '',
       row: 2
     },
     {
@@ -128,6 +137,7 @@ export const cruise = {
       date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
+      workshop: '',
       row: 3
     },
     {
@@ -135,6 +145,7 @@ export const cruise = {
       date: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
+      workshop: '',
       row: 3
     }
     // {
@@ -167,10 +178,6 @@ export const cruise = {
       description: 'desc'
     },
     {
-      name: 'register',
-      description: 'desc'
-    },
-    {
       name: 'cities',
       description: 'desc'
     }
@@ -179,16 +186,80 @@ export const cruise = {
     ['Ethical Hacking',
       {
         'id': 'ethical-hacking',
-        'home': `This workshop is specifically designed to provide the right knowledge to the
-        'aspiring Cyber Forensics & Ethical Hacking enthusiasts. This workshop will
-        'explore the various means that an intruder has available to gain access to computer
-        'resources. It will investigate weaknesses of cyber security systems by discussing the
-        'theoretical background behind it, and whenever possible, actually performing the attacks.
-        `,
+        'home': `This module is designed to give an introduction to the fundamentals of internet and its primary
+concepts from origin to the current trending concepts of information security world.
+We will complete knowledge of basic security concepts, principles, and the key terms associated
+with information security and cyber World.
+Intend of this module is to clear misbelieves and myths of cyber world and also to study recent
+trends as well as threats and modus operandi of cyber criminals and testers.`,
         'name': 'Ethical Hacking',
-        'content': '',
-        'benefits': 'Certificate of Participation for each participant from Techkriti, IIT Kanpur.',
-        'cities': ''
+        'content': `
+### Networking Fundamentals
+
+Networks are defined as medium for communication between two or multiple systems, i.e. it con-
+stitutes a mechanism of information that travels across multiple devices using various mediums,
+concepts of Domain name system, Servers, Connection mechanism.
+This module will cover in depth knowledge of OSI model and TCP/IP model and how data is
+transmitted through network, along with various Protocols used at each layer with focus on Net-
+working Layers, Network design and implementation and what devices are used for the data
+transmission i.e. hardware associated with networking like switches, router, hub etc along with
+types of network, internet protocol v4 & v6, ports & protocols, sub netting concepts, domain name
+system and its working, Network architecture and standards.
+
+### Open Source Intelligence
+
+Open source intelligence (OSI) is focused on collecting as much information as possible about a
+target which can be organization, a person, website or a specific system.
+The module is designed to give insight of OSI methods and techniques i.e. various ways to collect
+information from publicly available resources like e-Mail spoofing, Fake mail Tracing by using
+various methods.
+The module will provide elementary knowledge about advance search techniques in various
+search engines used by security professionals, cyber criminals. Introduction to social engineering
+technique like phishing for email id hacking, desktop phishing, remote phishing and how it is es-
+sential in information gathering.
+
+### Network Attacks
+
+The module will begin with an introduction of loopholes in protected Wi-Fi networks and its test-
+ing. Students will be able to learn, how to test security of a protected Wi-Fi network.
+In the later phase module will include hands on demonstration of internal network attacks like
+sniffing.
+Module will cover scanning networks for live systems and their open ports further it will include
+operating system finger printing and grabbing banners of running services on remote system.
+It will also give insight on scanning of known vulnerabilities.
+
+### Malware : Attacks & Detection
+
+The course will cover basic terminologies and concept of Malware - definition, why and how it is
+affecting the network and the system, key tools and techniques of malware attacks.
+Students will be briefed about creating Malware and various types of malware (virus, worms, Tro-
+jans, key loggers etc.)
+Concepts of antivirus and their working along with it techniques to identify Malwares which are
+not detected by AVs will be taught.
+
+### Web Application Attacks
+
+Introductory knowledge of database and working with database using SQL queries along with
+installation and working for local servers. Basic working of HTTP with request and host exam-
+ples. Basic html, JavaScript, php, sql are included in this module to make students better under-
+stand the loopholes. By the end of this module, students will be able to test for different type of
+loopholes in web application security.
+
+### Cyber Crime
+
+This session will include various cybercrime cases and criminal modus operands. Also will be
+discussed various cybercrime cases handled by HICUBE along with investigation procedure.
+Methods to handle cybercrime cases and Dos and Don’ts of handling cybercrime cases will be
+discussed. Indian IT act with reference to case studies from HICUBE will be discussed.
+`,
+        'benefits': `
+* A great headstart to pursue your interest in the field of cyber security.
+* Certificate of Participation for each participant from Techkriti, IIT Kanpur.
+`,
+        'cities': `
+* Dehradun
+* And more ...
+`
       }],
     ['Android App Development',
       {
@@ -201,8 +272,13 @@ export const cruise = {
            **Please bring your Laptops for the Workshop**`,
         'name': 'Android App Development',
         'content': '',
-        'benefits': 'Certificate of Participation for each participant from Techkriti, IIT Kanpur.',
-        'cities': ''
+        'benefits': `
+* Certificate of Participation for each participant from Techkriti, IIT Kanpur.
+`,
+        'cities': `
+* Dehradun
+* And more ...
+`
       }
     ],
     ['Internet Of Things',
@@ -213,11 +289,17 @@ export const cruise = {
             globally. Internet of Things will drive new consumer and business behavior that will demand increasingly intelligent
              industry solutions, which, in turn, will drive trillions of dollars in opportunity for IT industry and even more for
               the companies that take advantage of the IoT.This Workshop helps to get you ready for the future.
-           **Please bring your Laptops for the Workshop**
-           ####"The Internet of Things isn't a concept. It's a network; true technology based Network of all networks."-Edewede Oriwoh`,
+
+**Please bring your Laptops for the Workshop**
+
+> "The Internet of Things isn't a concept. It's a network; true technology based Network of all networks"
+
+> -Edewede Oriwoh`,
         'name': 'Internet Of Things',
         'content': '',
-        'benefits': 'Certificate of Participation for each participant from Techkriti, IIT Kanpur.',
+        'benefits': `
+* Certificate of Participation for each participant from Techkriti, IIT Kanpur.
+`,
         'cities': ''
       }
     ]
@@ -235,7 +317,9 @@ export const cruise = {
            **Please bring your Laptops for the Workshop**`,
           'name': 'Android App Development',
           'content': '',
-          'benefits': 'Certificate of Participation for each participant from Techkriti, IIT Kanpur.',
+          'benefits': `
+* Certificate of Participation for each participant from Techkriti, IIT Kanpur.
+`,
           'cities': ''
         },
         {
