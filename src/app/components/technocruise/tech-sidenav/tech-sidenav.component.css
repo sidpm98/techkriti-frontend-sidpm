@@ -59,7 +59,7 @@
 }
 @media (max-width: 1023px) {
   ._sidenav {
-    background-color: rgba(60, 60, 60, 0.8);
+    background-color: rgba(60, 60, 60, 1);
   }
 
   .close-btn {
