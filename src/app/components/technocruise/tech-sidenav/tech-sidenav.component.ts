@@ -16,3 +16,17 @@ phn: boolean;
     this.phn = (window.screen.width < 1024);
   }
 }
+
+@Component({
+  selector: 'app-dialog-sidenav',
+  templateUrl: './dialog-sidenav.component.html',
+  styleUrls: ['./tech-sidenav.component.css']
+})
+
+export class DialogSidenavComponent implements OnInit {
+  phn: boolean;
+  constructor() {}
+  ngOnInit() {
+    this.phn = (window.screen.width < 1024);
+  }
+}
