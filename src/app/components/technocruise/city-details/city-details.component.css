@@ -8,3 +8,16 @@
   font-size: 60px;
   font-family: Lato, sans-serif;
 }
+
+.work-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vmin;
+  margin-left: 12.5vmin;
+  margin-right: 12.5vmin;
+}
+
+.head {
+  font-weight: 800;
+  font-size: 5vh;
+}
