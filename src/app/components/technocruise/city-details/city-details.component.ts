@@ -24,6 +24,7 @@ export class CityDetailsComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.technoService.getCityWorkshops(params['city']))
       .subscribe(workshops => {
+        this.workshopStrings = [];
         for (let workshop of workshops[0].workshop) {
           this.technoService.getWorkshop(workshop).subscribe((workshop) => {
             this.workshopStrings.push(workshop);
