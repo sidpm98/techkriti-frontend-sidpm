@@ -19,3 +19,7 @@
   font-size: 2.5vh;
   word-wrap: break-word;
 }
+
+.page-header-wrapper{
+  padding-top: 15vh;
+}

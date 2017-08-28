@@ -1,8 +1,14 @@
-<div class="side-body">
-  <div class="pro-pic center-center">
-    <img class="pic" [src]="user.facebook.picture">
-  </div>
-  <div class="user-data center-center">
-    <h2>{{ user.name }}</h2>
-  </div>
+<div (click)="sidenav.toggle()" class="close-btn">
+  info
 </div>
+
+<md-sidenav-container class="_sidenav">
+  <md-sidenav mode=side [opened]="!phn" class='_side' #sidenav>
+    <section fxLayout="column" fxLayoutAlign="top center">
+      <img class="pic" [src]="user.facebook.picture">
+      <div>
+        {{ user.name }}
+      </div>
+    </section>
+  </md-sidenav>
+</md-sidenav-container>

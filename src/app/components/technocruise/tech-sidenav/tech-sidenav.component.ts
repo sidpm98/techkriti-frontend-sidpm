@@ -6,13 +6,13 @@ import {AuthService} from '../../../services/auth.service';
   templateUrl: './tech-sidenav.component.html',
   styleUrls: ['./tech-sidenav.component.css']
 })
+
 export class TechSidenavComponent implements OnInit {
-
-  constructor(private authService: AuthService) { }
-
+phn: boolean;
   user: any;
+  constructor(private authService: AuthService) {}
   ngOnInit() {
     this.user = this.authService.user;
+    this.phn = (window.screen.width < 1024);
   }
-
 }
