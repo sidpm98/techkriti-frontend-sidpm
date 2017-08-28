@@ -86,10 +86,20 @@
   left: 0;
 }
 
-@media only screen and (width: 1024px) {
+@media only screen and (min-width: 970px) {
   .tiles{
     width: 120px;
     height: 120px;
     border: 5px solid white;
+    margin: 0 23px 0 23px;
+  }
+}
+
+@media only screen and (min-width: 1439px) {
+  .tiles{
+    width: 180px;
+    height: 180px;
+    border: 10px solid white;
+    margin: 0 40px 0 40px;
   }
 }

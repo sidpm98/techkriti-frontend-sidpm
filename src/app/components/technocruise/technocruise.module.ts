@@ -24,6 +24,7 @@ import {PaymentService} from '../../../../src-tosc/app/services/payment.service'
 import {ScriptService} from '../../../../src-tosc/app/services/script.service';
 import { CityDetailsComponent } from './city-details/city-details.component';
 import {SocLinksComponent} from './soc-links/soc-links.component';
+import {MarkdownToHtmlModule} from 'ng2-markdown-to-html';
 
 @NgModule({
   imports:  [
@@ -33,6 +34,7 @@ import {SocLinksComponent} from './soc-links/soc-links.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     MaterialModule,
+    MarkdownToHtmlModule.forRoot(),
     MdDatepickerModule,
     MdNativeDateModule
   ],
