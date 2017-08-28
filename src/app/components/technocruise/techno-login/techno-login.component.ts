@@ -17,7 +17,7 @@ export class TechnoLoginComponent implements OnInit {
 
   login() {
     this.authService.fbLogin().then(() => {
-      this.router.navigate(['technocruise/dashboard'])
+      this.router.navigate(['zonals/dashboard'])
     });
   }
 

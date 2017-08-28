@@ -1,12 +1,12 @@
 <noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
-<div *ngIf="!workshopStrings">
+<app-dialog-sidenav></app-dialog-sidenav>
+<div *ngIf="!workshopStrings.length">
   <h1 class="coming"> COMING SOON ... </h1>
 </div>
-<div *ngIf="workshopStrings">
-  <app-dialog-sidenav></app-dialog-sidenav>
+<div *ngIf="workshopStrings.length">
   <div class="workshopTabs">
     <md-tab-group>
-      <md-tab *ngFor="let Workshop of workshopStrings" [label]="Workshop.name">
+      <md-tab *ngFor="let Workshop of workshopStrings" [label]="Workshop.name" id="fix">
         <div class="work-body">
           <div class="head">
             {{ Workshop.name }}

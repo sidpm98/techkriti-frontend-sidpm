@@ -46,7 +46,6 @@ export class AuthService {
   }
 
   checkLogin(): Promise<1 | 2 | 0> {
-    console.log('check Login');
     if (this.user) {
       if (this.user.completed) {
         return Promise.resolve(2);
@@ -69,7 +68,6 @@ export class AuthService {
     return this.waitPromise.then(() => this.fb.login({
       scope: 'email, public_profile'
     }).then((res: LoginResponse) => {
-      console.log(res);
       this.token = res.authResponse.accessToken;
       const dialogRef = this.dialog.open(WaitDialogComponent)
       return this.backendLogin(res.authResponse.accessToken, res.authResponse.userID, dialogRef);
@@ -91,14 +89,11 @@ export class AuthService {
         if (res.status === 202) {
           this.user = res.json();
           if (!this.user.completed) {
-            console.log('First Login Attempt');
             return 1;
           } else {
-            console.log('Form Filled Completely');
             return 2;
           }
         } else {
-          console.log('Offline');
           return 0;
         }
       }).catch((err) => {
@@ -119,7 +114,6 @@ export class AuthService {
       .toPromise()
       .then((res_response) => {
         this.user = res_response.json();
-        console.log(this.user);
         return user;
       }).catch((err) => {
         this.user = olduser;
@@ -133,7 +127,7 @@ export class AuthService {
       .toPromise()
       .then(() => {
       this.user = null;
-        this.router.navigate(['technocruise']);
+        this.router.navigate(['zonals']);
       })
       .catch((err) => {
         console.error('err');

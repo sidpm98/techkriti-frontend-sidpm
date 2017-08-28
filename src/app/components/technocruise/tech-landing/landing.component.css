@@ -14,7 +14,7 @@
 }
 
 .slide1 {
-  background: url('/assets/Technocruise/landing page1.png') no-repeat center;
+  background: url('/assets/Technocruise/landing1.png') no-repeat center;
   background-size: contain;
   animation: fade 24s infinite;
   -webkit-animation: fade 24s infinite;
@@ -22,21 +22,21 @@
 }
 
 .slide2 {
-  background: url('/assets/Technocruise/landing page2.png') no-repeat center;
+  background: url('/assets/Technocruise/landing2.png') no-repeat center;
   background-size: contain;
   animation: fade2 24s infinite;
   -webkit-animation: fade2 24s infinite;
 }
 
 .slide3 {
-  background: url('/assets/Technocruise/landing page3.png') no-repeat center;
+  background: url('/assets/Technocruise/landing3.png') no-repeat center;
   background-size: contain;
   animation: fade3 24s infinite;
   -webkit-animation: fade3 24s infinite;
 }
 
 .slide4 {
-  background: url('/assets/Technocruise/landing page4.png') no-repeat center;
+  background: url('/assets/Technocruise/landing4.png') no-repeat center;
   background-size: contain;
   animation: fade2 24s infinite;
   -webkit-animation: fade4 24s infinite;

@@ -13,16 +13,17 @@
 }
 
 ._sidenav {
-  height: 100vh;
+  height: calc(100vh - 50px);
   position: fixed;
   background-color: rgba(60, 60, 60, 0.4);
   z-index: 5;
   color: white;
   border-right: 1px solid rgba(0, 0, 0, 0.4);
+  top: 50px;
 }
 
 ._side {
-  width: 20vw;
+  width: 25vw;
   min-width: 300px;
   background-color: transparent;
   padding: 10%;
@@ -38,6 +39,7 @@
   display: block;
   font-size: 25px;
   color: white;
+  font-variant: small-caps;
 }
 
 .pic {
@@ -57,7 +59,7 @@
 }
 @media (max-width: 1023px) {
   ._sidenav {
-    background-color: rgba(60, 60, 60, 0.8);
+    background-color: rgba(60, 60, 60, 1);
   }
 
   .close-btn {

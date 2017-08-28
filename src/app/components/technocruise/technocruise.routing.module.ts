@@ -16,7 +16,7 @@ import {TechnoLoginComponent} from './techno-login/techno-login.component';
 
 const TechRoutes: Routes = [
   {
-    path: 'technocruise',
+    path: 'zonals',
     component: TechnocruiseComponent,
     children: [
       {
@@ -47,7 +47,7 @@ const TechRoutes: Routes = [
       {
         path: 'dashboard',
         component: TechDashboardComponent,
-        canActivate: [ WeakLoggedInGaurd ]
+        canActivate: [UpdateGuardService]
       },
       {
         path: 'login',
@@ -56,7 +56,7 @@ const TechRoutes: Routes = [
       {
         path: ':city',
         component: CityDetailsComponent,
-        canActivate: [ LoggedInGuardService ]
+        canActivate: [LoggedInGuardService]
       },
       {
         path: '**',
@@ -64,6 +64,10 @@ const TechRoutes: Routes = [
       }
     ]
   },
+  {
+    path: '**',
+    component: LandingComponent
+  }
 ];
 
 @NgModule({

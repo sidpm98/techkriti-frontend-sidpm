@@ -14,3 +14,10 @@
 .navbar {
   margin-bottom: 0px;
 }
+
+.navbar{
+  position: fixed;
+  width: 100vw;
+  z-index: 10000;
+  top: 0;
+}

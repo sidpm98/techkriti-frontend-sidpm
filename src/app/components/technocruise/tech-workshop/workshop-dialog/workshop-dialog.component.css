@@ -1,11 +1,10 @@
 .dialog{
-  height: 100vh;
+  height: 50vh;
   width: 100vw;
-  display: block;
 }
 
 .contents{
-    padding-left: 5px;
-    padding-top: 10px;
-    font-size: 2.2vh;
+  padding-left: 5px;
+  padding-top: 10px;
+  font-size: 2.2vh;
 }

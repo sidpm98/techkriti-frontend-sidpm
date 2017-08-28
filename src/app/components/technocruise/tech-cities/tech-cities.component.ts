@@ -26,7 +26,7 @@ export class TechCitiesComponent implements OnInit {
   }
 
   gotoWorkshop(city) {
-    this.router.navigate([`technocruise/${ city.name }`]);
+    this.router.navigate([`zonals/${ city.name }`]);
   }
 
   makePayment(eventcode: string) {

@@ -24,6 +24,7 @@ export class CityDetailsComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.technoService.getCityWorkshops(params['city']))
       .subscribe(workshops => {
+        this.workshopStrings = [];
         for (let workshop of workshops[0].workshop) {
           this.technoService.getWorkshop(workshop).subscribe((workshop) => {
             this.workshopStrings.push(workshop);
@@ -44,7 +45,7 @@ export class CityDetailsComponent implements OnInit {
     });
     this.authService.checkLogin().then((res) => {
       if (res === 1) {
-        this.router.navigate(['technocruise/dashboard']);
+        this.router.navigate(['zonals/dashboard']);
       } else if (res === 2) {
         const payPrefill = {
           cq1: this.authService.user._id,
@@ -56,7 +57,7 @@ export class CityDetailsComponent implements OnInit {
         payPrefill['eventcode'] = eventcode;
         this.paymentService.payment(payPrefill);
       } else {
-        this.router.navigate(['technocruise/login']);
+        this.router.navigate(['zonals/login']);
       }
     });
   }
