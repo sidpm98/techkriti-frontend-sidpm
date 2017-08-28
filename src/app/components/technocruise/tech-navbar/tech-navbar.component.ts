@@ -19,19 +19,18 @@ export class TechNavbarComponent implements OnInit {
     // {'name': 'Sponsors', 'link': 'sponsors'},
     {'name': 'Dashboard', 'link': 'dashboard'},
     {'name': 'Contact', 'link': 'contact'},
-    {'name': 'Login', 'link': 'login'}
+    {'name': 'Login', 'link': 'login'},
+    {'name': 'Register', 'link': 'dehradun'}
   ];
 
-  constructor(private authService: AuthService) {
-    if (this.authService.user !== undefined) {
-      this.username = this.authService.user.name;
-    } else {
-      this.username = 'Login';
-    }
-  }
+  constructor(private authService: AuthService) { }
 
   toogleMenu() {
     this.menuClicked = !this.menuClicked;
+  }
+
+  signOut() {
+    this.authService.logout()
   }
 
   menuClick(nav) {

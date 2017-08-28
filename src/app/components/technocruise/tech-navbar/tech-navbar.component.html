@@ -11,6 +11,7 @@
     </div>
     <div class="navbar-collapse" id="bs-example-navbar-collapse-1" [class.collapse]="menuClicked">
       <ul class="nav navbar-nav navbar-right">
+        <li (click)="signOut()"><a>Logout</a></li>
         <li *ngFor="let nav of navbar" [class.selected]="activeTab === nav.name" (click)="menuClick(nav.name)"><a [routerLink]="nav.link">{{nav.name}}</a></li>
       </ul>
     </div>

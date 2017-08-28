@@ -5,6 +5,7 @@ import {FacebookService, InitParams, LoginResponse, LoginStatus} from 'ngx-faceb
 import 'rxjs/add/operator/toPromise';
 import { ScriptService } from './script.service';
 import {MdDialog, MdDialogRef} from '@angular/material';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dialog-overview-example-dialog',
@@ -30,6 +31,7 @@ export class AuthService {
 
   constructor(private script: ScriptService,
               private http: Http,
+              private router: Router,
               private fb: FacebookService,
               private dialog: MdDialog) {
     const params: InitParams = {
@@ -122,6 +124,19 @@ export class AuthService {
       }).catch((err) => {
         this.user = olduser;
         return Promise.reject(err);
+      });
+  }
+
+  logout() {
+    const url = '/api/techkriti/user.logout';
+    return this.http.post(url, {})
+      .toPromise()
+      .then(() => {
+      this.user = null;
+        this.router.navigate(['technocruise']);
+      })
+      .catch((err) => {
+        console.error('err');
       });
   }
 }
