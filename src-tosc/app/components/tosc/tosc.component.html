@@ -128,11 +128,24 @@
   </div>
   <div class="con prize">
     <md-card class="prize-card" *ngFor="let prize of tosc.prizes">
+      <span [mdTooltip]="prize.tip">
       <md-card-header>
         <md-card-title> {{ prize.caption }} </md-card-title>
+        <md-card-subtitle> {{ prize.subcaption }} </md-card-subtitle>
       </md-card-header>
       <img md-card-image [src]="prize.src">
+      </span>
     </md-card>
+  </div>
+  <div class="con subprize">
+    <div class="subprize-card" *ngFor="let prize of tosc.subprizes">
+      <p class="subprize-title">
+        {{ prize.caption }}
+      </p>
+      <p class="subprize-subtitle">
+        {{ prize.subcaption }}
+      </p>
+    </div>
   </div>
 </div>
 

@@ -30,26 +30,58 @@ export const TOSC = {
   prizes: [
     {
       src: '/assets/1.jpg',
-      caption: '1st Prize'
+      subcaption: '1st Prize',
+      caption: 'Laptop',
+      tip: ''
     },
     {
       src: '/assets/2.jpg',
-      caption: '2nd Prize'
+      subcaption: '2nd Prize',
+      caption: 'iPad',
+      tip: ''
     },
     {
       src: '/assets/3.jpg',
-      caption: '3rd Prize'
+      subcaption: '3rd Prize',
+      caption: 'Kindle',
+      tip: ''
     },
     {
       src: '/assets/4.png',
-      caption: 'Top 50 Students'
+      subcaption: 'Top 50 Students',
+      caption: 'TOSC T-Shirts',
+      tip: ''
     },
     {
       src: '/assets/5.jpg',
-      caption: 'School Toppers'
+      subcaption: 'School Topper *',
+      caption: 'Medals',
+      tip: '* Only in schools with atleast 50 participants'
     }
   ],
 
+  subprizes: [
+    {
+      subcaption: 'Top 10 students of round 3',
+      caption: 'Gold Certificate'
+    },
+    {
+      subcaption: 'Top 100 students of round 3',
+      caption: 'Silver Certificate'
+    },
+    {
+      subcaption: 'Top 1000 students of round 1',
+      caption: 'Bronze Certificate'
+    },
+    {
+      subcaption: 'Maximum number of students qualifying for round 2 in each city',
+      caption: 'Best School'
+    },
+    {
+      subcaption: 'Maximum number of student participation from a school in each city',
+      caption: 'Maximum Participation'
+    }
+  ],
   testi: [
     {
       name: 'Asmita Mehta',
