@@ -1,10 +1,15 @@
 .links{
   display: block;
-  width: 200px;
+  width: 250px;
   height: 100px;
   position: fixed;
   bottom: 5vh;
   right: 5vw;
+}
+
+.links a {
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .links span{

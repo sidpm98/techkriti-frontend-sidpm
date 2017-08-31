@@ -56,6 +56,7 @@
   text-shadow: 2px 2px 2px #000;
   font-size: 20px;
   font-variant: small-caps;
+  font-weight: 600;
   z-index: 3;
   padding: 20px;
   width: 100%;
@@ -101,6 +102,14 @@
     height: 120px;
     border: 5px solid white;
     margin: 0 23px 0 23px;
+  }
+
+}
+
+@media only screen and (max-width: 594px) {
+
+  .city-head {
+    font-size: 5vmax;
   }
 }
 
