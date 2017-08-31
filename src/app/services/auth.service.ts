@@ -2,10 +2,10 @@ import {Component, Injectable} from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import {FacebookService, InitParams, LoginResponse, LoginStatus} from 'ngx-facebook';
 
-import 'rxjs/add/operator/toPromise';
-import { ScriptService } from './script.service';
 import {MdDialog, MdDialogRef} from '@angular/material';
 import {Router} from '@angular/router';
+import 'rxjs/add/operator/toPromise';
+import { ScriptService } from './script.service';
 
 @Component({
   selector: 'app-dialog-overview-example-dialog',
@@ -69,7 +69,7 @@ export class AuthService {
       scope: 'email, public_profile'
     }).then((res: LoginResponse) => {
       this.token = res.authResponse.accessToken;
-      const dialogRef = this.dialog.open(WaitDialogComponent)
+      const dialogRef = this.dialog.open(WaitDialogComponent);
       return this.backendLogin(res.authResponse.accessToken, res.authResponse.userID, dialogRef);
     }).catch((err) => console.error(err)));
   }

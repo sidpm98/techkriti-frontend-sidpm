@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../../services/auth.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-techno-login',
@@ -17,7 +17,7 @@ export class TechnoLoginComponent implements OnInit {
 
   login() {
     this.authService.fbLogin().then(() => {
-      this.router.navigate(['zonals/dashboard'])
+      this.router.navigate(['zonals/dashboard']);
     });
   }
 

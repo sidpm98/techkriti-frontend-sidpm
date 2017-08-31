@@ -8,9 +8,10 @@ import {AuthService} from '../../../services/auth.service';
 })
 export class TechDashboardComponent implements OnInit {
 
+  user: any;
+
   constructor(private authService: AuthService) { }
 
-  user: any;
   ngOnInit() {
     this.user = this.authService.user;
   }

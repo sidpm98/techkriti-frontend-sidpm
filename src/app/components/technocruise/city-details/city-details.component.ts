@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
-import {TechnocruiseService} from '../../../services/technocruise.service';
+import {PaymentService} from '../../../../../src-tosc/app/services/payment.service';
 import {WorkshopInterface} from '../../../models/workshop.interface';
 import {AuthService} from '../../../services/auth.service';
-import {PaymentService} from '../../../../../src-tosc/app/services/payment.service';
+import {TechnocruiseService} from '../../../services/technocruise.service';
 
 @Component({
   selector: 'app-city-details',
@@ -13,8 +13,7 @@ import {PaymentService} from '../../../../../src-tosc/app/services/payment.servi
 })
 export class CityDetailsComponent implements OnInit {
 
-  public workshops: Array<WorkshopInterface>;
-  public workshopStrings =[]
+  public workshopStrings = [];
   constructor(private route: ActivatedRoute,
               public technoService: TechnocruiseService,
               private authService: AuthService,
@@ -25,13 +24,15 @@ export class CityDetailsComponent implements OnInit {
       .switchMap((params: Params) => this.technoService.getCityWorkshops(params['city']))
       .subscribe(workshops => {
         this.workshopStrings = [];
-        for (let workshop of workshops[0].workshop) {
-          this.technoService.getWorkshop(workshop).subscribe((workshop) => {
-            this.workshopStrings.push(workshop);
-          });
+        for (const workshop of workshops[0].workshop) {
+          if (workshops[0].workshop.hasOwnProperty(workshop)) {
+
+            this.technoService.getWorkshop(workshop).subscribe((work) => {
+              this.workshopStrings.push(work);
+            });
+          }
         }
-        console.log(workshops[0].workshop);
-      } );
+      });
   }
 
   payNow(ticketname: string) {

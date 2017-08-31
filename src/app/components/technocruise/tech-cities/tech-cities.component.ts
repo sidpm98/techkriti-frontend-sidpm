@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import * as _ from 'lodash';
-import {TechnocruiseService} from '../../../services/technocruise.service';
-import {AuthService} from '../../../services/auth.service';
-import {PaymentService} from '../../../../../src-tosc/app/services/payment.service';
 import {Router} from '@angular/router';
+import * as _ from 'lodash';
+import {PaymentService} from '../../../../../src-tosc/app/services/payment.service';
+import {AuthService} from '../../../services/auth.service';
+import {TechnocruiseService} from '../../../services/technocruise.service';
 
 @Component({
   selector: 'app-tech-cities',

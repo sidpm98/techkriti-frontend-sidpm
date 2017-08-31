@@ -22,5 +22,4 @@ export class WorkshopDialogComponent implements OnInit {
       .subscribe(workshop => this.data = workshop);
   }
 
-
 }

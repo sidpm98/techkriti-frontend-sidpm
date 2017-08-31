@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {LoggedInGuardService, UpdateGuardService, WeakLoggedInGaurd} from '../../services/guards.service';
 import {LandingComponent} from '../landing/landing.component';
 import {CityDetailsComponent} from './city-details/city-details.component';
 import {TechAboutComponent} from './tech-about/tech-about.component';
@@ -10,9 +11,8 @@ import {TechEventsComponent} from './tech-events/tech-events.component';
 import {TechLandingComponent} from './tech-landing/landing.component';
 import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
-import {TechnocruiseComponent} from './technocruise.component';
-import {LoggedInGuardService, UpdateGuardService, WeakLoggedInGaurd} from '../../services/guards.service';
 import {TechnoLoginComponent} from './techno-login/techno-login.component';
+import {TechnocruiseComponent} from './technocruise.component';
 
 const TechRoutes: Routes = [
   {

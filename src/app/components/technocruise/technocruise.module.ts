@@ -3,9 +3,14 @@ import {NgModule} from '@angular/core';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule, MdDatepickerModule, MdNativeDateModule} from '@angular/material';
+import {MarkdownToHtmlModule} from 'ng2-markdown-to-html';
+import {PaymentService} from '../../../../src-tosc/app/services/payment.service';
+import {ScriptService} from '../../../../src-tosc/app/services/script.service';
 import {AuthService} from '../../services/auth.service';
 import {GuardsService, LoggedInGuardService, UpdateGuardService, WeakLoggedInGaurd} from '../../services/guards.service';
 import {TechnocruiseService} from '../../services/technocruise.service';
+import { CityDetailsComponent } from './city-details/city-details.component';
+import {SocLinksComponent} from './soc-links/soc-links.component';
 import {TechAboutComponent} from './tech-about/tech-about.component';
 import {TechCitiesComponent} from './tech-cities/tech-cities.component';
 import {TechContactComponent} from './tech-contact/tech-contact.component';
@@ -18,14 +23,9 @@ import {DialogSidenavComponent, TechSidenavComponent} from './tech-sidenav/tech-
 import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
 import {WorkshopDialogComponent} from './tech-workshop/workshop-dialog/workshop-dialog.component';
+import { TechnoLoginComponent } from './techno-login/techno-login.component';
 import {TechnocruiseComponent} from './technocruise.component';
 import {TechnocruiseRoutingModule} from './technocruise.routing.module';
-import {PaymentService} from '../../../../src-tosc/app/services/payment.service';
-import {ScriptService} from '../../../../src-tosc/app/services/script.service';
-import { CityDetailsComponent } from './city-details/city-details.component';
-import {SocLinksComponent} from './soc-links/soc-links.component';
-import {MarkdownToHtmlModule} from 'ng2-markdown-to-html';
-import { TechnoLoginComponent } from './techno-login/techno-login.component';
 
 @NgModule({
   imports:  [

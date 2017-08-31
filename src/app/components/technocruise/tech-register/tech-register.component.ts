@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {AuthService} from '../../../services/auth.service';
 import {MdSnackBar} from '@angular/material';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-tech-register',
@@ -116,8 +116,10 @@ export class TechRegisterComponent implements OnInit {
 
   updateUser(olduser: any, newuser: any) {
     for (const keys in newuser) {
-      console.log(keys);
-      olduser[keys] = newuser[keys];
+      if (newuser.hasOwnProperty(keys)) {
+        console.log(keys);
+        olduser[keys] = newuser[keys];
+      }
     }
     return olduser;
   }

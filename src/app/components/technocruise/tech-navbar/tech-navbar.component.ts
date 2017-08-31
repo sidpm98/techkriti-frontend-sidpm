@@ -8,7 +8,7 @@ import {AuthService} from '../../../services/auth.service';
 })
 export class TechNavbarComponent implements OnInit {
   menuClicked = true;
-  username: string = 'Login';
+  username = 'Login';
   activeTab: string;
   navbar = [
     {'name': 'Register', 'link': 'dehradun'},

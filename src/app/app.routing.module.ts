@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'ambassador/register',
     component: RegisterComponent
-  },
+  }
 ];
 
 @NgModule({
