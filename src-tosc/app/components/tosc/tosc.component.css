@@ -75,7 +75,7 @@
     background-color: #fefae5;
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 6vmin;
+    padding-bottom: 2vmin;
 }
 
 .prize div {
@@ -111,7 +111,7 @@
     margin: 2vmin;
     padding-top: 0;
     padding-bottom: 0;
-    width: 250px;
+    width: 200px;
     height: 100%;
     background-color: #e0ce94 !important;
 }
@@ -120,12 +120,13 @@
     padding: 1vmin 0;
 }
 
-.prize-card .mat-card-title {
+.prize-card .mat-card-subtitle {
     margin-bottom: 0 !important;
 }
 
 md-card-header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -133,7 +134,56 @@ md-card-header {
 md-card-title {
     font-family: Lato, sans-serif;
     font-weight: 700 !important;
-    font-size: 3vmin !important;
+    font-size: 2.5vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+md-card-subtitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subprize {
+    display: flex;
+    background-color: #fefae5;
+    flex-wrap: wrap;
+  align-items: center;
+    justify-content: center;
+    padding-bottom: 8vmin;
+}
+
+.subprize div {
+    margin: 20px;
+    height: 15vh;
+    width: 220px;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.subprize-card{
+    height: 60px;
+    background-color: #e0ce94;
+}
+
+.subprize-card p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subprize-title{
+    text-align : center !important;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.subprize-subtitle{
+    text-align : center !important;
+    font-weight: 300;
+    font-size: 2vh;
 }
 
 @media (max-width: 1440px) {
@@ -144,7 +194,7 @@ md-card-title {
 
 @media (max-width: 412px) {
     .sponsor-card {
-        width: 50vmax !important; 
+        width: 50vmax !important;
     }
 }
 
