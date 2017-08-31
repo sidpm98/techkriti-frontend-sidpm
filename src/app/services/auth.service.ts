@@ -123,14 +123,18 @@ export class AuthService {
 
   logout() {
     const url = '/api/techkriti/user.logout';
-    return this.http.post(url, {})
+    if (this.user != null) {
+      return this.http.post(url, {})
       .toPromise()
       .then(() => {
-      this.user = null;
+        this.user = null;
         this.router.navigate(['zonals']);
       })
       .catch((err) => {
-        console.error('err');
+        console.error(err);
       });
+    } else {
+      return;
+    }
   }
 }

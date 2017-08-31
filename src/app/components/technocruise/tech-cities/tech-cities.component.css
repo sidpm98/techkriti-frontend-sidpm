@@ -1,13 +1,21 @@
 .initial {
   width: 100vw;
-  height: 100%;
   padding: 100px 10vw 0 10vw;
+  margin-top: 7.5vh;
+}
+
+.city-head {
+  font-weight: 800;
+  font-variant: small-caps;
+  font-size: 3vmax;
+  margin-bottom: 3vh;
 }
 
 .tiles {
   display: block;
-  width: 180px;
-  height: 180px;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
   margin: 0 40px 0 40px;
   overflow: hidden;
   z-index: 1;
@@ -20,8 +28,8 @@
 .pic {
   display: block;
   z-index: -1;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   padding: 0px;
   transform: rotateZ(45deg);
   transition: all 0.2s ease-in-out;
@@ -37,8 +45,8 @@
   left: -20px;
   transform: scale(1.5);
   z-index: -1;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   padding: 0px;
   transition: all 0.2s ease-in-out;
 }
@@ -98,8 +106,8 @@
 
 @media only screen and (min-width: 1439px) {
   .tiles{
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     border: 10px solid white;
     margin: 0 40px 0 40px;
   }

@@ -146,14 +146,14 @@ export const cruise = {
       pic: '',
       workshop: '',
       row: 3
+    },
+    {
+      name: 'patna',
+      date: '',
+      eventcode: 'technocruise-raipur-213040',
+      pic: '',
+      row: 4
     }
-    // {
-    //   name: 'patna',
-    //   date: 'Coming Soon',
-    //   eventcode: 'technocruise-raipur-213040',
-    //   pic: '',
-    //   row: 3
-    // },
     // {
     //   name: 'gorakhpur',
     //   date: 'Coming Soon',

@@ -15,7 +15,7 @@ export class CityDetailsComponent implements OnInit {
 
   public workshopStrings = [];
   constructor(private route: ActivatedRoute,
-              public technoService: TechnocruiseService,
+              private technoService: TechnocruiseService,
               private authService: AuthService,
               private paymentService: PaymentService,
               private router: Router) { }
@@ -24,13 +24,11 @@ export class CityDetailsComponent implements OnInit {
       .switchMap((params: Params) => this.technoService.getCityWorkshops(params['city']))
       .subscribe(workshops => {
         this.workshopStrings = [];
-        for (const workshop of workshops[0].workshop) {
-          if (workshops[0].workshop.hasOwnProperty(workshop)) {
-
-            this.technoService.getWorkshop(workshop).subscribe((work) => {
-              this.workshopStrings.push(work);
-            });
-          }
+        const myWorkshops = workshops[0].workshop;
+        for (const workshop of myWorkshops) {
+          this.technoService.getWorkshop(workshop).subscribe((work) => {
+            this.workshopStrings.push(work);
+          });
         }
       });
   }

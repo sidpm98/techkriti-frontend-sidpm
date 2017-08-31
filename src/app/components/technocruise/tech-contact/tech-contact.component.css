@@ -6,6 +6,13 @@
   filter: grayscale(70%);
 }
 
+section {
+  margin-top: 10vh;
+}
+
+md-card {
+  margin: 12.5px;
+}
 .contact-card:hover {
   transform-origin: bottom;
   transform: scale(1.05);

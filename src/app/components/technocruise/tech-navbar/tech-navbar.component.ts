@@ -29,10 +29,6 @@ export class TechNavbarComponent implements OnInit {
     this.menuClicked = !this.menuClicked;
   }
 
-  signOut() {
-    this.authService.logout();
-  }
-
   menuClick(nav) {
     this.menuClicked = true;
     this.activeTab = nav;

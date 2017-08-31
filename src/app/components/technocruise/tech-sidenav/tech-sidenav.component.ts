@@ -16,6 +16,10 @@ phn: boolean;
     this.user = this.authService.user;
     this.phn = (window.screen.width < 1024);
   }
+
+  signOut() {
+    this.authService.logout();
+  }
 }
 
 @Component({
@@ -26,8 +30,10 @@ phn: boolean;
 
 export class DialogSidenavComponent implements OnInit {
   phn: boolean;
-  constructor(public Tech: TechnocruiseService) {}
+  constructor(public Tech: TechnocruiseService,
+              private authService: AuthService) {}
   ngOnInit() {
     this.phn = (window.screen.width < 1024);
   }
+
 }

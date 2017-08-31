@@ -1,7 +1,9 @@
-<noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
 <div class="initial">
   <div fxLayout="column" fxLayoutAlign="center center">
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutWrap="wrap" *ngFor="let Cities of getCities()">
+    <div class="city-head">Cities</div>
+    <div fxLayout="row" fxLayoutAlign="center center"
+         fxLayoutWrap="wrap"
+         *ngFor="let Cities of getCities()">
       <div *ngFor="let city of Cities" (click)="gotoWorkshop(city)" class="tiles" fxLayoutAlign="center center">
         <div class="pic">
           <img class="pic1" [src]="'/assets/Technocruise/city/'+city.name.toLowerCase()+'.jpg'"/>

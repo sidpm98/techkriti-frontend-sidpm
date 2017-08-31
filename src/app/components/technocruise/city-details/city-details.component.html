@@ -1,6 +1,6 @@
 <noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
 <app-dialog-sidenav></app-dialog-sidenav>
-<div *ngIf="!workshopStrings.length">
+<div class="com-head" *ngIf="!workshopStrings.length">
   <h1 class="coming"> COMING SOON ... </h1>
 </div>
 <div *ngIf="workshopStrings.length">
@@ -16,7 +16,7 @@
           <h2>Content</h2>
           <div markdown-to-html>{{Workshop.content}}</div>
           <h2>Benefits</h2>
-          {{Workshop.benefits}}
+          <div markdown-to-html>{{Workshop.benefits}}</div>
           <div>
             <button md-raised-button (click)="payNow(Workshop.name)">Register</button>
           </div>

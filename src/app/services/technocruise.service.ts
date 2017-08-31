@@ -36,6 +36,7 @@ export class TechnocruiseService {
   }
 
   getWorkshop(name: string): Observable<any> {
+    console.log(name);
     return this.workshops.map(city => city.get(name));
   }
 
