@@ -24,6 +24,7 @@ import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
 import {WorkshopDialogComponent} from './tech-workshop/workshop-dialog/workshop-dialog.component';
 import { TechnoLoginComponent } from './techno-login/techno-login.component';
+import { TechnoTicketComponent } from './techno-ticket/techno-ticket.component';
 import {TechnocruiseComponent} from './technocruise.component';
 import {TechnocruiseRoutingModule} from './technocruise.routing.module';
 
@@ -56,7 +57,8 @@ import {TechnocruiseRoutingModule} from './technocruise.routing.module';
     CityDetailsComponent,
     SocLinksComponent,
     TechnoLoginComponent,
-    DialogSidenavComponent
+    DialogSidenavComponent,
+    TechnoTicketComponent
   ],
   exports: [ TechnocruiseComponent ],
   providers: [

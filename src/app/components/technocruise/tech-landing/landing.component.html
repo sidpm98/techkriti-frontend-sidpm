@@ -1,3 +1,10 @@
+<div class="login" fxFlex="row" fxLayoutAlign="center center"
+     *ngIf="!authService.user">
+  <button md-raised-button color="primary"
+          (click)="login()">
+    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+    SignIn with Facebook</button>
+</div>
 <div class='slider'>
   <div class='slide1'></div>
   <div class='slide2'></div>

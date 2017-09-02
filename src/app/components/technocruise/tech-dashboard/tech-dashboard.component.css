@@ -4,8 +4,18 @@
 
 .dash-body {
   flex: 1 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding-left: 5vmin;
+  margin-left: 26vw;
+  margin-top: 50px;
+}
+
+app-techno-ticket {
+  padding: 10px;
+}
+
+@media (max-width: 512px){
+  .dash-body {
+    margin-left: 0px;
+  }
+
 }

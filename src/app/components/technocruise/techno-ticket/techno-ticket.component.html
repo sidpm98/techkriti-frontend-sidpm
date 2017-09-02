@@ -1,0 +1,6 @@
+<md-card *ngIf="ticket" fxLayout="column" fxLayoutAlign="space-around center">
+  <div class="event">{{ ticket.eventName }}</div>
+  <div class="ticket">{{ ticket.ticketName }}</div>
+  <div class="price"><i class="fa fa-inr" aria-hidden="true"></i>
+    {{ ticket.price }}</div>
+</md-card>

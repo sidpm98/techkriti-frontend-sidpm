@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import * as _ from 'lodash';
-import {PaymentService} from '../../../../../src-tosc/app/services/payment.service';
-import {AuthService} from '../../../services/auth.service';
 import {TechnocruiseService} from '../../../services/technocruise.service';
 
 @Component({
@@ -13,9 +11,7 @@ import {TechnocruiseService} from '../../../services/technocruise.service';
 export class TechCitiesComponent implements OnInit {
   cities;
   constructor(public tech: TechnocruiseService,
-              private authService: AuthService,
-              private router: Router,
-              private paymentService: PaymentService) {
+              private router: Router) {
     tech.getCities().subscribe(res => this.cities = res);
   }
   getCities() {
@@ -26,11 +22,6 @@ export class TechCitiesComponent implements OnInit {
   }
 
   gotoWorkshop(city) {
-    this.router.navigate([`zonals/${ city.name }`]);
+    this.router.navigate([`technocruise/${ city.name }`]);
   }
-
-  makePayment(eventcode: string) {
-
-  }
-
 }

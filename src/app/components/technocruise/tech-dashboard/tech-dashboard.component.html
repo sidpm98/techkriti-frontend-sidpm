@@ -5,12 +5,13 @@
       <md-tab label="Profile">
         <app-tech-register [user]="user"></app-tech-register>
       </md-tab>
-      <!--<md-tab label="Events">-->
-        <!--Events-->
-      <!--</md-tab>-->
+      <md-tab label="Tickets">
+        <h1>Tickets</h1>
+        <div fxLayout="row">
+          <app-techno-ticket *ngFor="let ticket of user.tickets"
+                             [ticket]="ticket"></app-techno-ticket>
+        </div>
+      </md-tab>
     </md-tab-group>
-    <!--<div class="events">-->
-    <!--<h1>Events Registered</h1>-->
-    <!--</div>-->
   </div>
 </div>

@@ -17,7 +17,7 @@ export class GuardsService implements CanActivate {
           this.snackbar.open('Please Register', '', {
             duration: 2000
           });
-          this.router.navigate(['zonals/dashboard']);
+          this.router.navigate(['technocruise/dashboard']);
           return false;
         }
         return true;
@@ -41,7 +41,7 @@ export class UpdateGuardService implements CanActivate {
           });
           return true;
         } else if (res === 0) {
-          this.router.navigate(['zonals/login']);
+          this.router.navigate(['../technocruise']);
           return false;
         } else {
           return true;
@@ -67,10 +67,10 @@ export class LoggedInGuardService implements CanActivate {
           this.snackbar.open('Please fill the form', '', {
             duration: 2000
           });
-          this.router.navigate(['zonals/dashboard']);
+          this.router.navigate(['technocruise/dashboard']);
           return false;
         } else if (res === 0) {
-          this.router.navigate(['zonals/login']);
+          this.router.navigate(['../technocruise']);
           return false;
         }
         return false;
@@ -88,7 +88,7 @@ export class WeakLoggedInGaurd implements CanActivate {
     console.log('Weak Log In');
     return this.authService.checkLogin().then((res) => {
       if (res === 0) {
-        this.router.navigate(['login']);
+        this.router.navigate(['../technocruise']);
         return false;
       } else {
         return true;

@@ -15,33 +15,8 @@
       </md-input-container>
 
       <md-input-container>
-        <input mdInput [mdDatepicker]="picker" placeholder="Date of birth"
-               formControlName="dob">
-        <button mdSuffix [mdDatepickerToggle]="picker"></button>
-      </md-input-container>
-      <md-datepicker touchUi="true" #picker></md-datepicker>
-
-      <md-input-container>
         <input mdInput placeholder="Gender"
                required formControlName="gender">
-      </md-input-container>
-
-      <md-input-container>
-        <input mdInput placeholder="City"
-               required formControlName="city">
-        <md-error> {{ formErrors.city }} </md-error>
-      </md-input-container>
-
-      <md-input-container>
-        <input mdInput placeholder="Phone No"
-               required formControlName="phone">
-        <md-error> {{ formErrors.phone }} </md-error>
-      </md-input-container>
-
-      <md-input-container>
-        <input mdInput placeholder="WhatsApp No"
-               required formControlName="whatsapp">
-        <md-error> {{ formErrors.whatsapp }} </md-error>
       </md-input-container>
 
       <md-input-container>
@@ -51,9 +26,18 @@
       </md-input-container>
 
       <md-input-container>
-        <input mdInput placeholder="Campus Ambassador Referral Code"
-               formControlName="ref_code">
+        <input mdInput placeholder="College City"
+               required formControlName="city">
+        <md-error> {{ formErrors.city }} </md-error>
       </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="Phone No"
+        required formControlName="phone">
+        <span mdPrefix>+91 &nbsp;</span>
+        <md-error> {{ formErrors.phone }} </md-error>
+      </md-input-container>
+
 
       <button md-raised-button (click)="register()">Update</button>
     </div>

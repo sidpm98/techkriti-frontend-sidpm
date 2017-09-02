@@ -8,10 +8,8 @@ import {AuthService} from '../../../services/auth.service';
 })
 export class TechNavbarComponent implements OnInit {
   menuClicked = true;
-  username = 'Login';
   activeTab: string;
   navbar = [
-    {'name': 'Register', 'link': 'dehradun'},
     {'name': 'About', 'link': 'about'},
     {'name': 'Workshop', 'link': 'workshop'},
     {'name': 'Cities', 'link': 'cities'},
@@ -19,11 +17,10 @@ export class TechNavbarComponent implements OnInit {
     {'name': 'Events', 'link': 'events'},
     // {'name': 'Sponsors', 'link': 'sponsors'},
     {'name': 'Dashboard', 'link': 'dashboard'},
-    {'name': 'Contact', 'link': 'contact'},
-    {'name': 'Login', 'link': 'login'}
+    {'name': 'Contact', 'link': 'contact'}
   ];
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   toogleMenu() {
     this.menuClicked = !this.menuClicked;

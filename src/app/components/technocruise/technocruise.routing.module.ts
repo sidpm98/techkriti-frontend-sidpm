@@ -16,7 +16,7 @@ import {TechnocruiseComponent} from './technocruise.component';
 
 const TechRoutes: Routes = [
   {
-    path: 'zonals',
+    path: 'technocruise',
     component: TechnocruiseComponent,
     children: [
       {

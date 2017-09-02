@@ -128,7 +128,7 @@ export class AuthService {
       .toPromise()
       .then(() => {
         this.user = null;
-        this.router.navigate(['zonals']);
+        this.router.navigate(['technocruise']);
       })
       .catch((err) => {
         console.error(err);

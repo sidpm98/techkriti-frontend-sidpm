@@ -14,7 +14,6 @@ export class TechRegisterComponent implements OnInit {
     name: '',
     email: '',
     phone: '',
-    whatsapp: '',
     college: '',
     city: ''
   };
@@ -29,10 +28,6 @@ export class TechRegisterComponent implements OnInit {
     },
     phone: {
       required: 'Phone is required',
-      pattern: 'Phone number is not valid',
-      maxlength: 'Phone number exceeds 10 digit'
-    },
-    whatsapp: {
       pattern: 'Phone number is not valid',
       maxlength: 'Phone number exceeds 10 digit'
     },
@@ -72,22 +67,14 @@ export class TechRegisterComponent implements OnInit {
         Validators.pattern(this.phoneRe),
         Validators.maxLength(10)
       ]],
-      'whatsapp': [this.user.whatsapp, [
-        Validators.pattern(this.phoneRe),
-        Validators.maxLength(10)
-      ]],
       'college': [this.user.college, [
         Validators.required
       ]],
       'gender': [this.user.gender, [
         Validators.required
       ]],
-      'dob': [this.user.dob],
-      'city': ['Kanpur', [
+      'city': ['', [
         Validators.required
-      ]],
-      'ref_code': [this.user.ref_code, [
-        Validators.maxLength(20)
       ]]
     });
 
@@ -128,7 +115,7 @@ export class TechRegisterComponent implements OnInit {
     const myUser = this.registerForm.value;
     this.authService.updateUser(this.updateUser(this.user, myUser)).then((res) => {
       this.user = res;
-      this.snackbar.open('User is updated', '', {
+      this.snackbar.open('Your Profile is updated', '', {
         duration: 2000
       });
     }).catch((err) => {

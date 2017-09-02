@@ -1,0 +1,20 @@
+md-card {
+  height: 150px;
+  width: 300px;
+  border: 2px dashed black;
+  background-color: #FFF9EE;
+  margin: 3px;
+}
+
+.event {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ticket {
+  font-size: 12px;
+}
+
+.price {
+  font-size: 16px;
+}

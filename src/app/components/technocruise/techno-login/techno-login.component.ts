@@ -15,10 +15,4 @@ export class TechnoLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login() {
-    this.authService.fbLogin().then(() => {
-      this.router.navigate(['zonals/dashboard']);
-    });
-  }
-
 }

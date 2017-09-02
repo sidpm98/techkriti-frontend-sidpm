@@ -5,13 +5,25 @@
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand mainLogo" routerLink="../zonals">
+      <a class="navbar-brand mainLogo" routerLink="../technocruise">
         <img src="/assets/Technocruise/logo.png">
       </a>
     </div>
     <div class="navbar-collapse" id="bs-example-navbar-collapse-1" [class.collapse]="menuClicked">
       <ul class="nav navbar-nav navbar-right">
-        <li *ngFor="let nav of navbar" [class.selected]="activeTab === nav.name" (click)="menuClick(nav.name)"><a [routerLink]="nav.link">{{nav.name}}</a></li>
+        <li *ngFor="let nav of navbar"
+            [class.selected]="activeTab === nav.name"
+            (click)="menuClick(nav.name)">
+          <a [routerLink]="nav.link">{{nav.name}}</a>
+        </li>
+        <li *ngIf="authService.user">
+          <a [mdMenuTriggerFor]="menu">
+            {{ authService.user?.name }}
+          </a>
+          <md-menu #menu="mdMenu">
+            <button md-menu-item (click)="authService.logout()">Logout</button>
+          </md-menu>
+        </li>
       </ul>
     </div>
   </div>

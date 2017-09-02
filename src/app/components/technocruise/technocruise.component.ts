@@ -14,4 +14,5 @@ export class TechnocruiseComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }

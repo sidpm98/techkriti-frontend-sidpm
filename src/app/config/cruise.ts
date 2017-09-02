@@ -43,6 +43,11 @@ export const cruise = {
         name: 'SP Ranjan',
         phn: 7054151304,
         pic: '/assets/contacts/sp_ranjan.jpg'
+      },
+      {
+        name: 'Sandeep Akode',
+        phn: 9151619485,
+        pic: '/assets/contacts/sandeep_akode.jpg'
       }
     ]
   },
@@ -76,7 +81,8 @@ export const cruise = {
   cities: [
     {
       name: 'dehradun',
-      date: '2-3 September',
+      date: '2-3',
+      month: 'September',
       eventcode: 'technocruise-dehradun-443331',
       pic: '',
       workshop:
@@ -86,6 +92,7 @@ export const cruise = {
     {
       name: 'raipur',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: '',
@@ -94,6 +101,7 @@ export const cruise = {
     {
       name: 'hyderabad',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: '',
@@ -102,6 +110,7 @@ export const cruise = {
     {
       name: 'allahabad',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: '',
@@ -110,6 +119,7 @@ export const cruise = {
     {
       name: 'indore',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: '',
@@ -118,6 +128,7 @@ export const cruise = {
     {
       name: 'jabalpur',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: '',
@@ -126,6 +137,7 @@ export const cruise = {
     {
       name: 'chandigarh',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: '',
@@ -134,6 +146,7 @@ export const cruise = {
     {
       name: 'agra',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: '',
@@ -142,6 +155,7 @@ export const cruise = {
     {
       name: 'chennai',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: '',
@@ -150,6 +164,7 @@ export const cruise = {
     {
       name: 'patna',
       date: '',
+      month: '',
       eventcode: 'technocruise-raipur-213040',
       pic: '',
       row: 4
@@ -187,9 +202,7 @@ export const cruise = {
         'id': 'ethical-hacking',
         'home': `This module is designed to give an introduction to the fundamentals of internet and its primary
 concepts from origin to the current trending concepts of information security world.
-We will complete knowledge of basic security concepts, principles, and the key terms associated
-with information security and cyber World.
-Intend of this module is to clear misbelieves and myths of cyber world and also to study recent
+We will complete knowledge of basic security concepts, principles, and the key terms associated.With information security and cyber World.
 trends as well as threats and modus operandi of cyber criminals and testers.`,
         'name': 'Ethical Hacking',
         'content': `
