@@ -5,6 +5,9 @@
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-bars"></i>
       </button>
+      <!-- <a class="navbar-brand techLogo" routerLink=""> -->
+      <!-- <img src="/assets/"> -->
+      <!-- </a> -->
       <a class="navbar-brand mainLogo" routerLink="../technocruise">
         <img src="/assets/Technocruise/logo.png">
       </a>
@@ -16,7 +19,7 @@
             (click)="menuClick(nav.name)">
           <a [routerLink]="nav.link">{{nav.name}}</a>
         </li>
-        <li *ngIf="authService.user">
+        <li *ngIf="authService.user" class="user-nav">
           <a [mdMenuTriggerFor]="menu">
             {{ authService.user?.name }}
           </a>

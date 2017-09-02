@@ -6,10 +6,13 @@
         <app-tech-register [user]="user"></app-tech-register>
       </md-tab>
       <md-tab label="Tickets">
-        <h1>Tickets</h1>
-        <div fxLayout="row">
+        <h1 class="head">Tickets</h1>
+        <div fxLayout="row" *ngIf="user.tickets.length">
           <app-techno-ticket *ngFor="let ticket of user.tickets"
                              [ticket]="ticket"></app-techno-ticket>
+        </div>
+        <div *ngIf="!user.tickets.length">
+          <h1 class="no-ticket">No tickets to show</h1>
         </div>
       </md-tab>
     </md-tab-group>

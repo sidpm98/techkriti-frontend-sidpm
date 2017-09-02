@@ -9,6 +9,7 @@ import {TechContactComponent} from './tech-contact/tech-contact.component';
 import {TechDashboardComponent} from './tech-dashboard/tech-dashboard.component';
 import {TechEventsComponent} from './tech-events/tech-events.component';
 import {TechLandingComponent} from './tech-landing/landing.component';
+import {TechSponserComponent} from './tech-sponser/tech-sponser.component';
 import {TechTalksComponent} from './tech-talks/tech-talks.component';
 import {TechWorkshopComponent} from './tech-workshop/tech-workshop.component';
 import {TechnoLoginComponent} from './techno-login/techno-login.component';
@@ -52,6 +53,10 @@ const TechRoutes: Routes = [
       {
         path: 'login',
         component: TechnoLoginComponent
+      },
+      {
+        path: 'sponsors',
+        component: TechSponserComponent
       },
       {
         path: ':city',

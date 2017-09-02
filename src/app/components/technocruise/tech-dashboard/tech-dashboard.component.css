@@ -2,6 +2,16 @@
   display: flex
 }
 
+.no-ticket {
+    margin-left: 25vw;
+    margin-top: 25vh;
+    color: #b7bfcc;
+}
+
+.head {
+    font-variant: small-caps;
+}
+
 .dash-body {
   flex: 1 0 0;
   padding-left: 5vmin;

@@ -1,0 +1,11 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="sponsor">
+  <div class="head">
+    Sponsors
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <img *ngFor="let sponsor of Tech.getSponsers() | async"
+         [src]="sponsor.pic" class="logo"
+         [style.height.%]="sponsor.scale" [style.width.%]="sponsor.scale">
+  </div>
+</div>

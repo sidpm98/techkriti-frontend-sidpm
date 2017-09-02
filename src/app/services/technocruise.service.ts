@@ -13,6 +13,7 @@ export class TechnocruiseService {
   cityWorkshops: Observable<Map<string, Array<WorkshopInterface>>>;
   WorkshopName: Observable<Array<{name: string, pic: string}>>;
   contacts: any;
+  sponsers: any;
 
   constructor() {
     this.about = Observable.of(cruise.about);
@@ -21,6 +22,7 @@ export class TechnocruiseService {
     this.tabs = Observable.of(cruise.tabs);
     this.workshops = Observable.of(new Map(cruise.workshops));
     this.contacts = Observable.of(cruise.contacts);
+    this.sponsers = Observable.of(cruise.sponsers);
   }
 
   getAbout() {
@@ -50,5 +52,9 @@ export class TechnocruiseService {
 
   getContacts() {
     return this.contacts;
+  }
+
+  getSponsers() {
+    return this.sponsers;
   }
 }

@@ -178,6 +178,19 @@ export const cruise = {
     // }
   ],
 
+  sponsers: [
+    {
+      name: '',
+      pic: '/assets/Technocruise/sponsers/cryptus_cyber.png',
+      scale: '35'
+    },
+    {
+      name: '',
+      pic: '/assets/Technocruise/sponsers/hicube_Logo.png',
+      scale: '20'
+    }
+  ],
+
   tabs: [
     {
       name: 'home',
