@@ -6,8 +6,11 @@
 <md-sidenav-container class="_sidenav">
   <md-sidenav mode=side [opened]="!phn" class='_side' #sidenav>
     <section fxLayout="column" fxLayoutAlign="top center">
-      <div *ngFor="let city of Tech.getCities() |async" id="cityNames" [routerLink]="'../'+city.name">
-        {{city.name}}
+      <div *ngFor="let city of Tech.getCities() |async"
+           id="cityNames" [routerLink]="'../'+city.name"
+           fxFlex="row" fxLayoutAlign="space-between center">
+        <span class="name">{{city.name}}</span>
+        <sub class="date">{{ city.date}} {{ city.month }}</sub>
       </div>
     </section>
   </md-sidenav>

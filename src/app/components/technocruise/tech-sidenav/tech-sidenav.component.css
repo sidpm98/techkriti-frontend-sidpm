@@ -21,7 +21,7 @@ button {
 ._sidenav {
   height: calc(100vh - 50px);
   position: fixed;
-  background-color: rgba(60, 60, 60, 0.4);
+  background-color: rgba(60, 60, 60, 1);
   z-index: 5;
   color: white;
   border-right: 1px solid rgba(0, 0, 0, 0.4);
@@ -54,6 +54,15 @@ button {
   border-radius: 50%;
 }
 
+.name {
+    font-size: 130%;
+    font-weight: 130%;
+}
+
+.date{
+    right: 0;
+}
+
 #cityNames{
   font-size: 20px;
   padding: 5px;
@@ -62,6 +71,7 @@ button {
 }
 #cityNames:hover{
   cursor: pointer;
+  background-color: rgba(70, 70, 80, 1)
 }
 @media (max-width: 1023px) {
   ._sidenav {
