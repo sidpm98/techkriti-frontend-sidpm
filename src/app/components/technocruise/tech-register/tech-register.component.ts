@@ -73,7 +73,7 @@ export class TechRegisterComponent implements OnInit {
       'gender': [this.user.gender, [
         Validators.required
       ]],
-      'city': ['', [
+      'city': [this.user.city, [
         Validators.required
       ]]
     });
