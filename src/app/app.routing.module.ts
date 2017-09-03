@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'ambassador/register',
     component: RegisterComponent
+  },
+  {
+    path: '**',
+    component: LandingComponent
   }
 ];
 

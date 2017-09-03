@@ -68,10 +68,6 @@ const TechRoutes: Routes = [
         component: TechLandingComponent
       }
     ]
-  },
-  {
-    path: '**',
-    component: LandingComponent
   }
 ];
 
