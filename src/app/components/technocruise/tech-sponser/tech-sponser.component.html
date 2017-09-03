@@ -3,7 +3,7 @@
     Sponsors
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="center center">
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayout.xs="column">
     <img *ngFor="let sponsor of Tech.getSponsers() | async"
          [src]="sponsor.pic" class="logo"
          [style.height.%]="sponsor.scale" [style.width.%]="sponsor.scale">
