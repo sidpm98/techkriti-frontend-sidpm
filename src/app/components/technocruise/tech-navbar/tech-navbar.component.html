@@ -23,6 +23,7 @@
           <a [mdMenuTriggerFor]="menu">
             {{ authService.user?.name }}
           </a>
+          <i class="fa fa-caret-down"></i>
           <md-menu #menu="mdMenu">
             <button md-menu-item (click)="authService.logout()">Logout</button>
           </md-menu>
