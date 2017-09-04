@@ -93,7 +93,7 @@ export const cruise = {
       name: 'raipur',
       date: '9-10',
       month: 'September',
-      eventcode: '',
+      eventcode: 'technocruise-raipur-213040',
       pic: '',
       workshop: ['Ethical Hacking', 'Internet of Things'],
       row: 1

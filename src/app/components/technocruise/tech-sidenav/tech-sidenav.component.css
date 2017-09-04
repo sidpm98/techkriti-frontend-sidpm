@@ -48,6 +48,11 @@ button {
   font-variant: small-caps;
 }
 
+.city-icon {
+    font-size: 70%;
+    color: rgba(100, 100, 100, 1);
+}
+
 .pic {
   display: block;
   width: 100%;
