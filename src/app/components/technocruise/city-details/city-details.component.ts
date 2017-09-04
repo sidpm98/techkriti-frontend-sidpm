@@ -35,16 +35,19 @@ export class CityDetailsComponent implements OnInit {
 
   payNow(ticketname: string) {
     let eventcode = '';
+    console.log(ticketname);
     this.technoService.getCities().subscribe(cities => {
       for (const city of cities) {
+        console.log(city);
         if (city.name === this.route.snapshot.params.city) {
           eventcode = city.eventcode;
         }
       }
     });
+    console.log(eventcode);
     this.authService.checkLogin().then((res) => {
       if (res === 1) {
-        this.router.navigate(['zonals/dashboard']);
+        this.router.navigate(['technocruise/dashboard']);
       } else if (res === 2) {
         const payPrefill = {
           cq1: this.authService.user._id,
@@ -54,9 +57,10 @@ export class CityDetailsComponent implements OnInit {
           ticketvalue1: 1
         };
         payPrefill['eventcode'] = eventcode;
+        console.log(payPrefill);
         this.paymentService.payment(payPrefill);
       } else {
-        this.router.navigate(['zonals/login']);
+        this.router.navigate(['technocruise']);
       }
     });
   }

@@ -10,6 +10,7 @@
         <div class="work-body">
           <div class="head">
             {{ Workshop.name }}
+            <button md-raised-button (click)="payNow('Combo')">Buy Tickets for both @400!</button>
           </div>
           <h2>Description</h2>
           <div markdown-to-html>{{Workshop.home}}</div>
