@@ -8,11 +8,9 @@
     <section fxLayout="column" fxLayoutAlign="top center">
       <div *ngFor="let city of Tech.getCities() |async"
            id="cityNames" [routerLink]="'../'+city.name"
-           fxFlex="row" fxLayoutAlign="space-between center">
-        <div>
-        <i class="fa fa-map-pin city-icon">  </i>
+           fxFlex="row" fxLayoutAlign="space-between center" fxLayoutWrap>
+        <!--<i class="fa fa-map-pin city-icon">  </i>-->
         <span class="name">{{city.name}}</span>
-        </div>
         <sub class="date">{{ city.date}} {{ city.month }}</sub>
       </div>
     </section>
