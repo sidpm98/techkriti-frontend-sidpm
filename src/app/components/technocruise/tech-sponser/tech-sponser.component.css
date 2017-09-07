@@ -1,5 +1,11 @@
-.logo {
+img.logo {
     cursor: pointer;
+    filter: grayscale(80%);
+    transition: all 0.2s ease-out;
+}
+
+.logo:hover{
+  filter: grayscale(0);
 }
 
 .sponsor {

@@ -22,10 +22,10 @@
         <li *ngIf="authService.user" class="user-nav">
           <a [mdMenuTriggerFor]="menu">
             {{ authService.user?.name }}
+            <i class="fa fa-caret-down"></i>
           </a>
-          <i class="fa fa-caret-down"></i>
           <md-menu #menu="mdMenu">
-            <button md-menu-item (click)="authService.logout()">Logout</button>
+            <button md-menu-item (click)="authService.logout()" class="logout">Logout</button>
           </md-menu>
         </li>
       </ul>

@@ -15,7 +15,9 @@
   margin-bottom: 0px;
   font-size: 110%;
 }
-
+.logout{
+  margin-top: 50px;
+}
 .navbar{
   position: fixed;
   width: 100vw;
