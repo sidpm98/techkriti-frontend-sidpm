@@ -84,6 +84,7 @@
 
 .tiles:hover {
   transform: rotateZ(0deg);
+  -webkit-transform: rotateZ(0deg);
 }
 
 .tiles:hover .pic {
