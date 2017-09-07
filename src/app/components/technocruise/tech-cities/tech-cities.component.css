@@ -1,6 +1,5 @@
 .initial {
   width: 100vw;
-  padding: 100px 10vw 0 10vw;
   margin-top: 7.5vh;
 }
 
@@ -23,6 +22,20 @@
   transition: all 0.2s ease-in-out;
   border: 10px solid white;
   box-shadow: 0 0 0.5px 0 black;
+}
+
+.tiles:hover {
+  transform: rotateZ(0deg);
+}
+
+.tiles:hover .pic {
+  transform: rotateZ(0deg);
+}
+
+.tiles:hover .pic1 {
+  transform: scale(1);
+  top: 0;
+  left: 0;
 }
 
 .pic {
@@ -80,20 +93,6 @@
 
 .tiles:hover .desc {
   height: 20px;
-}
-
-.tiles:hover {
-  transform: rotateZ(0deg);
-}
-
-.tiles:hover .pic {
-  transform: rotateZ(0deg);
-}
-
-.tiles:hover .pic1 {
-  transform: scale(1);
-  top: 0;
-  left: 0;
 }
 
 @media only screen and (min-width: 970px) {
