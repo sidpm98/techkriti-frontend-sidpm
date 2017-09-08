@@ -7,5 +7,5 @@
 <div class="actions">
   <button md--raised-button class="tsbutton" *ngIf="content.prefillData"
           (click)="makePayment()">Proceed To Pay</button>
-  <button md-raised-button md-dialog-close>{{ content.button.value }}</button>
+  <button md-raised-button md-dialog-close>{{ content.button?.value }}</button>
 </div>

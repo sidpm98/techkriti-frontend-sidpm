@@ -217,11 +217,9 @@ export class ToscRegisterComponent implements OnInit {
           header: 'You have registered Succesfully',
           body: `You will be receiving a mail from us at ${prefillData.emailid}.<br>
 If you want to make your Payment later, please follow the link provided in the mail.<br>
-            <span>Note</span>: Last date for payment is <span>10 October</span>`,
+            <span>Note</span>: Last date for payment is <span>7 October</span>`,
           prefillData,
-          button: {
-            value: 'PAY LATER'
-          }
+          button: null
         };
         const dialogRef = this.dialog.open(SuccessfullDialogComponent, {
           disableClose: true,

@@ -47,7 +47,7 @@ export class StatusComponent implements OnInit {
         } else {
           content = {
             header: 'You have registered Succesfully',
-            body: `<span>Note</span>: Last date for payment is <span>10 October</span>`,
+            body: `<span>Note</span>: Last date for payment is <span>7 October</span>`,
             prefillData,
             button: {
               value: 'PAY LATER'
