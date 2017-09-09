@@ -1,0 +1,78 @@
+<div class="example-container mat-elevation-z8">
+
+  <div class="example-header">
+    <md-form-field floatPlaceholder="never">
+      <input mdInput #filter placeholder="Filter users">
+    </md-form-field>
+  </div>
+
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- ID Column -->
+    <ng-container mdColumnDef="name">
+      <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.name}} </md-cell>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container mdColumnDef="class">
+      <md-header-cell *mdHeaderCellDef> Class </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.class}} </md-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container mdColumnDef="school">
+      <md-header-cell *mdHeaderCellDef> School </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.school}} </md-cell>
+    </ng-container><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!-- <!--  --> -->
+
+    <ng-container mdColumnDef="city">
+      <md-header-cell *mdHeaderCellDef> City </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.city}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="payment">
+      <md-header-cell *mdHeaderCellDef> Payment </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.paid}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="contact">
+      <md-header-cell *mdHeaderCellDef> Contact </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.contact}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+
+  <md-paginator #paginator
+                [length]="exampleDatabase.data.length"
+                [pageIndex]="0"
+                [pageSize]="25"
+                [pageSizeOptions]="[5, 10, 25, 100]">
+  </md-paginator>
+</div>
+
+<md-expansion-panel>
+  <md-expansion-panel-header>
+    <md-panel-title>
+      <h2>Download</h2>
+    </md-panel-title>
+  </md-expansion-panel-header>
+
+  <div fxFlex="row" fxLayoutAlign="center center" fxLayoutWrap>
+    <md-form-field>
+      <input mdInput [(ngModel)]="city" placeholder="City">
+    </md-form-field>
+    <md-form-field>
+      <input mdInput [(ngModel)]="class" placeholder="Class">
+    </md-form-field>
+    <!-- <button md-raised-button (click)="toscDownload()">Download</button> -->
+    <!-- <a md-raised-button [href]="'/api/backend/excel/formstosc?city=' + city.value + '&class=' + class.value">Download</a> -->
+    <a md-raised-button [href]="'/api/backend/excel/formstosc' + getParams()">Download</a>
+  </div>
+
+</md-expansion-panel>

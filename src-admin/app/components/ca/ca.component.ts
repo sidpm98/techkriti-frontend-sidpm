@@ -15,17 +15,17 @@ export class CAComponent implements OnInit {
               private authService: AuthService) { }
 
   ngOnInit() {
-    this.getCAForms();
+    // this.getCAForms();
   }
 
-  getCAForms() {
-    this.caService.getApplications()
-      .then((res) => {
-        this.results = res;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
+  // getCAForms() {
+  //   this.caService.getApplications()
+  //     .then((res) => {
+  //       this.results = res;
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // }
 
 }

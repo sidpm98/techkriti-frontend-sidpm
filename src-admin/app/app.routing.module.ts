@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CAComponent } from './components/ca/ca.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
-import { ToscComponent } from './components/tosc/tosc.component';
+import {ToscDataComponent} from './components/tosc/tosc-data/tosc-data.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'ca', component: CAComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'tosc', component: ToscComponent }
+  { path: 'tosc', component: ToscDataComponent }
 ];
 
 @NgModule({

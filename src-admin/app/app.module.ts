@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule, MdButtonModule } from '@angular/material';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import { NgUploaderModule } from 'ngx-uploader';
 import { AppRoutingModule } from './app.routing.module';
 
@@ -19,6 +19,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ToscComponent } from './components/tosc/tosc.component';
 
 // Services
+import {CdkTableModule} from '@angular/cdk/table';
+import { ToscDataComponent } from './components/tosc/tosc-data/tosc-data.component';
 import { AuthService } from './services/auth.service';
 import { CAService } from './services/ca.service';
 import { ParamsService } from './services/params.service';
@@ -34,20 +36,22 @@ import { ToscService } from './services/tosc.service';
     LoginComponent,
     BackendComponent,
     DashboardComponent,
-    ToscComponent
+    ToscComponent,
+    ToscDataComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    MdButtonModule,
+    MaterialModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
+    CdkTableModule,
     NgUploaderModule
   ],
   providers: [
     AuthService,
-    CAService,
     ParamsService,
     TechHttp,
     ToscService

@@ -21,7 +21,7 @@ export class AuthService {
   public login(username: string, password: string): Promise<string> {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    const url = '/api/backend/user/get-token';
+    const url = '/api/backend/user.login';
     const data = { 'username': username, 'password': password };
     return this.http.post(url, data, { headers })
       .toPromise()
@@ -39,4 +39,5 @@ export class AuthService {
     this.router.navigate(['login']);
 
   }
+
 }

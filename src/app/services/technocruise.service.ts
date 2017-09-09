@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import 'rxjs/add/observable/of';
 import {Observable} from 'rxjs/Observable';
 import {cruise} from '../config/cruise';
 import {WorkshopInterface} from '../models/workshop.interface';

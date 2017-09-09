@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Request, RequestMethod, RequestOptions, RequestOptionsArgs, Response } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
 
+import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Observable';
 import { AuthService } from './auth.service';
 
 @Injectable()
@@ -13,7 +14,7 @@ export class TechHttp {
 
   generateHeaders(): Headers {
     const headers = new Headers({
-      'Accept': 'application/json',
+      'Accept': 'application/*',
       'Content-Type': 'application/json',
       'x-access-token': this.authService.token
     });
@@ -32,7 +33,7 @@ export class TechHttp {
     return this.request(RequestMethod.Put, url, body, options);
   }
 
-  private request(method: RequestMethod, url: string, body?: string, options?: RequestOptionsArgs): Promise<Response> {
+  private request(method: RequestMethod, url: string, body?: string, options?: RequestOptionsArgs): Observable<Response> {
     const requestOptions = new RequestOptions(Object.assign({
       method,
       url,
@@ -41,12 +42,8 @@ export class TechHttp {
     }, options));
 
     return this.http.request(new Request(requestOptions))
-      .toPromise()
-      .then((res) => {
+      .map((res) => {
         return res;
-      })
-      .catch((err) => {
-        return err;
       });
   }
 }

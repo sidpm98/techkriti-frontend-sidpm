@@ -10,20 +10,10 @@ import { ToscService } from '../../services/tosc.service';
 export class ToscComponent implements OnInit {
 
   public students: any;
-  constructor(private toscService: ToscService) { }
+
+  constructor(private toscService: ToscService) {
+  }
 
   ngOnInit() {
-    this.getToscApplications();
   }
-
-  getToscApplications() {
-    this.toscService.getApplications()
-      .then((res) => {
-        this.students = res;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
 }
