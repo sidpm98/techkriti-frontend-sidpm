@@ -23,7 +23,7 @@ export const FAQS: FAQ[] = [
   },
   {
     question: 'What is the eligibility criteria?',
-    answer: 'You must be studying in standard 9th-12th in the year 2016-17. Classes 9th and 10th comprise the pool A while classes 11th and 12th comprise the pool B. No prerequisite knowledge is required for solving questions.'
+    answer: 'You must be studying in standard 9th-12th in the year 2017-18. Classes 9th and 10th comprise the pool A while classes 11th and 12th comprise the pool B. No prerequisite knowledge is required for solving questions.'
   },
   {
     question: 'What if two participants get equal marks?',
