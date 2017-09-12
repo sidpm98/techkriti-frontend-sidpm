@@ -1,51 +1,53 @@
 .reg-form {
-    margin: 12.5vmin auto;
-    width: 30vmax;
+  margin: 12.5vmin auto;
+  width: 30vmax;
 }
 
 @media (max-width: 412px) {
-    md-input-container {
-        padding: 5vmin 0;
-    }
+  md-input-container {
+    padding: 5vmin 0;
+  }
 
-    .reg-form {
-        width: 80vw;
-    }
+  .reg-form {
+    width: 80vw;
+  }
 }
 
 
 span {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 
 md-input-container, md-select {
-    margin-bottom: 1.5vmin;
+  margin-bottom: 1.5vmin;
+  width: 100%;
 }
 
 md-card-actions {
-    display: flex;
-    margin-top: 1vmin;
-    justify-content: center;
+  display: flex;
+  margin-top: 1vmin;
+  justify-content: center;
 }
 
 .body {
-    background-image: url('/assets/registerback.jpg');
-    width: 100%;
-    height: 100vh;
-    background-size: contain;
-    overflow-x: hidden;
-    margin: 0 0;
+  background-image: url('/assets/registerback.jpg');
+  width: 100%;
+  height: 100vh;
+  background-size: contain;
+  overflow-x: hidden;
+  margin: 0 0;
 }
 
 .error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .standard {

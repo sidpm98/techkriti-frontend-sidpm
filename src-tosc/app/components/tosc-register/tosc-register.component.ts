@@ -84,10 +84,10 @@ export class ToscRegisterComponent implements OnInit {
     this.buildForm();
     this.getCities();
 
-    const cityControl = this.registerForm.get('city');
-      this.filteredCity = cityControl.valueChanges
-        .startWith(null)
-        .map(name => this.filterCity(name));
+    // const cityControl = this.registerForm.get('city');
+    //   this.filteredCity = cityControl.valueChanges
+    //     .startWith(null)
+    //     .map(name => this.filterCity(name));
 
     const schoolControl = this.registerForm.get('school');
       this.filteredSchool = schoolControl.valueChanges
@@ -182,9 +182,9 @@ export class ToscRegisterComponent implements OnInit {
     }
   }
 
-  filterCity(val: string) {
-    return val ? this.cities.filter(s => new RegExp(`${val}`, 'gi').test(s)) : this.cities ;
-  }
+  // filterCity(val: string) {
+  //   return val ? this.cities.filter(s => new RegExp(`${val}`, 'gi').test(s)) : this.cities ;
+  // }
 
   filterSchools(val: string) {
     return val ? this.autoSchools.filter(s => new RegExp(`${val}`, 'gi').test(s)) : this.autoSchools ;
@@ -235,6 +235,7 @@ If you want to make your Payment later, please follow the link provided in the m
   }
 
   options(e) {
+    console.log(e);
     this.autoSchools = [];
     const schoolinbox = this.registerForm.get('school');
     schoolinbox.setValue('');
