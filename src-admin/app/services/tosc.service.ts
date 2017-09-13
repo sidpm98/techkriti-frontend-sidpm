@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
-import { saveAs } from 'file-saver';
 import { TechHttp } from './tech-http.service';
 
 import {Observable} from 'rxjs/Observable';
@@ -8,7 +7,7 @@ import { ParamsService } from './params.service';
 
 @Injectable()
 
-export class ToscService {
+export class ToscDataService {
 
   constructor(
     private http: TechHttp,
@@ -20,30 +19,23 @@ export class ToscService {
     const urlparams = this.paramService.generateParams(params);
     return this.http.get(`api/backend/formstosc`, { params: urlparams })
       .map((res) => {
-        console.log(res);
         return res.json();
       });
   }
 
-  // download(field: {} = null): Observable<any> {
-  //   const params = this.paramService.generateParams(field);
-  //   return this.http.get('api/backend/excel/formstosc', { params })
-  //     .map((data: any) => {
-  //       console.log(data);
-  //       this.downloadFile(atob(data._body));
-  //       return data;
-  //     });
-  // }
+  delete(id: string): Observable<string> {
+    const url = `api/backend/formstosc/${ id }`;
+    return this.http.delete(url)
+      .map(() => {
+      return 'Student Successfully Deleted';
+      });
+  }
 
-  // downloadFile(data: any) {
-  //   const blob = new Blob([data], {type: 'application/excel'});
-  //   const file = new File([blob], 'download.xlsx', {type: 'application/excel'});
-    // saveAs(file, 'report.xlsx');
-    // console.log(file);
-    // let url= window.URL.createObjectURL(blob);
-    // let blob1 = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
-    // console.log(url);
-    // console.log(blob);
-  //   // window.open(url);
-  // }
+  public getCity() {
+    return this.https.get('/api/techkriti/tosc/city/?involved_in=tosc')
+    .toPromise()
+    .then((res) => {
+      return res.json();
+    });
+  }
 }

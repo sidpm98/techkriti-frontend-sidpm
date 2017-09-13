@@ -1,6 +1,6 @@
 import {DataSource} from '@angular/cdk/collections';
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {MdPaginator} from '@angular/material';
+import {MdPaginator, MdSnackBar} from '@angular/material';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/debounceTime';
@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
-import {ToscService} from '../../../services/tosc.service';
+import {ToscDataService} from '../../../services/tosc.service';
 
 @Component({
   selector: 'app-tosc-data',
@@ -18,19 +18,27 @@ import {ToscService} from '../../../services/tosc.service';
 })
 
 export class ToscDataComponent implements OnInit {
-  displayedColumns = ['name', 'class', 'school', 'city', 'payment', 'contact'];
+  displayedColumns = ['name', 'class', 'school', 'city', 'payment', 'contact', 'delete'];
   exampleDatabase: ExampleDatabase;
   dataSource: ExampleDataSource | null;
   class = '';
   city = '';
+  cities = [];
+  classes = ['09', '10', '11', '12'];
 
   @ViewChild(MdPaginator) paginator: MdPaginator;
   @ViewChild('filter') filter: ElementRef;
 
-  constructor(private toscService: ToscService) {
+  constructor(private toscService: ToscDataService,
+              public snackbar: MdSnackBar) {
   }
 
   ngOnInit() {
+    this.build();
+    this.toscService.getCity().then((res) => this.cities = res);
+  }
+
+  build() {
     this.exampleDatabase = new ExampleDatabase(this.toscService);
     Observable.fromEvent(this.filter.nativeElement, 'keyup')
       .debounceTime(150)
@@ -55,9 +63,21 @@ export class ToscDataComponent implements OnInit {
     }
     if (this.city !== '') {
       params += `city=${ this.city }`;
-    }
+    }    this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator);
     return params;
   }
+
+  deleteStudent(id: string) {
+    this.toscService.delete(id).subscribe((res) => {
+      this.snackbar.open(res, '', {
+        duration: 2000
+      });
+      const currentData = this.exampleDatabase.data;
+      const index = currentData.findIndex(x => x._id === id);
+      currentData.splice(index, 1);
+      this.exampleDatabase.dataChange.next(currentData);
+  });
+}
 }
 
 /** An example database that the data source uses to retrieve data for the table. */
@@ -68,7 +88,7 @@ export class ExampleDatabase {
     return this.dataChange.value;
   }
 
-  constructor(private toscService: ToscService) {
+  constructor(private toscService: ToscDataService) {
     this.toscService.getApplications().subscribe((users) => {
       const toscdata = [];
       for (let i = 0; i < users.length; i++) {

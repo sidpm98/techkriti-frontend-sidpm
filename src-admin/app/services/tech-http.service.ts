@@ -29,6 +29,10 @@ export class TechHttp {
     return this.request(RequestMethod.Post, url, body, options);
   }
 
+  delete(url: string, options?: RequestOptionsArgs) {
+    return this.request(RequestMethod.Delete, url, null, options);
+  }
+
   put(url: string, body?: string, options?: RequestOptionsArgs) {
     return this.request(RequestMethod.Put, url, body, options);
   }

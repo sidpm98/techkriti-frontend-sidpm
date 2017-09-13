@@ -44,6 +44,14 @@
       <md-cell *mdCellDef="let row"> {{row.contact}} </md-cell>
     </ng-container>
 
+    <ng-container mdColumnDef="delete">
+      <md-header-cell *mdHeaderCellDef> Manage </md-header-cell>
+      <md-cell *mdCellDef="let row">
+        <button md-raised-button *ngIf="!row.paid"
+                (click)="deleteStudent(row._id)">Delete</button>
+      </md-cell>
+    </ng-container>
+
     <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
     <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
   </md-table>
@@ -64,12 +72,20 @@
   </md-expansion-panel-header>
 
   <div fxFlex="row" fxLayoutAlign="center center" fxLayoutWrap>
-    <md-form-field>
-      <input mdInput [(ngModel)]="city" placeholder="City">
-    </md-form-field>
-    <md-form-field>
-      <input mdInput [(ngModel)]="class" placeholder="Class">
-    </md-form-field>
+    <md-select placeholder="Cities" [(ngModel)]="city">
+      <md-option value=""></md-option>
+      <md-option *ngFor="let city of cities" [value]="city._id">
+        {{ city._id }}
+      </md-option>
+    </md-select>
+
+    <md-select placeholder="Class" [(ngModel)]="class">
+      <md-option value=""></md-option>
+      <md-option *ngFor="let class of classes" [value]="class">
+        {{ class }}
+      </md-option>
+    </md-select>
+
     <!-- <button md-raised-button (click)="toscDownload()">Download</button> -->
     <!-- <a md-raised-button [href]="'/api/backend/excel/formstosc?city=' + city.value + '&class=' + class.value">Download</a> -->
     <a md-raised-button [href]="'/api/backend/excel/formstosc' + getParams()">Download</a>

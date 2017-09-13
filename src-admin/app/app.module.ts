@@ -22,10 +22,9 @@ import { ToscComponent } from './components/tosc/tosc.component';
 import {CdkTableModule} from '@angular/cdk/table';
 import { ToscDataComponent } from './components/tosc/tosc-data/tosc-data.component';
 import { AuthService } from './services/auth.service';
-import { CAService } from './services/ca.service';
 import { ParamsService } from './services/params.service';
 import { TechHttp } from './services/tech-http.service';
-import { ToscService } from './services/tosc.service';
+import { ToscDataService } from './services/tosc.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +53,7 @@ import { ToscService } from './services/tosc.service';
     AuthService,
     ParamsService,
     TechHttp,
-    ToscService
+    ToscDataService
   ],
   bootstrap: [AppComponent]
 })
