@@ -16,7 +16,7 @@ export class TechHttp {
     const headers = new Headers({
       'Accept': 'application/*',
       'Content-Type': 'application/json',
-      'x-access-token': this.authService.token
+      'x-access-token': localStorage.getItem('token')
     });
     return headers;
   }
