@@ -47,7 +47,7 @@ export class StatusComponent implements OnInit {
         } else {
           content = {
             header: 'You have registered Succesfully',
-            body: `<span>Note</span>: Last date for payment is <span>7 October</span>`,
+            body: `<span>Note</span>: Last date for payment is <span>5 October</span>`,
             prefillData,
             button: {
               value: 'PAY LATER'
@@ -61,7 +61,22 @@ export class StatusComponent implements OnInit {
           }
         });
         dialogRef.afterClosed().subscribe(() => this.router.navigate(['']));
-      })
-      .catch(err => this.message = err.json().message);
+      }).catch((err) => {
+        content = {
+          header: 'Registration Deactivated',
+          body: 'Please visit TOSC to register again. <br> Sorry for the inconvenience',
+          prefillData: false,
+          button: {
+            value: 'VISIT TOSC'
+          }
+        };
+        const dialogRef = this.dialog.open(SuccessfullDialogComponent, {
+          disableClose: true,
+          data: {
+            data: content
+          }
+        });
+        dialogRef.afterClosed().subscribe(() => this.router.navigate(['']));
+      });
   }
 }

@@ -14,6 +14,20 @@
     align-items: center;
 }
 
+.land-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.land-actions a {
+    margin-right: 10px;
+}
+
+.deepika {
+    background-color: grey !important;
+    color: white !important;
+}
+
 .cover-detail {
     display: flex;
     flex-direction: column;
