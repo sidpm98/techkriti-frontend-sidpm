@@ -594,3 +594,8 @@ a {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.msg {
+    font-size: 110%;
+    color: #C7C0B6;
+}
